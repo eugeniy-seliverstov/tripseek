@@ -1,7 +1,7 @@
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import { geoTimes } from 'd3-geo-projection'
 
-import map from '../assets/map/world-110m.json'
+import map from '../assets/map/countries-110m.json'
 
 function World() {
  return (
