@@ -30,7 +30,6 @@ function World() {
                 },
                 hover: {
                   fill: "#ED008E",
-                  strokeWidth: 0,
                   outline: "none",
                   cursor: "pointer",
                 },
