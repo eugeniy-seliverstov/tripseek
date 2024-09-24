@@ -34,6 +34,7 @@ function World() {
                   cursor: "pointer",
                 },
                 pressed: {
+                  fill: "#ED008E",
                   outline: 'none',
                 },
               }}
