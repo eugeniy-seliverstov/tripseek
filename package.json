@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",
     "@types/firebase": "^3.2.1",
+    "antd": "^5.21.4",
     "axios": "^1.7.6",
     "d3-geo-projection": "^4.0.0",
     "firebase": "^10.13.2",
