@@ -2,7 +2,6 @@ import { auth, provider } from '../../libs/firebase.ts'
 import { signInWithPopup } from 'firebase/auth'
 
 function GoogleAuth() {
-
   const signInWithGoogle = async() => {
     const results = await signInWithPopup(auth, provider)
     const token = await results.user.getIdToken()
