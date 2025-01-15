@@ -1,5 +1,6 @@
 import { auth, provider } from '../../libs/firebase.ts'
 import { signInWithPopup } from 'firebase/auth'
+import { Button } from "@/components/ui/button"
 
 function GoogleAuth() {
   const signInWithGoogle = async() => {
@@ -18,7 +19,7 @@ function GoogleAuth() {
 
   return (
     <div>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+      <Button onClick={signInWithGoogle}>Sign in with Google</Button>
     </div>
   )
 }
