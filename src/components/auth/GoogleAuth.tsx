@@ -1,4 +1,4 @@
-import { auth, provider } from '../../libs/firebase.ts'
+import { auth, provider } from '../../lib/firebase.ts'
 import { signInWithPopup } from 'firebase/auth'
 import { Button } from "@/components/ui/button"
 
