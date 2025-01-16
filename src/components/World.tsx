@@ -9,6 +9,7 @@ function World() {
     <ComposableMap
       width={1000}
       height={600}
+      className='max-h-full'
       projection={geoTimes()
         .translate([980 / 2, 50 + 551 / 2])
         .scale(205)
