@@ -1,7 +1,7 @@
-import Logo from './components/Logo'
-import Banner from './components/Banner'
-import World from './components/World'
-import Sidebar from './components/Sidebar'
+import World from '@/components/World'
+import Sidebar from '@/components/Sidebar'
+import Logo from '@/components/header/Logo'
+import Banner from '@/components/header/Banner'
 
 function App() {
   return (
