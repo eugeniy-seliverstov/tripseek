@@ -10,7 +10,7 @@ function App() {
         className="w-full sm:w-auto grow flex flex-col"
         style={{ background: 'linear-gradient(180deg,#1a0548 0,#1a0548 100%' }}
       >
-        <div className="flex justify-between p-4">
+        <div className="hidden sm:flex justify-between p-4">
           <Logo />
           <Banner />
         </div>
@@ -18,7 +18,7 @@ function App() {
           <World />
         </div>
       </div>
-      <div className="w-full sm:w-2/5 md:1/3 lg:w-2/5 xl:w-1/4 max-w-md h-full bg-white">
+      <div className="w-full sm:w-2/5 max-w-md h-full bg-white">
         <Sidebar />
       </div>
     </div>
