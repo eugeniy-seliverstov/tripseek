@@ -2,13 +2,16 @@ import { useState, useEffect } from 'react'
 import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import TerritoryPopover from './territory/TerritoryPopover'
-import { TerritoryIso3 } from '@/types/Territory'
+import { TTerritory } from '@/types/Territory'
+import useGlobalStore from '@/store/global'
 
 import map from '../assets/map/countries-110m.json'
 
 function World() {
-  const [hoverTerritory, setHoverTerritory] = useState<Territory | null>(null)
+  const [hoverTerritory, setHoverTerritory] = useState<TTerritory | null>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
+
+  const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
 
   useEffect(() => {
     const handleMouseMove = ({ clientX, clientY }) => {
@@ -19,7 +22,7 @@ function World() {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
     }
-  })
+  }, [])
 
   return (
     <>
@@ -35,11 +38,12 @@ function World() {
         <Geographies geography={map}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const territory: Territory = {
+              const territory: TTerritory = {
                 name: geo.properties.NAME,
                 iso2: geo.properties.ISO_A2,
                 iso3: geo.properties.ISO_A3,
               }
+              const isActiveTerritory = territory.iso3 ===  globalHoverTerritory?.iso3
 
               return <Geography
                 key={geo.rsmKey}
@@ -48,7 +52,7 @@ function World() {
                 strokeWidth={1}
                 style={{
                   default: {
-                    fill: "rgba(255, 255, 255, 0.25)",
+                    fill: isActiveTerritory ? "#ED008E": "rgba(255, 255, 255, 0.25)",
                     outline: "none",
                     pointerEvents: 'auto',
                   },

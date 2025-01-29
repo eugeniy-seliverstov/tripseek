@@ -1,13 +1,21 @@
 import Territory from './Territory'
 import { TTerritory } from '@/types/Territory'
+import { GlobalStoreActions } from '@/store/global'
 
 interface TerritoryListProps {
   territories: TTerritory[]
+  setHoverTerritory: GlobalStoreActions['setHoverTerritory']
 }
 
-function TerritoryList({ territories }: TerritoryListProps) {
-  const list = territories.map(({name, iso3: code}) =>
-    <Territory key={code} name={name} code={code}></Territory>
+function TerritoryList({ territories, setHoverTerritory }: TerritoryListProps) {
+  const list = territories.map((territory) =>
+    <Territory
+      key={territory.iso3}
+      code={territory.iso3}
+      name={territory.name}
+      onMouseEnter={() => setHoverTerritory(territory)}
+      onMouseLeave={() => setHoverTerritory(null)}
+    />
   )
   return list
 }
