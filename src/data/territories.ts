@@ -998,6 +998,12 @@ const territories = [
     "other": true
   },
   {
+    "name": "Fr. S. Antarctic Lands",
+    "continent": "Antarctica",
+    "iso3": "ATF",
+    "other": true
+  },
+  {
     "name": "Taiwan",
     "continent": "East & Southeast Asia",
     "iso3": "TWN",

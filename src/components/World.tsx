@@ -7,6 +7,14 @@ import useGlobalStore from '@/store/global'
 
 import map from '../assets/map/countries-110m.json'
 
+function getCodeByName(name: string): string | null {
+  switch (name) {
+    case 'Northern Cyprus': return 'NOCYP'
+    case 'Kosovo': return 'SRBKV'
+    default: return null
+  }
+}
+
 function World() {
   const [hoverTerritory, setHoverTerritory] = useState<TTerritory | null>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
@@ -40,7 +48,7 @@ function World() {
             geographies.map((geo) => {
               const territory: TTerritory = {
                 name: geo.properties.NAME,
-                iso3: geo.properties.ISO_A3,
+                iso3: geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 : getCodeByName(geo.properties.NAME_LONG),
               }
               const isActiveTerritory = territory.iso3 ===  globalHoverTerritory?.iso3
 
