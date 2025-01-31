@@ -11,6 +11,7 @@ function getCodeByName(name: string): string | null {
   switch (name) {
     case 'Northern Cyprus': return 'NOCYP'
     case 'Kosovo': return 'SRBKV'
+    case 'Somaliland': return 'SOMLN'
     default: return null
   }
 }
