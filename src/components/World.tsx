@@ -40,7 +40,6 @@ function World() {
             geographies.map((geo) => {
               const territory: TTerritory = {
                 name: geo.properties.NAME,
-                iso2: geo.properties.ISO_A2,
                 iso3: geo.properties.ISO_A3,
               }
               const isActiveTerritory = territory.iso3 ===  globalHoverTerritory?.iso3
