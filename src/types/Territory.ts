@@ -1,6 +1,6 @@
 import territories from '@/data/territories'
 
-export type TTerritory = (typeof territories)[number]
-export type TTerritoryName = TTerritory['name']
-export type TTerritoryCode = TTerritory['code']
-export type TContinent = TTerritory['continent']
+export type TerritoryType = (typeof territories)[number]
+export type TerritoryName = TerritoryType['name']
+export type TerritoryCode = TerritoryType['code']
+export type TContinent = TerritoryType['continent']

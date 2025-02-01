@@ -1,8 +1,8 @@
-import { TTerritory } from '@/types/Territory'
+import { TerritoryType } from '@/types/Territory'
 import TerritoryFlag from './TerritoryFlag'
 
 interface TerritoryPopoverProps {
-  territory: TTerritory;
+  territory: TerritoryType;
   clientY: number;
   clientX: number;
 }

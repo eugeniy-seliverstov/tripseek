@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import TerritoryPopover from './territory/TerritoryPopover'
-import { TTerritory } from '@/types/Territory'
+import { TerritoryType } from '@/types/Territory'
 import useGlobalStore from '@/store/global'
 
 import map from '../assets/map/countries-110m.json'
@@ -17,7 +17,7 @@ function getCodeByName(name: string): string | null {
 }
 
 function World() {
-  const [hoverTerritory, setHoverTerritory] = useState<TTerritory | null>(null)
+  const [hoverTerritory, setHoverTerritory] = useState<TerritoryType | null>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
   const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
@@ -47,7 +47,7 @@ function World() {
         <Geographies geography={map}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const territory: TTerritory = {
+              const territory: TerritoryType = {
                 name: geo.properties.NAME,
                 code: geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 : getCodeByName(geo.properties.NAME_LONG),
               }

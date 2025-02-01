@@ -1,7 +1,7 @@
-import { TTerritoryCode } from "@/types/Territory"
+import { TerritoryCode } from "@/types/Territory"
 
 interface TerritoryFlagProps {
-  code: TTerritoryCode
+  code: TerritoryCode
 }
 
 function TerritoryFlag({ code }: TerritoryFlagProps) {

@@ -1,9 +1,9 @@
 import Territory from './Territory'
-import { TTerritory } from '@/types/Territory'
+import { TerritoryType } from '@/types/Territory'
 import { GlobalStoreActions } from '@/store/global'
 
 interface TerritoryListProps {
-  territories: TTerritory[]
+  territories: TerritoryType[]
   setHoverTerritory: GlobalStoreActions['setHoverTerritory']
 }
 
