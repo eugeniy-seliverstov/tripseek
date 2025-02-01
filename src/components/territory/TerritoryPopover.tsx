@@ -17,7 +17,7 @@ function TerritoryPopover({ territory, clientY, clientX }: TerritoryPopoverProps
         transform: 'translateX(-50%)',
       }}
     >
-      <TerritoryFlag code={territory.iso3}/>
+      <TerritoryFlag code={territory.code}/>
       <span className='text-xl'>{territory.name}</span>
     </div>
   )

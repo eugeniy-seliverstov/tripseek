@@ -49,9 +49,9 @@ function World() {
             geographies.map((geo) => {
               const territory: TTerritory = {
                 name: geo.properties.NAME,
-                iso3: geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 : getCodeByName(geo.properties.NAME_LONG),
+                code: geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 : getCodeByName(geo.properties.NAME_LONG),
               }
-              const isActiveTerritory = territory.iso3 ===  globalHoverTerritory?.iso3
+              const isActiveTerritory = territory.code ===  globalHoverTerritory?.code
 
               return <Geography
                 key={geo.rsmKey}

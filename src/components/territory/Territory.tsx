@@ -1,9 +1,9 @@
-import { TTerritoryName, TTerritoryIso3 } from '@/types/Territory'
+import { TTerritoryName, TTerritoryCode } from '@/types/Territory'
 import TerritoryFlag from './TerritoryFlag'
 
 interface TerritoryProps {
   name: TTerritoryName
-  code: TTerritoryIso3
+  code: TTerritoryCode
   onMouseEnter?: () => void
   onMouseLeave?: () => void
 }

@@ -10,8 +10,8 @@ interface TerritoryListProps {
 function TerritoryList({ territories, setHoverTerritory }: TerritoryListProps) {
   const list = territories.map((territory) =>
     <Territory
-      key={territory.iso3}
-      code={territory.iso3}
+      key={territory.code}
+      code={territory.code}
       name={territory.name}
       onMouseEnter={() => setHoverTerritory(territory)}
       onMouseLeave={() => setHoverTerritory(null)}

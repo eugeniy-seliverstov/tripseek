@@ -13,1372 +13,1372 @@ const territories = [
   {
     "name": "Albania",
     "continent": "Europe",
-    "iso3": "ALB",
+    "code": "ALB",
   },
   {
     "name": "Estonia",
     "continent": "Europe",
-    "iso3": "EST",
+    "code": "EST",
   },
   {
     "name": "Finland",
     "continent": "Europe",
-    "iso3": "FIN"
+    "code": "FIN"
   },
   {
     "name": "Russia",
     "continent": "Europe",
-    "iso3": "RUS"
+    "code": "RUS"
   },
   {
     "name": "Sweden",
     "continent": "Europe",
-    "iso3": "SWE"
+    "code": "SWE"
   },
   {
     "name": "Ukraine",
     "continent": "Europe",
-    "iso3": "UKR"
+    "code": "UKR"
   },
   {
     "name": "Algeria",
     "continent": "Africa",
-    "iso3": "DZA",
+    "code": "DZA",
   },
   {
     "name": "Angola",
     "continent": "Africa",
-    "iso3": "AGO"
+    "code": "AGO"
   },
   {
     "name": "Afghanistan",
     "continent": "South Asia",
-    "iso3": "AFG"
+    "code": "AFG"
   },
   {
     "name": "Andorra",
     "continent": "Europe",
-    "iso3": "AND"
+    "code": "AND"
   },
   {
     "name": "Antigua and Barbuda",
     "continent": "Central America",
-    "iso3": "ATG"
+    "code": "ATG"
   },
   {
     "name": "Argentina",
     "continent": "South America",
-    "iso3": "ARG"
+    "code": "ARG"
   },
   {
     "name": "Armenia",
     "continent": "Middle East",
-    "iso3": "ARM"
+    "code": "ARM"
   },
   {
     "name": "Australia",
     "continent": "Oceania",
-    "iso3": "AUS"
+    "code": "AUS"
   },
   {
     "name": "Austria",
     "continent": "Europe",
-    "iso3": "AUT"
+    "code": "AUT"
   },
   {
     "name": "Azerbaijan",
     "continent": "Middle East",
-    "iso3": "AZE"
+    "code": "AZE"
   },
   {
     "name": "Bahamas",
     "continent": "Central America",
-    "iso3": "BHS"
+    "code": "BHS"
   },
   {
     "name": "Bahrain",
     "continent": "Middle East",
-    "iso3": "BHR"
+    "code": "BHR"
   },
   {
     "name": "Bangladesh",
     "continent": "South Asia",
-    "iso3": "BGD"
+    "code": "BGD"
   },
   {
     "name": "Barbados",
     "continent": "Central America",
-    "iso3": "BRB"
+    "code": "BRB"
   },
   {
     "name": "Belarus",
     "continent": "Europe",
-    "iso3": "BLR"
+    "code": "BLR"
   },
   {
     "name": "Belgium",
     "continent": "Europe",
-    "iso3": "BEL"
+    "code": "BEL"
   },
   {
     "name": "Belize",
     "continent": "Central America",
-    "iso3": "BLZ"
+    "code": "BLZ"
   },
   {
     "name": "Benin",
     "continent": "Africa",
-    "iso3": "BEN"
+    "code": "BEN"
   },
   {
     "name": "Bhutan",
     "continent": "South Asia",
-    "iso3": "BTN"
+    "code": "BTN"
   },
   {
     "name": "Bolivia",
     "continent": "South America",
-    "iso3": "BOL"
+    "code": "BOL"
   },
   {
     "name": "Bosnia and Herzegovina",
     "continent": "Europe",
-    "iso3": "BIH"
+    "code": "BIH"
   },
   {
     "name": "Botswana",
     "continent": "Africa",
-    "iso3": "BWA"
+    "code": "BWA"
   },
   {
     "name": "Brazil",
     "continent": "South America",
-    "iso3": "BRA"
+    "code": "BRA"
   },
   {
     "name": "Brunei",
     "continent": "East & Southeast Asia",
-    "iso3": "BRN"
+    "code": "BRN"
   },
   {
     "name": "Bulgaria",
     "continent": "Europe",
-    "iso3": "BGR"
+    "code": "BGR"
   },
   {
     "name": "Burkina Faso",
     "continent": "Africa",
-    "iso3": "BFA"
+    "code": "BFA"
   },
   {
     "name": "Burundi",
     "continent": "Africa",
-    "iso3": "BDI"
+    "code": "BDI"
   },
   {
     "name": "Cambodia",
     "continent": "East & Southeast Asia",
-    "iso3": "KHM"
+    "code": "KHM"
   },
   {
     "name": "Cameroon",
     "continent": "Africa",
-    "iso3": "CMR"
+    "code": "CMR"
   },
   {
     "name": "Canada",
     "continent": "North America",
-    "iso3": "CAN"
+    "code": "CAN"
   },
   {
     "name": "Cape Verde",
     "continent": "Africa",
-    "iso3": "CPV"
+    "code": "CPV"
   },
   {
     "name": "Central African Republic",
     "continent": "Africa",
-    "iso3": "CAF"
+    "code": "CAF"
   },
   {
     "name": "Chad",
     "continent": "Africa",
-    "iso3": "TCD"
+    "code": "TCD"
   },
   {
     "name": "Chile",
     "continent": "South America",
-    "iso3": "CHL"
+    "code": "CHL"
   },
   {
     "name": "China",
     "continent": "East & Southeast Asia",
-    "iso3": "CHN"
+    "code": "CHN"
   },
   {
     "name": "Colombia",
     "continent": "South America",
-    "iso3": "COL"
+    "code": "COL"
   },
   {
     "name": "Comoros",
     "continent": "Africa",
-    "iso3": "COM"
+    "code": "COM"
   },
   {
     "name": "Costa Rica",
     "continent": "Central America",
-    "iso3": "CRI"
+    "code": "CRI"
   },
   {
     "name": "Croatia",
     "continent": "Europe",
-    "iso3": "HRV"
+    "code": "HRV"
   },
   {
     "name": "Cuba",
     "continent": "Central America",
-    "iso3": "CUB"
+    "code": "CUB"
   },
   {
     "name": "Cyprus",
     "continent": "Europe",
-    "iso3": "CYP"
+    "code": "CYP"
   },
   {
     "name": "Czech Republic",
     "continent": "Europe",
-    "iso3": "CZE"
+    "code": "CZE"
   },
   {
     "name": "Democratic Republic of the Congo",
     "continent": "Africa",
-    "iso3": "COD"
+    "code": "COD"
   },
   {
     "name": "Denmark",
     "continent": "Europe",
-    "iso3": "DNK"
+    "code": "DNK"
   },
   {
     "name": "Djibouti",
     "continent": "Africa",
-    "iso3": "DJI"
+    "code": "DJI"
   },
   {
     "name": "Dominica",
     "continent": "Central America",
-    "iso3": "DMA"
+    "code": "DMA"
   },
   {
     "name": "Dominican Republic",
     "continent": "Central America",
-    "iso3": "DOM"
+    "code": "DOM"
   },
   {
     "name": "Ecuador",
     "continent": "South America",
-    "iso3": "ECU"
+    "code": "ECU"
   },
   {
     "name": "Egypt",
     "continent": "Africa",
-    "iso3": "EGY"
+    "code": "EGY"
   },
   {
     "name": "El Salvador",
     "continent": "Central America",
-    "iso3": "SLV"
+    "code": "SLV"
   },
   {
     "name": "Equatorial Guinea",
     "continent": "Africa",
-    "iso3": "GNQ"
+    "code": "GNQ"
   },
   {
     "name": "Eritrea",
     "continent": "Africa",
-    "iso3": "ERI"
+    "code": "ERI"
   },
   {
     "name": "Eswatini",
     "continent": "Africa",
-    "iso3": "SWZ"
+    "code": "SWZ"
   },
   {
     "name": "Ethiopia",
     "continent": "Africa",
-    "iso3": "ETH"
+    "code": "ETH"
   },
   {
     "name": "Fiji",
     "continent": "Oceania",
-    "iso3": "FJI"
+    "code": "FJI"
   },
   {
     "name": "France",
     "continent": "Europe",
-    "iso3": "FRA"
+    "code": "FRA"
   },
   {
     "name": "Gabon",
     "continent": "Africa",
-    "iso3": "GAB"
+    "code": "GAB"
   },
   {
     "name": "Georgia",
     "continent": "Middle East",
-    "iso3": "GEO"
+    "code": "GEO"
   },
   {
     "name": "Gambia",
     "continent": "Africa",
-    "iso3": "GMB"
+    "code": "GMB"
   },
   {
     "name": "Germany",
     "continent": "Europe",
-    "iso3": "DEU"
+    "code": "DEU"
   },
   {
     "name": "Ghana",
     "continent": "Africa",
-    "iso3": "GHA"
+    "code": "GHA"
   },
   {
     "name": "Greece",
     "continent": "Europe",
-    "iso3": "GRC"
+    "code": "GRC"
   },
   {
     "name": "Grenada",
     "continent": "Central America",
-    "iso3": "GRD"
+    "code": "GRD"
   },
   {
     "name": "Guatemala",
     "continent": "Central America",
-    "iso3": "GTM"
+    "code": "GTM"
   },
   {
     "name": "Guinea",
     "continent": "Africa",
-    "iso3": "GIN"
+    "code": "GIN"
   },
   {
     "name": "Guinea-Bissau",
     "continent": "Africa",
-    "iso3": "GNB"
+    "code": "GNB"
   },
   {
     "name": "Guyana",
     "continent": "South America",
-    "iso3": "GUY"
+    "code": "GUY"
   },
   {
     "name": "Haiti",
     "continent": "Central America",
-    "iso3": "HTI"
+    "code": "HTI"
   },
   {
     "name": "Honduras",
     "continent": "Central America",
-    "iso3": "HND"
+    "code": "HND"
   },
   {
     "name": "Hungary",
     "continent": "Europe",
-    "iso3": "HUN"
+    "code": "HUN"
   },
   {
     "name": "Iceland",
     "continent": "Europe",
-    "iso3": "ISL"
+    "code": "ISL"
   },
   {
     "name": "India",
     "continent": "South Asia",
-    "iso3": "IND"
+    "code": "IND"
   },
   {
     "name": "Indonesia",
     "continent": "East & Southeast Asia",
-    "iso3": "IDN"
+    "code": "IDN"
   },
   {
     "name": "Iran",
     "continent": "Middle East",
-    "iso3": "IRN"
+    "code": "IRN"
   },
   {
     "name": "Iraq",
     "continent": "Middle East",
-    "iso3": "IRQ"
+    "code": "IRQ"
   },
   {
     "name": "Ireland",
     "continent": "Europe",
-    "iso3": "IRL"
+    "code": "IRL"
   },
   {
     "name": "Israel",
     "continent": "Middle East",
-    "iso3": "ISR"
+    "code": "ISR"
   },
   {
     "name": "Italy",
     "continent": "Europe",
-    "iso3": "ITA"
+    "code": "ITA"
   },
   {
     "name": "Ivory Coast",
     "continent": "Africa",
-    "iso3": "CIV"
+    "code": "CIV"
   },
   {
     "name": "Jamaica",
     "continent": "Central America",
-    "iso3": "JAM"
+    "code": "JAM"
   },
   {
     "name": "Japan",
     "continent": "East & Southeast Asia",
-    "iso3": "JPN"
+    "code": "JPN"
   },
   {
     "name": "Jordan",
     "continent": "Middle East",
-    "iso3": "JOR"
+    "code": "JOR"
   },
   {
     "name": "Kazakhstan",
     "continent": "Central Asia",
-    "iso3": "KAZ"
+    "code": "KAZ"
   },
   {
     "name": "Kenya",
     "continent": "Africa",
-    "iso3": "KEN"
+    "code": "KEN"
   },
   {
     "name": "Kiribati",
     "continent": "Oceania",
-    "iso3": "KIR"
+    "code": "KIR"
   },
   {
     "name": "Kuwait",
     "continent": "Middle East",
-    "iso3": "KWT"
+    "code": "KWT"
   },
   {
     "name": "Kyrgyzstan",
     "continent": "Central Asia",
-    "iso3": "KGZ"
+    "code": "KGZ"
   },
   {
     "name": "Laos",
     "continent": "East & Southeast Asia",
-    "iso3": "LAO"
+    "code": "LAO"
   },
   {
     "name": "Latvia",
     "continent": "Europe",
-    "iso3": "LVA"
+    "code": "LVA"
   },
   {
     "name": "Lebanon",
     "continent": "Middle East",
-    "iso3": "LBN"
+    "code": "LBN"
   },
   {
     "name": "Lesotho",
     "continent": "Africa",
-    "iso3": "LSO"
+    "code": "LSO"
   },
   {
     "name": "Liberia",
     "continent": "Africa",
-    "iso3": "LBR"
+    "code": "LBR"
   },
   {
     "name": "Libya",
     "continent": "Africa",
-    "iso3": "LBY"
+    "code": "LBY"
   },
   {
     "name": "Liechtenstein",
     "continent": "Europe",
-    "iso3": "LIE"
+    "code": "LIE"
   },
   {
     "name": "Lithuania",
     "continent": "Europe",
-    "iso3": "LTU"
+    "code": "LTU"
   },
   {
     "name": "Luxembourg",
     "continent": "Europe",
-    "iso3": "LUX"
+    "code": "LUX"
   },
   {
     "name": "Madagascar",
     "continent": "Africa",
-    "iso3": "MDG"
+    "code": "MDG"
   },
   {
     "name": "Malawi",
     "continent": "Africa",
-    "iso3": "MWI"
+    "code": "MWI"
   },
   {
     "name": "Malaysia",
     "continent": "East & Southeast Asia",
-    "iso3": "MYS"
+    "code": "MYS"
   },
   {
     "name": "Maldives",
     "continent": "South Asia",
-    "iso3": "MDV"
+    "code": "MDV"
   },
   {
     "name": "Mali",
     "continent": "Africa",
-    "iso3": "MLI"
+    "code": "MLI"
   },
   {
     "name": "Malta",
     "continent": "Europe",
-    "iso3": "MLT"
+    "code": "MLT"
   },
   {
     "name": "Marshall Islands",
     "continent": "Oceania",
-    "iso3": "MHL"
+    "code": "MHL"
   },
   {
     "name": "Mauritania",
     "continent": "Africa",
-    "iso3": "MRT"
+    "code": "MRT"
   },
   {
     "name": "Mauritius",
     "continent": "Africa",
-    "iso3": "MUS"
+    "code": "MUS"
   },
   {
     "name": "Mexico",
     "continent": "North America",
-    "iso3": "MEX"
+    "code": "MEX"
   },
   {
     "name": "Micronesia",
     "continent": "Oceania",
-    "iso3": "FSM"
+    "code": "FSM"
   },
   {
     "name": "Moldova",
     "continent": "Europe",
-    "iso3": "MDA"
+    "code": "MDA"
   },
   {
     "name": "Monaco",
     "continent": "Europe",
-    "iso3": "MCO"
+    "code": "MCO"
   },
   {
     "name": "Mongolia",
     "continent": "East & Southeast Asia",
-    "iso3": "MNG"
+    "code": "MNG"
   },
   {
     "name": "Montenegro",
     "continent": "Europe",
-    "iso3": "MNE"
+    "code": "MNE"
   },
   {
     "name": "Morocco",
     "continent": "Africa",
-    "iso3": "MAR"
+    "code": "MAR"
   },
   {
     "name": "Mozambique",
     "continent": "Africa",
-    "iso3": "MOZ"
+    "code": "MOZ"
   },
   {
     "name": "Myanmar",
     "continent": "East & Southeast Asia",
-    "iso3": "MMR"
+    "code": "MMR"
   },
   {
     "name": "Namibia",
     "continent": "Africa",
-    "iso3": "NAM"
+    "code": "NAM"
   },
   {
     "name": "Nauru",
     "continent": "Oceania",
-    "iso3": "NRU"
+    "code": "NRU"
   },
   {
     "name": "Nepal",
     "continent": "South Asia",
-    "iso3": "NPL"
+    "code": "NPL"
   },
   {
     "name": "Netherlands",
     "continent": "Europe",
-    "iso3": "NLD"
+    "code": "NLD"
   },
   {
     "name": "New Zealand",
     "continent": "Oceania",
-    "iso3": "NZL"
+    "code": "NZL"
   },
   {
     "name": "Nicaragua",
     "continent": "Central America",
-    "iso3": "NIC"
+    "code": "NIC"
   },
   {
     "name": "Niger",
     "continent": "Africa",
-    "iso3": "NER"
+    "code": "NER"
   },
   {
     "name": "Nigeria",
     "continent": "Africa",
-    "iso3": "NGA"
+    "code": "NGA"
   },
   {
     "name": "North Korea",
     "continent": "East & Southeast Asia",
-    "iso3": "PRK"
+    "code": "PRK"
   },
   {
     "name": "North Macedonia",
     "continent": "Europe",
-    "iso3": "MKD"
+    "code": "MKD"
   },
   {
     "name": "Norway",
     "continent": "Europe",
-    "iso3": "NOR"
+    "code": "NOR"
   },
   {
     "name": "Oman",
     "continent": "Middle East",
-    "iso3": "OMN"
+    "code": "OMN"
   },
   {
     "name": "Pakistan",
     "continent": "South Asia",
-    "iso3": "PAK"
+    "code": "PAK"
   },
   {
     "name": "Palau",
     "continent": "Oceania",
-    "iso3": "PLW"
+    "code": "PLW"
   },
   {
     "name": "Panama",
     "continent": "Central America",
-    "iso3": "PAN"
+    "code": "PAN"
   },
   {
     "name": "Palestine",
     "continent": "Middle East",
-    "iso3": "PSE"
+    "code": "PSE"
   },
   {
     "name": "Papua New Guinea",
     "continent": "Oceania",
-    "iso3": "PNG"
+    "code": "PNG"
   },
   {
     "name": "Paraguay",
     "continent": "South America",
-    "iso3": "PRY"
+    "code": "PRY"
   },
   {
     "name": "Peru",
     "continent": "South America",
-    "iso3": "PER"
+    "code": "PER"
   },
   {
     "name": "Philippines",
     "continent": "East & Southeast Asia",
-    "iso3": "PHL"
+    "code": "PHL"
   },
   {
     "name": "Poland",
     "continent": "Europe",
-    "iso3": "POL"
+    "code": "POL"
   },
   {
     "name": "Portugal",
     "continent": "Europe",
-    "iso3": "PRT"
+    "code": "PRT"
   },
   {
     "name": "Qatar",
     "continent": "Middle East",
-    "iso3": "QAT"
+    "code": "QAT"
   },
   {
     "name": "Republic of Congo",
     "continent": "Africa",
-    "iso3": "COG"
+    "code": "COG"
   },
   {
     "name": "Romania",
     "continent": "Europe",
-    "iso3": "ROU"
+    "code": "ROU"
   },
   {
     "name": "Rwanda",
     "continent": "Africa",
-    "iso3": "RWA"
+    "code": "RWA"
   },
   {
     "name": "Saint Kitts and Nevis",
     "continent": "Central America",
-    "iso3": "KNA"
+    "code": "KNA"
   },
   {
     "name": "Saint Lucia",
     "continent": "Central America",
-    "iso3": "LCA"
+    "code": "LCA"
   },
   {
     "name": "Saint Vincent and the Grenadines",
     "continent": "Central America",
-    "iso3": "VCT"
+    "code": "VCT"
   },
   {
     "name": "Samoa",
     "continent": "Oceania",
-    "iso3": "WSM"
+    "code": "WSM"
   },
   {
     "name": "San Marino",
     "continent": "Europe",
-    "iso3": "SMR"
+    "code": "SMR"
   },
   {
     "name": "Sao Tome and Principe",
     "continent": "Africa",
-    "iso3": "STP"
+    "code": "STP"
   },
   {
     "name": "Saudi Arabia",
     "continent": "Middle East",
-    "iso3": "SAU"
+    "code": "SAU"
   },
   {
     "name": "Senegal",
     "continent": "Africa",
-    "iso3": "SEN"
+    "code": "SEN"
   },
   {
     "name": "Serbia",
     "continent": "Europe",
-    "iso3": "SRB"
+    "code": "SRB"
   },
   {
     "name": "Seychelles",
     "continent": "Africa",
-    "iso3": "SYC"
+    "code": "SYC"
   },
   {
     "name": "Sierra Leone",
     "continent": "Africa",
-    "iso3": "SLE"
+    "code": "SLE"
   },
   {
     "name": "Singapore",
     "continent": "East & Southeast Asia",
-    "iso3": "SGP"
+    "code": "SGP"
   },
   {
     "name": "Slovakia",
     "continent": "Europe",
-    "iso3": "SVK"
+    "code": "SVK"
   },
   {
     "name": "Slovenia",
     "continent": "Europe",
-    "iso3": "SVN"
+    "code": "SVN"
   },
   {
     "name": "Solomon Islands",
     "continent": "Oceania",
-    "iso3": "SLB"
+    "code": "SLB"
   },
   {
     "name": "Somalia",
     "continent": "Africa",
-    "iso3": "SOM"
+    "code": "SOM"
   },
   {
     "name": "South Africa",
     "continent": "Africa",
-    "iso3": "ZAF"
+    "code": "ZAF"
   },
   {
     "name": "South Korea",
     "continent": "East & Southeast Asia",
-    "iso3": "KOR"
+    "code": "KOR"
   },
   {
     "name": "South Sudan",
     "continent": "Africa",
-    "iso3": "SSD"
+    "code": "SSD"
   },
   {
     "name": "Spain",
     "continent": "Europe",
-    "iso3": "ESP"
+    "code": "ESP"
   },
   {
     "name": "Sri Lanka",
     "continent": "South Asia",
-    "iso3": "LKA"
+    "code": "LKA"
   },
   {
     "name": "Sudan",
     "continent": "Africa",
-    "iso3": "SDN"
+    "code": "SDN"
   },
   {
     "name": "Suriname",
     "continent": "South America",
-    "iso3": "SUR"
+    "code": "SUR"
   },
   {
     "name": "Switzerland",
     "continent": "Europe",
-    "iso3": "CHE"
+    "code": "CHE"
   },
   {
     "name": "Syria",
     "continent": "Middle East",
-    "iso3": "SYR"
+    "code": "SYR"
   },
   {
     "name": "Tajikistan",
     "continent": "Central Asia",
-    "iso3": "TJK"
+    "code": "TJK"
   },
   {
     "name": "Tanzania",
     "continent": "Africa",
-    "iso3": "TZA"
+    "code": "TZA"
   },
   {
     "name": "Thailand",
     "continent": "East & Southeast Asia",
-    "iso3": "THA"
+    "code": "THA"
   },
   {
     "name": "Timor-Leste",
     "continent": "East & Southeast Asia",
-    "iso3": "TLS"
+    "code": "TLS"
   },
   {
     "name": "Togo",
     "continent": "Africa",
-    "iso3": "TGO"
+    "code": "TGO"
   },
   {
     "name": "Tonga",
     "continent": "Oceania",
-    "iso3": "TON"
+    "code": "TON"
   },
   {
     "name": "Trinidad and Tobago",
     "continent": "Central America",
-    "iso3": "TTO"
+    "code": "TTO"
   },
   {
     "name": "Tunisia",
     "continent": "Africa",
-    "iso3": "TUN"
+    "code": "TUN"
   },
   {
     "name": "Turkey",
     "continent": "Middle East",
-    "iso3": "TUR"
+    "code": "TUR"
   },
   {
     "name": "Turkmenistan",
     "continent": "Central Asia",
-    "iso3": "TKM"
+    "code": "TKM"
   },
   {
     "name": "Tuvalu",
     "continent": "Oceania",
-    "iso3": "TUV"
+    "code": "TUV"
   },
   {
     "name": "Uganda",
     "continent": "Africa",
-    "iso3": "UGA"
+    "code": "UGA"
   },
   {
     "name": "United Arab Emirates",
     "continent": "Middle East",
-    "iso3": "ARE"
+    "code": "ARE"
   },
   {
     "name": "United Kingdom",
     "continent": "Europe",
-    "iso3": "GBR"
+    "code": "GBR"
   },
   {
     "name": "United States",
     "continent": "North America",
-    "iso3": "USA"
+    "code": "USA"
   },
   {
     "name": "Uruguay",
     "continent": "South America",
-    "iso3": "URY"
+    "code": "URY"
   },
   {
     "name": "Uzbekistan",
     "continent": "Central Asia",
-    "iso3": "UZB"
+    "code": "UZB"
   },
   {
     "name": "Vanuatu",
     "continent": "Oceania",
-    "iso3": "VUT"
+    "code": "VUT"
   },
   {
     "name": "Vatican City",
     "continent": "Europe",
-    "iso3": "VAT"
+    "code": "VAT"
   },
   {
     "name": "Venezuela",
     "continent": "South America",
-    "iso3": "VEN"
+    "code": "VEN"
   },
   {
     "name": "Vietnam",
     "continent": "East & Southeast Asia",
-    "iso3": "VNM"
+    "code": "VNM"
   },
   {
     "name": "Yemen",
     "continent": "Middle East",
-    "iso3": "YEM"
+    "code": "YEM"
   },
   {
     "name": "Zambia",
     "continent": "Africa",
-    "iso3": "ZMB"
+    "code": "ZMB"
   },
   {
     "name": "Zimbabwe",
     "continent": "Africa",
-    "iso3": "ZWE"
+    "code": "ZWE"
   },
   {
     "name": "British Indian Ocean Territory",
     "continent": "South Asia",
-    "iso3": "IOT",
+    "code": "IOT",
     "other": true
   },
   {
     "name": "Antarctica",
     "continent": "Antarctica",
-    "iso3": "ATA",
+    "code": "ATA",
     "other": true
   },
   {
     "name": "Fr. S. Antarctic Lands",
     "continent": "Antarctica",
-    "iso3": "ATF",
+    "code": "ATF",
     "other": true
   },
   {
     "name": "Taiwan",
     "continent": "East & Southeast Asia",
-    "iso3": "TWN",
+    "code": "TWN",
     "disputed": true
   },
   {
     "name": "Hong Kong",
     "continent": "East & Southeast Asia",
-    "iso3": "HKG",
+    "code": "HKG",
     "other": true
   },
   {
     "name": "Macau",
     "continent": "East & Southeast Asia",
-    "iso3": "MAC",
+    "code": "MAC",
     "other": true
   },
   {
     "name": "Christmas Island",
     "continent": "East & Southeast Asia",
-    "iso3": "CXR",
+    "code": "CXR",
     "other": true
   },
   {
     "name": "Cocos (Keeling) Islands",
     "continent": "East & Southeast Asia",
-    "iso3": "CCK",
+    "code": "CCK",
     "other": true
   },
   {
     "name": "American Samoa",
     "continent": "Oceania",
-    "iso3": "ASM",
+    "code": "ASM",
     "other": true
   },
   {
     "name": "Cook Islands",
     "continent": "Oceania",
-    "iso3": "COK",
+    "code": "COK",
     "other": true
   },
   {
     "name": "French Polynesia",
     "continent": "Oceania",
-    "iso3": "PYF",
+    "code": "PYF",
     "other": true
   },
   {
     "name": "Guam",
     "continent": "Oceania",
-    "iso3": "GUM",
+    "code": "GUM",
     "other": true
   },
   {
     "name": "New Caledonia",
     "continent": "Oceania",
-    "iso3": "NCL",
+    "code": "NCL",
     "other": true
   },
   {
     "name": "Niue",
     "continent": "Oceania",
-    "iso3": "NIU",
+    "code": "NIU",
     "other": true
   },
   {
     "name": "Norfolk Island",
     "continent": "Oceania",
-    "iso3": "NFK",
+    "code": "NFK",
     "other": true
   },
   {
     "name": "Northern Mariana Islands",
     "continent": "Oceania",
-    "iso3": "USANI",
+    "code": "USANI",
     "other": true
   },
   {
     "name": "Pitcairn Islands",
     "continent": "Oceania",
-    "iso3": "PCN",
+    "code": "PCN",
     "other": true
   },
   {
     "name": "Tokelau",
     "continent": "Oceania",
-    "iso3": "TKL",
+    "code": "TKL",
     "other": true
   },
   {
     "name": "Wallis and Futuna",
     "continent": "Oceania",
-    "iso3": "WLF",
+    "code": "WLF",
     "other": true
   },
   {
     "name": "Falkland Islands",
     "continent": "South America",
-    "iso3": "FLK",
+    "code": "FLK",
     "other": true
   },
   {
     "name": "French Guiana",
     "continent": "South America",
-    "iso3": "GUF",
+    "code": "GUF",
     "other": true
   },
   {
     "name": "Galapagos Islands",
     "continent": "South America",
-    "iso3": "ECUGI",
+    "code": "ECUGI",
     "other": true
   },
   {
     "name": "Angullia",
     "continent": "Central America",
-    "iso3": "AIA",
+    "code": "AIA",
     "other": true
   },
   {
     "name": "Aruba",
     "continent": "Central America",
-    "iso3": "ABW",
+    "code": "ABW",
     "other": true
   },
   {
     "name": "Bermuda",
     "continent": "Central America",
-    "iso3": "BMU",
+    "code": "BMU",
     "other": true
   },
   {
     "name": "Bonaire",
     "continent": "Central America",
-    "iso3": "BES",
+    "code": "BES",
     "other": true
   },
   {
     "name": "British Virgin Islands",
     "continent": "Central America",
-    "iso3": "VGB",
+    "code": "VGB",
     "other": true
   },
   {
     "name": "Cayman Islands",
     "continent": "Central America",
-    "iso3": "CYM",
+    "code": "CYM",
     "other": true
   },
   {
     "name": "Curaçao",
     "continent": "Central America",
-    "iso3": "CUW",
+    "code": "CUW",
     "other": true
   },
   {
     "name": "Guadeloupe",
     "continent": "Central America",
-    "iso3": "GLP",
+    "code": "GLP",
     "other": true
   },
   {
     "name": "Martinique",
     "continent": "Central America",
-    "iso3": "MTQ",
+    "code": "MTQ",
     "other": true
   },
   {
     "name": "Montserrat",
     "continent": "Central America",
-    "iso3": "MSR",
+    "code": "MSR",
     "other": true
   },
   {
     "name": "Puerto Rico",
     "continent": "Central America",
-    "iso3": "PRI",
+    "code": "PRI",
     "other": true
   },
   {
     "name": "Saba",
     "continent": "Central America",
-    "iso3": "NLDSA",
+    "code": "NLDSA",
     "other": true
   },
   {
     "name": "Saint Barthélemy",
     "continent": "Central America",
-    "iso3": "BLM",
+    "code": "BLM",
     "other": true
   },
   {
     "name": "Saint Martin",
     "continent": "Central America",
-    "iso3": "MAF",
+    "code": "MAF",
     "other": true
   },
   {
     "name": "Sint Eustatius",
     "continent": "Central America",
-    "iso3": "NLDSI",
+    "code": "NLDSI",
     "other": true
   },
   {
     "name": "Sint Maarten",
     "continent": "Central America",
-    "iso3": "SXM",
+    "code": "SXM",
     "other": true
   },
   {
     "name": "Turks and Caicos Islands",
     "continent": "Central America",
-    "iso3": "TCA",
+    "code": "TCA",
     "other": true
   },
   {
     "name": "United States Virgin Islands",
     "continent": "Central America",
-    "iso3": "VIR",
+    "code": "VIR",
     "other": true
   },
   {
     "name": "Greenland",
     "continent": "North America",
-    "iso3": "GRL",
+    "code": "GRL",
     "other": true
   },
   {
     "name": "Saint Pierre and Miquelo",
     "continent": "North America",
-    "iso3": "SPM",
+    "code": "SPM",
     "other": true
   },
   {
     "name": "Ceuta",
     "continent": "Africa",
-    "iso3": "ESPCA",
+    "code": "ESPCA",
     "other": true
   },
   {
     "name": "Mayotte",
     "continent": "Africa",
-    "iso3": "MYT",
+    "code": "MYT",
     "other": true
   },
   {
     "name": "Melilla",
     "continent": "Africa",
-    "iso3": "ESPME",
+    "code": "ESPME",
     "other": true
   },
   {
     "name": "Réunion",
     "continent": "Africa",
-    "iso3": "REU",
+    "code": "REU",
     "other": true
   },
   {
     "name": "Saint Helena, Ascension and Tristan da Cunha",
     "continent": "Africa",
-    "iso3": "SHN",
+    "code": "SHN",
     "other": true
   },
   {
     "name": "Somaliland",
     "continent": "Africa",
-    "iso3": "SOMLN",
+    "code": "SOMLN",
     "disputed": true
   },
   {
     "name": "Western Sahara",
     "continent": "Africa",
-    "iso3": "ESH",
+    "code": "ESH",
     "disputed": true
   },
   {
     "name": "Azores",
     "continent": "Europe",
-    "iso3": "PRTAZ",
+    "code": "PRTAZ",
     "other": true
   },
   {
     "name": "Balearic Islands",
     "continent": "Europe",
-    "iso3": "ESPBI",
+    "code": "ESPBI",
     "other": true
   },
   {
     "name": "Canary Islands",
     "continent": "Europe",
-    "iso3": "ESPCI",
+    "code": "ESPCI",
     "other": true
   },
   {
     "name": "Faroe Islands",
     "continent": "Europe",
-    "iso3": "FRO",
+    "code": "FRO",
     "other": true
   },
   {
     "name": "Gibraltar",
     "continent": "Europe",
-    "iso3": "GIB",
+    "code": "GIB",
     "other": true
   },
   {
     "name": "Guernsey",
     "continent": "Europe",
-    "iso3": "GUE",
+    "code": "GUE",
     "other": true
   },
   {
     "name": "Isle of Man",
     "continent": "Europe",
-    "iso3": "ISO",
+    "code": "ISO",
     "other": true
   },
   {
     "name": "Jan Mayen",
     "continent": "Europe",
-    "iso3": "NORJM",
+    "code": "NORJM",
     "other": true
   },
   {
     "name": "Jersey",
     "continent": "Europe",
-    "iso3": "JER",
+    "code": "JER",
     "other": true
   },
   {
     "name": "Madeira",
     "continent": "Europe",
-    "iso3": "PRTMD",
+    "code": "PRTMD",
     "other": true
   },
   {
     "name": "Svalbard",
     "continent": "Europe",
-    "iso3": "SJM",
+    "code": "SJM",
     "other": true
   },
   {
     "name": "Åland Islands",
     "continent": "Europe",
-    "iso3": "ALA",
+    "code": "ALA",
     "other": true
   },
   {
     "name": "Kosovo",
     "continent": "Europe",
-    "iso3": "SRBKV",
+    "code": "SRBKV",
     "disputed": true
   },
   {
     "name": "Northern Cyprus",
     "continent": "Europe",
-    "iso3": "NOCYP",
+    "code": "NOCYP",
     "disputed": true
   },
   {
     "name": "Transnistria",
     "continent": "Europe",
-    "iso3": "MDATN",
+    "code": "MDATN",
     "disputed": true
   },
   {
     "name": "Abkhazia",
     "continent": "Middle East",
-    "iso3": "GEOAB",
+    "code": "GEOAB",
     "disputed": true
   },
   {
     "name": "South Ossetia",
     "continent": "Middle East",
-    "iso3": "GEOSO",
+    "code": "GEOSO",
     "disputed": true
   },
 ] as const
