@@ -1,4 +1,4 @@
-import { TerritoryCode } from "@/types/Territory"
+import { TerritoryCode } from "@/types/territory"
 
 interface TerritoryFlagProps {
   code: TerritoryCode

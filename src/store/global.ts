@@ -1,17 +1,18 @@
 import { create } from 'zustand'
-import { TerritoryType } from '@/types/Territory'
+import { TerritoryType } from '@/types/territory'
+import { Nullable } from '@/types/utils'
 
 export interface GlobalStoreState {
-  hoverTerritory: TerritoryType | null
+  hoverTerritory: Nullable<TerritoryType>
 }
 
 export interface GlobalStoreActions {
-  setHoverTerritory: (newTerritory: TerritoryType | null) => void
+  setHoverTerritory: (newTerritory: Nullable<TerritoryType>) => void
 }
 
 const useGlobalStore = create<GlobalStoreState & GlobalStoreActions>((set) => ({
   hoverTerritory: null,
-  setHoverTerritory: (newTerritory: TerritoryType | null) => set(() => ({ hoverTerritory: newTerritory }))
+  setHoverTerritory: (newTerritory: Nullable<TerritoryType>) => set(() => ({ hoverTerritory: newTerritory }))
 }))
 
 export default useGlobalStore

@@ -2,22 +2,16 @@ import { useState, useEffect } from 'react'
 import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 import TerritoryPopover from './territory/TerritoryPopover'
-import { TerritoryType } from '@/types/Territory'
+import { getTerritoryByCode, getCodeByName } from '@/data/territoriesUtils'
 import useGlobalStore from '@/store/global'
+
+import { Nullable } from '@/types/utils'
+import { TerritoryCode, TerritoryName, TerritoryType } from '@/types/territory'
 
 import map from '../assets/map/countries-110m.json'
 
-function getCodeByName(name: string): string | null {
-  switch (name) {
-    case 'Northern Cyprus': return 'NOCYP'
-    case 'Kosovo': return 'SRBKV'
-    case 'Somaliland': return 'SOMLN'
-    default: return null
-  }
-}
-
 function World() {
-  const [hoverTerritory, setHoverTerritory] = useState<TerritoryType | null>(null)
+  const [hoverTerritory, setHoverTerritory] = useState<Nullable<TerritoryType>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
   const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
@@ -47,11 +41,9 @@ function World() {
         <Geographies geography={map}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const territory: TerritoryType = {
-                name: geo.properties.NAME,
-                code: geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 : getCodeByName(geo.properties.NAME_LONG),
-              }
-              const isActiveTerritory = territory.code ===  globalHoverTerritory?.code
+              const code = geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 as TerritoryCode : getCodeByName(geo.properties.NAME_LONG as TerritoryName)
+              const territory = code ? getTerritoryByCode(code) : null
+              const isActiveTerritory = territory?.code === globalHoverTerritory?.code
 
               return <Geography
                 key={geo.rsmKey}

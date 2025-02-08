@@ -1,6 +1,6 @@
 import { groupBy } from 'lodash'
 import territories from '@/data/territories'
-import { TContinent } from '@/types/Territory'
+import { TerritoryContinent } from '@/types/territory'
 import TerritoryList from './territory/TerritoryList'
 import useGlobalStore from '@/store/global'
 
@@ -11,7 +11,7 @@ function Sidebar() {
     .map(territory => territory.continent)
     .filter((territory, index, arr) => arr.indexOf(territory) === index)
     .sort()
-  const groupedTerritories = groupBy(territories, ({ continent }: { continent: TContinent }) => continent)
+  const groupedTerritories = groupBy(territories, ({ continent }: { continent: TerritoryContinent }) => continent)
 
   const continentsList = continents.map((continent, index) =>
     <div key={continent}>

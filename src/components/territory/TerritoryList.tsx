@@ -1,5 +1,5 @@
 import Territory from './Territory'
-import { TerritoryType } from '@/types/Territory'
+import { TerritoryType } from '@/types/territory'
 import { GlobalStoreActions } from '@/store/global'
 
 interface TerritoryListProps {
@@ -11,8 +11,7 @@ function TerritoryList({ territories, setHoverTerritory }: TerritoryListProps) {
   const list = territories.map((territory) =>
     <Territory
       key={territory.code}
-      code={territory.code}
-      name={territory.name}
+      territory={territory}
       onMouseEnter={() => setHoverTerritory(territory)}
       onMouseLeave={() => setHoverTerritory(null)}
     />
