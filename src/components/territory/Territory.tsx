@@ -1,5 +1,6 @@
 import { TerritoryType } from '@/types/territory'
 import TerritoryFlag from './TerritoryFlag'
+import { Badge } from '../ui/badge'
 
 interface TerritoryProps {
   territory: TerritoryType
@@ -17,8 +18,10 @@ function Territory({ territory, onMouseEnter, onMouseLeave }: TerritoryProps) {
       <TerritoryFlag code={territory.code} />
       <div className="flex flex-col">
         <div>{territory.name}</div>
-        {territory.other && <div>Other</div>}
-        {territory.disputed && <div>Disputed</div>}
+        <div className="flex">
+          {territory.other && <Badge variant="info">Other</Badge>}
+          {territory.disputed && <Badge variant="negative">Disputed</Badge>}
+        </div>
       </div>
     </div>
   )
