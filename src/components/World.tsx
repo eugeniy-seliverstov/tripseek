@@ -1,23 +1,39 @@
 import { useState, useEffect } from 'react'
 import { geoTimes } from 'd3-geo-projection'
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
+import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-simple-maps'
+
 import TerritoryPopover from './territory/TerritoryPopover'
 import { getTerritoryByCode, getCodeByName } from '@/data/territoriesUtils'
+
 import useGlobalStore from '@/store/global'
+import useTerritoriesStore from '@/store/territories'
 
 import { Nullable } from '@/types/utils'
 import { TerritoryCode, TerritoryName, TerritoryType } from '@/types/territory'
 
 import map from '../assets/map/countries-110m.json'
 
+const getGeographyStyle = (isActive: boolean, isVisited: boolean): GeographyProps['style'] => {
+  let defaultColor = 'rgba(255, 255, 255, 0.25)'
+  if (isVisited) defaultColor = '#FFFFFF'
+  if (isActive) defaultColor = '#ED008E'
+
+  return {
+    default: { fill: defaultColor, outline: 'none', pointerEvents: 'auto' },
+    hover: { fill: '#ED008E', outline: 'none', cursor: 'pointer' },
+    pressed: { fill: '#ED008E', outline: 'none' },
+  }
+}
+
 function World() {
   const [hoverTerritory, setHoverTerritory] = useState<Nullable<TerritoryType>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
   const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
+  const { visited } = useTerritoriesStore()
 
   useEffect(() => {
-    const handleMouseMove = ({ clientX, clientY }) => {
+    const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
       setMouseCoordinates({ clientX, clientY })
     }
     window.addEventListener('mousemove', handleMouseMove)
@@ -41,31 +57,20 @@ function World() {
         <Geographies geography={map}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const code = geo.properties.ISO_A3 !== '-99' ? geo.properties.ISO_A3 as TerritoryCode : getCodeByName(geo.properties.NAME_LONG as TerritoryName)
+              const code = geo.properties.ISO_A3 !== '-99'
+                ? geo.properties.ISO_A3 as TerritoryCode
+                : getCodeByName(geo.properties.NAME_LONG as TerritoryName)
               const territory = code ? getTerritoryByCode(code) : null
-              const isActiveTerritory = territory?.code === globalHoverTerritory?.code
+
+              const isActive = territory?.code === globalHoverTerritory?.code
+              const isVisited = territory?.code ? visited.includes(territory.code) : false
 
               return <Geography
                 key={geo.rsmKey}
                 geography={geo}
                 stroke="rgba(255, 255, 255, 0.05)"
                 strokeWidth={1}
-                style={{
-                  default: {
-                    fill: isActiveTerritory ? "#ED008E": "rgba(255, 255, 255, 0.25)",
-                    outline: "none",
-                    pointerEvents: 'auto',
-                  },
-                  hover: {
-                    fill: "#ED008E",
-                    outline: "none",
-                    cursor: "pointer",
-                  },
-                  pressed: {
-                    fill: "#ED008E",
-                    outline: 'none',
-                  },
-                }}
+                style={getGeographyStyle(isActive, isVisited)}
                 onMouseEnter={() => setHoverTerritory(territory)}
                 onMouseLeave={() => setHoverTerritory(null)}
               />

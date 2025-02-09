@@ -12,4 +12,5 @@ export type TerritoryType = {
   continent: TerritoryContinent,
   other?: boolean,
   disputed?: boolean,
+  visited?: boolean,
 }

@@ -6,14 +6,16 @@ interface TerritoryProps {
   territory: TerritoryType
   onMouseEnter?: () => void
   onMouseLeave?: () => void
+  onClick?: () => void
 }
 
-function Territory({ territory, onMouseEnter, onMouseLeave }: TerritoryProps) {
+function Territory({ territory, onMouseEnter, onMouseLeave, onClick }: TerritoryProps) {
   return (
     <div
-      className="flex items-center px-4 py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 hover:cursor-pointer duration-100"
+      className={`flex items-center px-4 py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 hover:cursor-pointer duration-100 ${!territory.visited ? 'opacity-50 hover:opacity-75' : ''}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       <TerritoryFlag code={territory.code} />
       <div className="flex flex-col">

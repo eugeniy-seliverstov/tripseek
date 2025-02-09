@@ -1,21 +1,28 @@
 import Territory from './Territory'
 import { TerritoryType } from '@/types/territory'
-import { GlobalStoreActions } from '@/store/global'
+import useGlobalStore from '@/store/global'
+import useTerritoriesStore from '@/store/territories'
 
 interface TerritoryListProps {
   territories: TerritoryType[]
-  setHoverTerritory: GlobalStoreActions['setHoverTerritory']
 }
 
-function TerritoryList({ territories, setHoverTerritory }: TerritoryListProps) {
-  const list = territories.map((territory) =>
-    <Territory
+function TerritoryList({ territories }: TerritoryListProps) {
+  const { setHoverTerritory } = useGlobalStore()
+  const { addVisitedTerritory, removeVisitedTerritory } = useTerritoriesStore()
+
+  const list = territories.map((territory) => {
+    return <Territory
       key={territory.code}
       territory={territory}
       onMouseEnter={() => setHoverTerritory(territory)}
       onMouseLeave={() => setHoverTerritory(null)}
+      onClick={() => {
+        if (territory.visited) removeVisitedTerritory(territory.code)
+        else addVisitedTerritory(territory.code)
+      }}
     />
-  )
+  })
   return list
 }
 
