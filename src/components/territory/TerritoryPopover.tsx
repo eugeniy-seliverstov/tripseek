@@ -10,7 +10,7 @@ interface TerritoryPopoverProps {
 function TerritoryPopover({ territory, clientY, clientX }: TerritoryPopoverProps) {
   return (
     <div
-      className='flex gap-2 items-center absolute bg-white px-3 py-2 rounded-[12px]'
+      className='flex gap-2 items-center absolute bg-white px-3 py-2 rounded-[12px] drop-shadow-xl'
       style={{
         top: clientY - 70,
         left: clientX - 0,
