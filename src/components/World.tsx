@@ -15,13 +15,16 @@ import map from '../assets/map/countries-110m.json'
 
 const getGeographyStyle = (isActive: boolean, isVisited: boolean): GeographyProps['style'] => {
   let defaultColor = 'rgba(255, 255, 255, 0.25)'
-  if (isVisited) defaultColor = '#FFFFFF'
-  if (isActive) defaultColor = '#ED008E'
+  if (isVisited && isActive) defaultColor = '#F46A44'
+  else if (isActive)  defaultColor = '#ED008E'
+  else if (isVisited)  defaultColor = '#FFFFFF'
+
+  const hoverColor = isVisited ? '#F46A44' : '#ED008E'
 
   return {
     default: { fill: defaultColor, outline: 'none', pointerEvents: 'auto' },
-    hover: { fill: '#ED008E', outline: 'none', cursor: 'pointer' },
-    pressed: { fill: '#ED008E', outline: 'none' },
+    hover: { fill: hoverColor, outline: 'none', cursor: 'pointer' },
+    pressed: { fill: hoverColor, outline: 'none' },
   }
 }
 

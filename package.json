@@ -20,6 +20,7 @@
     "lucide-react": "^0.471.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
     "react-simple-maps": "^3.0.0",
     "react-tooltip": "^5.28.0",
     "tailwind-merge": "^2.6.0",
