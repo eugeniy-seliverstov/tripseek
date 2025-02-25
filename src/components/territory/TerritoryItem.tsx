@@ -1,16 +1,16 @@
-import { TerritoryType } from '@/types/territory'
+import { Territory } from '@/types/territory'
 import TerritoryFlag from './TerritoryFlag'
 import { Badge } from '../ui/badge'
 import { IoFlag, IoFlagOutline } from 'react-icons/io5'
 
-interface TerritoryProps {
-  territory: TerritoryType
+interface TerritoryItemProps {
+  territory: Territory
   onMouseEnter?: () => void
   onMouseLeave?: () => void
   onClick?: () => void
 }
 
-function Territory({ territory, onMouseEnter, onMouseLeave, onClick }: TerritoryProps) {
+function TerritoryItem({ territory, onMouseEnter, onMouseLeave, onClick }: TerritoryItemProps) {
   const FlagIcon = territory.visited ? IoFlag : IoFlagOutline
 
   return (
@@ -23,8 +23,8 @@ function Territory({ territory, onMouseEnter, onMouseLeave, onClick }: Territory
       <div className="flex flex-col grow">
         <div>{territory.name}</div>
         <div className="flex">
-          {territory.other && <Badge variant="info">Other</Badge>}
-          {territory.disputed && <Badge variant="negative">Disputed</Badge>}
+          {territory.type ==='other' && <Badge variant="info">Other</Badge>}
+          {territory.type === 'disputed' && <Badge variant="negative">Disputed</Badge>}
         </div>
       </div>
       <FlagIcon
@@ -37,4 +37,4 @@ function Territory({ territory, onMouseEnter, onMouseLeave, onClick }: Territory
   )
 }
 
-export default Territory
+export default TerritoryItem

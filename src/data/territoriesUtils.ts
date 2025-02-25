@@ -1,11 +1,11 @@
 import territories from './territories'
-import { TerritoryType, TerritoryCode, TerritoryName, TerritoryContinent } from '@/types/territory'
+import { Territory, TerritoryCode, TerritoryName, TerritoryContinent } from '@/types/territory'
 
-export function getTerritoryByCode(code: TerritoryCode): TerritoryType | undefined {
+export function getTerritoryByCode(code: TerritoryCode): Territory | undefined {
   return territories.find(territory => territory.code === code)
 }
 
-export function getTerritoriesByContinent(continent: TerritoryContinent): TerritoryType[] {
+export function getTerritoriesByContinent(continent: TerritoryContinent): Territory[] {
   return territories.filter(territory => territory.continent === continent)
 }
 

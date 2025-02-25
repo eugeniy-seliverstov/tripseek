@@ -9,7 +9,7 @@ import useGlobalStore from '@/store/global'
 import useTerritoriesStore from '@/store/territories'
 
 import { Nullable } from '@/types/utils'
-import { TerritoryCode, TerritoryName, TerritoryType } from '@/types/territory'
+import { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
 
 import map from '../assets/map/countries-110m.json'
 
@@ -30,7 +30,7 @@ const getGeographyStyle = (isActive: boolean, isVisited: boolean): GeographyProp
 }
 
 function World() {
-  const [hoverTerritory, setHoverTerritory] = useState<Nullable<TerritoryType>>(null)
+  const [hoverTerritory, setHoverTerritory] = useState<Nullable<Territory>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
   const { hoverTerritory: globalHoverTerritory } = useGlobalStore()

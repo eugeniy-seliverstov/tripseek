@@ -1,10 +1,10 @@
-import Territory from './Territory'
-import { TerritoryType } from '@/types/territory'
+import TerritoryItem from './TerritoryItem'
+import { Territory } from '@/types/territory'
 import useGlobalStore from '@/store/global'
 import useTerritoriesStore from '@/store/territories'
 
 interface TerritoryListProps {
-  territories: TerritoryType[]
+  territories: Territory[]
 }
 
 function TerritoryList({ territories }: TerritoryListProps) {
@@ -12,7 +12,7 @@ function TerritoryList({ territories }: TerritoryListProps) {
   const { addVisitedTerritory, removeVisitedTerritory } = useTerritoriesStore()
 
   const list = territories.map((territory) => {
-    return <Territory
+    return <TerritoryItem
       key={territory.code}
       territory={territory}
       onMouseEnter={() => setHoverTerritory(territory)}
