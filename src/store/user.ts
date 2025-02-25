@@ -3,16 +3,16 @@ import { persist } from 'zustand/middleware'
 import { TerritoryCode } from '@/types/territory'
 import unique from '@/utils/unique'
 
-export interface TerritoriesStore {
+export interface UserStore {
   visited: TerritoryCode[]
 }
 
-export interface TerritoriesStoreActions {
+export interface UserStoreActions {
   addVisitedTerritory: (code: TerritoryCode) => void
   removeVisitedTerritory: (code: TerritoryCode) => void
 }
 
-const useTerritoriesStore = create<TerritoriesStore & TerritoriesStoreActions>()(
+const useUserStore = create<UserStore & UserStoreActions>()(
   persist(
     (set) => ({
       visited: [],
@@ -25,4 +25,4 @@ const useTerritoriesStore = create<TerritoriesStore & TerritoriesStoreActions>()
   )
 )
 
-export default useTerritoriesStore
+export default useUserStore

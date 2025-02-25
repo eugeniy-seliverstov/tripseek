@@ -6,7 +6,7 @@ import TerritoryPopover from './territory/TerritoryPopover'
 import { getTerritoryByCode, getCodeByName } from '@/data/territoriesUtils'
 
 import useGlobalStore from '@/store/global'
-import useTerritoriesStore from '@/store/territories'
+import useUserStore from '@/store/user'
 
 import { Nullable } from '@/types/utils'
 import { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
@@ -34,7 +34,7 @@ function World() {
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
   const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
-  const { visited } = useTerritoriesStore()
+  const { visited } = useUserStore()
 
   useEffect(() => {
     const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {

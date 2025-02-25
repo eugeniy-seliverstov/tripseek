@@ -1,7 +1,7 @@
 import TerritoryItem from './TerritoryItem'
 import { Territory } from '@/types/territory'
 import useGlobalStore from '@/store/global'
-import useTerritoriesStore from '@/store/territories'
+import useUserStore from '@/store/user'
 
 interface TerritoryListProps {
   territories: Territory[]
@@ -9,7 +9,7 @@ interface TerritoryListProps {
 
 function TerritoryList({ territories }: TerritoryListProps) {
   const { setHoverTerritory } = useGlobalStore()
-  const { addVisitedTerritory, removeVisitedTerritory } = useTerritoriesStore()
+  const { addVisitedTerritory, removeVisitedTerritory } = useUserStore()
 
   const list = territories.map((territory) => {
     return <TerritoryItem

@@ -2,11 +2,11 @@ import { useMemo } from 'react'
 import territories from '@/data/territories'
 import { Territory, TerritoryContinent } from '@/types/territory'
 import TerritoryList from './territory/TerritoryList'
-import useTerritoriesStore from '@/store/territories'
+import useUserStore from '@/store/user'
 import { getTerritoriesByContinent } from '@/data/territoriesUtils'
 
 function Sidebar() {
-  const { visited } = useTerritoriesStore()
+  const { visited } = useUserStore()
 
   const continents = useMemo(() => Array.from(new Set(territories.map(t => t.continent))).sort(), [])
   const groupedTerritories = useMemo(() => {
