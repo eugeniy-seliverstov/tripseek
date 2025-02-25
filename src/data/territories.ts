@@ -372,12 +372,6 @@ const territories = [
     "type": "other"
   },
   {
-    "name": "Fr. S. Antarctic Lands",
-    "code": "ATF",
-    "continent": "Antarctica",
-    "type": "other"
-  },
-  {
     "name": "Antigua and Barbuda",
     "code": "ATG",
     "continent": "Central America",

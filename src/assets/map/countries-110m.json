@@ -34472,30 +34472,6 @@
         {
           "arcs": [
             [
-              44
-            ]
-          ],
-          "type": "Polygon",
-          "properties": {
-            "NAME": "Fr. S. Antarctic Lands",
-            "NAME_LONG": "French Southern and Antarctic Lands",
-            "ABBREV": "Fr. S.A.L.",
-            "FORMAL_EN": "Territory of the French Southern and Antarctic Lands",
-            "POP_EST": 140,
-            "POP_RANK": 1,
-            "GDP_MD_EST": 16,
-            "POP_YEAR": 2017,
-            "GDP_YEAR": 2016,
-            "ISO_A2": "TF",
-            "ISO_A3": "ATF",
-            "CONTINENT": "Seven seas (open ocean)",
-            "REGION_UN": "Seven seas (open ocean)",
-            "SUBREGION": "Seven seas (open ocean)"
-          }
-        },
-        {
-          "arcs": [
-            [
               [
                 45
               ]
