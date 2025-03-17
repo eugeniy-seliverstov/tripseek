@@ -1,17 +1,19 @@
 import { Territory } from '@/types/territory'
 import TerritoryFlag from './TerritoryFlag'
 import { Badge } from '../ui/badge'
-import { IoFlag, IoFlagOutline } from 'react-icons/io5'
+import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 
 interface TerritoryItemProps {
   territory: Territory
-  onMouseEnter?: () => void
-  onMouseLeave?: () => void
-  onClick?: () => void
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+  onVisitedClick: () => void
+  onFavoriteClick: () => void
 }
 
-function TerritoryItem({ territory, onMouseEnter, onMouseLeave, onClick }: TerritoryItemProps) {
+function TerritoryItem({ territory, onMouseEnter, onMouseLeave, onVisitedClick, onFavoriteClick }: TerritoryItemProps) {
   const FlagIcon = territory.visited ? IoFlag : IoFlagOutline
+  const HeartIcon = territory.favorite ? IoHeart : IoHeartOutline
 
   return (
     <div
@@ -27,12 +29,22 @@ function TerritoryItem({ territory, onMouseEnter, onMouseLeave, onClick }: Terri
           {territory.type === 'disputed' && <Badge variant="negative">Disputed</Badge>}
         </div>
       </div>
-      <FlagIcon
-        className={`hover:cursor-pointer ${!territory.visited && 'hidden group-hover:inline-flex'}`}
-        color='#F46A44'
-        size='20px'
-        onClick={onClick}
-      />
+      <div className="flex gap-2">
+        <FlagIcon
+          className={`hover:cursor-pointer ${!territory.visited && 'hidden group-hover:inline-flex'}`}
+          color='#F46A44'
+          size='20px'
+          onClick={onVisitedClick}
+        />
+        {!territory.visited &&
+          <HeartIcon
+            className={`hover:cursor-pointer ${!territory.favorite && 'hidden group-hover:inline-flex'}`}
+            color='#52dcb5'
+            size='20px'
+            onClick={onFavoriteClick}
+          />
+        }
+      </div>
     </div>
   )
 }

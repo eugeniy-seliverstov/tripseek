@@ -10,6 +10,7 @@ interface TerritoryListProps {
 function TerritoryList({ territories }: TerritoryListProps) {
   const { setHoverTerritory } = useGlobalStore()
   const { addVisitedTerritory, removeVisitedTerritory } = useUserStore()
+  const { addFavoriteTerritory, removeFavoriteTerritory } = useUserStore()
 
   const list = territories.map((territory) => {
     return <TerritoryItem
@@ -17,9 +18,16 @@ function TerritoryList({ territories }: TerritoryListProps) {
       territory={territory}
       onMouseEnter={() => setHoverTerritory(territory)}
       onMouseLeave={() => setHoverTerritory(null)}
-      onClick={() => {
+      onVisitedClick={() => {
         if (territory.visited) removeVisitedTerritory(territory.code)
-        else addVisitedTerritory(territory.code)
+        else {
+          if (territory.favorite) removeFavoriteTerritory(territory.code)
+          addVisitedTerritory(territory.code)
+        }
+      }}
+      onFavoriteClick={() => {
+        if (territory.favorite) removeFavoriteTerritory(territory.code)
+        else addFavoriteTerritory(territory.code)
       }}
     />
   })
