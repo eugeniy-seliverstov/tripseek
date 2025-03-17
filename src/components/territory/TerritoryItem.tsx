@@ -1,10 +1,10 @@
-import { Territory } from '@/types/territory'
+import { UserTerritory } from '@/types/user'
 import TerritoryFlag from './TerritoryFlag'
 import { Badge } from '../ui/badge'
 import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 
 interface TerritoryItemProps {
-  territory: Territory
+  territory: UserTerritory
   onMouseEnter: () => void
   onMouseLeave: () => void
   onVisitedClick: () => void

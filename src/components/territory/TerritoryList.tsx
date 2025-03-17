@@ -1,10 +1,10 @@
 import TerritoryItem from './TerritoryItem'
-import { Territory } from '@/types/territory'
+import { UserTerritory } from '@/types/user'
 import useGlobalStore from '@/store/global'
 import useUserStore from '@/store/user'
 
 interface TerritoryListProps {
-  territories: Territory[]
+  territories: UserTerritory[]
 }
 
 function TerritoryList({ territories }: TerritoryListProps) {

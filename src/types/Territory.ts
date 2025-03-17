@@ -12,6 +12,4 @@ export interface Territory {
   code: TerritoryCode
   type: TerritoryType
   continent: TerritoryContinent
-  visited?: boolean
-  favorite?: boolean
 }
