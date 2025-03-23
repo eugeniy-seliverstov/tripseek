@@ -3,7 +3,6 @@ import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-simple-maps'
 
 import TerritoryPopover from './territory/TerritoryPopover'
-import { getTerritoryByCode, getCodeByName } from '@/data/territoriesUtils'
 
 import useGlobalStore from '@/store/global'
 import useUserStore from '@/store/user'
@@ -12,6 +11,7 @@ import { Nullable } from '@/types/utils'
 import { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
 
 import map from '../assets/map/countries-110m.json'
+import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 
 const getGeographyStyle = (isActive: boolean, isVisited: boolean): GeographyProps['style'] => {
   let defaultColor = 'rgba(255, 255, 255, 0.25)'

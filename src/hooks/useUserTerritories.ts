@@ -6,7 +6,7 @@ import continents from '@/constants/continents'
 import type { UserTerritory } from '@/types/user'
 import type { TerritoryContinent } from '@/types/territory'
 
-import { getTerritoriesByContinent } from '@/data/territoriesUtils'
+import { getTerritoriesByContinent } from '@/utils/territories'
 
 type GroupedUserTerritories = Record<TerritoryContinent, {
   all: UserTerritory[]
