@@ -12,7 +12,7 @@ export interface GlobalStoreActions {
 
 const useGlobalStore = create<GlobalStoreState & GlobalStoreActions>((set) => ({
   hoverTerritory: null,
-  setHoverTerritory: (newTerritory: Nullable<Territory>) => set(() => ({ hoverTerritory: newTerritory }))
+  setHoverTerritory: (newTerritory) => set(() => ({ hoverTerritory: newTerritory }))
 }))
 
 export default useGlobalStore

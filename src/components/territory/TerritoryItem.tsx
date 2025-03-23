@@ -2,8 +2,10 @@ import { UserTerritory } from '@/types/user'
 import TerritoryFlag from './TerritoryFlag'
 import { Badge } from '../ui/badge'
 import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
+import { cn } from '@/lib/utils'
 
 interface TerritoryItemProps {
+  active: boolean
   territory: UserTerritory
   onMouseEnter: () => void
   onMouseLeave: () => void
@@ -11,13 +13,16 @@ interface TerritoryItemProps {
   onFavoriteClick: () => void
 }
 
-function TerritoryItem({ territory, onMouseEnter, onMouseLeave, onVisitedClick, onFavoriteClick }: TerritoryItemProps) {
+function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisitedClick, onFavoriteClick }: TerritoryItemProps) {
   const FlagIcon = territory.visited ? IoFlag : IoFlagOutline
   const HeartIcon = territory.favorite ? IoHeart : IoHeartOutline
 
   return (
     <div
-      className={`group flex items-center px-4 py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 duration-100 ${!territory.visited && 'opacity-50 hover:opacity-75'}`}
+      className={cn(
+        'group flex items-center px-4 py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 duration-100',
+        !active && 'opacity-50 hover:opacity-75'
+      )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

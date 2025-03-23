@@ -1,20 +1,33 @@
 import TerritoryItem from './TerritoryItem'
-import { UserTerritory } from '@/types/user'
+
 import useGlobalStore from '@/store/global'
 import useUserStore from '@/store/user'
 
+import type { UserTerritory } from '@/types/user'
+
 interface TerritoryListProps {
   territories: UserTerritory[]
+  activeStatus?: 'visited' | 'favorite'
 }
 
-function TerritoryList({ territories }: TerritoryListProps) {
+function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
+  const {
+    addVisitedTerritory,
+    addFavoriteTerritory,
+    removeVisitedTerritory,
+    removeFavoriteTerritory,
+  } = useUserStore()
   const { setHoverTerritory } = useGlobalStore()
-  const { addVisitedTerritory, removeVisitedTerritory } = useUserStore()
-  const { addFavoriteTerritory, removeFavoriteTerritory } = useUserStore()
 
-  const list = territories.map((territory) => {
+  return territories.map((territory) => {
+    const active =
+      activeStatus === 'favorite' ? territory.favorite ?? false :
+      activeStatus === 'visited' ? territory.visited ?? false :
+      true
+
     return <TerritoryItem
       key={territory.code}
+      active={active}
       territory={territory}
       onMouseEnter={() => setHoverTerritory(territory)}
       onMouseLeave={() => setHoverTerritory(null)}
@@ -31,7 +44,6 @@ function TerritoryList({ territories }: TerritoryListProps) {
       }}
     />
   })
-  return list
 }
 
 export default TerritoryList

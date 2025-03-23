@@ -1,41 +1,50 @@
-import { useMemo } from 'react'
-import territories from '@/data/territories'
-import { TerritoryContinent } from '@/types/territory'
-import { UserTerritory } from '@/types/user'
-import TerritoryList from './territory/TerritoryList'
-import useUserStore from '@/store/user'
-import { getTerritoriesByContinent } from '@/data/territoriesUtils'
+import Continent from './territory/Continent'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
+import continents from '@/constants/continents'
+import useFilterStore, { Filter } from '@/store/filter'
+
+import useUserTerritories from '@/hooks/useUserTerritories'
 
 function Sidebar() {
-  const { visited, favorite } = useUserStore()
+  const { filter, setFilter } = useFilterStore()
+  const groupedTerritories = useUserTerritories()
 
-  const continents = useMemo(() => Array.from(new Set(territories.map(t => t.continent))).sort(), [])
-  const groupedTerritories = useMemo(() => {
-    const grouped = {} as Record<TerritoryContinent, UserTerritory[]>
-    continents.forEach((continent) => {
-      grouped[continent] = getTerritoriesByContinent(continent)?.map(territory => ({
-        ...territory,
-        visited: visited.includes(territory.code),
-        favorite: favorite.includes(territory.code),
-      }))
-    })
-    return grouped
-  }, [continents, visited, favorite])
-
-  const continentsList = continents.map((continent, index) =>
-    <div key={continent}>
-      <div className='pl-4 pr-6 py-3 flex items-center justify-between'>
-        <div className="text-xl font-bold">{continent}</div>
-        <div className="text-md">{groupedTerritories[continent]?.filter(e => e.visited).length}/{groupedTerritories[continent]?.length}</div>
-      </div>
-      <TerritoryList territories={groupedTerritories[continent]} />
-      {index !== continents.length - 1 && <hr className="mt-4 mb-2"/>}
-    </div>
-  )
+  const filteredContinents = continents.filter(continent => {
+    if (filter === 'visited') return groupedTerritories[continent].visited.length > 0
+    if (filter === 'favorite') return groupedTerritories[continent].favorite.length > 0
+    return true
+  })
 
   return (
     <div className="max-h-full overflow-auto py-3">
-      {continentsList}
+      <Tabs defaultValue={filter} onValueChange={(value) => setFilter(value as Filter)} className="w-full px-4">
+        <TabsList className="w-full flex justify-between">
+          <TabsTrigger value="visited" className="flex-1">Visited</TabsTrigger>
+          <TabsTrigger value="favorite" className="flex-1">Favorite</TabsTrigger>
+          <TabsTrigger value="all" className="flex-1">All</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      {filteredContinents.map((continent) => {
+        const continentTerritories = groupedTerritories[continent]
+        const visibleTerritories =
+          filter === 'visited' ? continentTerritories.visited :
+          filter === 'favorite' ? continentTerritories.favorite :
+          continentTerritories.all
+
+        const activeStatus = filter === 'all' ? 'visited' : filter
+
+        return (
+          <Continent
+            continent={continent}
+            territories={visibleTerritories}
+            activeStatus={activeStatus}
+            showCounter={filter !== 'favorite'}
+            activeCount={continentTerritories[activeStatus].length}
+            allCount={continentTerritories.all.length}
+          />
+        )
+      })}
     </div>
   )
 }
