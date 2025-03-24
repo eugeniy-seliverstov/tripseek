@@ -1,10 +1,10 @@
 import TerritoryList from './TerritoryList'
 
 import type { UserTerritory } from '@/types/user'
-import type { TerritoryContinent } from '@/types/territory'
+import type { TerritoryRegion } from '@/types/territory'
 
-interface ContinentProps {
-  continent: TerritoryContinent
+interface RegionProps {
+  region: TerritoryRegion
   territories: UserTerritory[]
   activeStatus?: 'visited' | 'favorite'
   showCounter?: boolean
@@ -12,11 +12,11 @@ interface ContinentProps {
   allCount?: number
 }
 
-function Continent({ continent, territories, activeStatus, showCounter, activeCount, allCount }: ContinentProps) {
+function Region({ region, territories, activeStatus, showCounter, activeCount, allCount }: RegionProps) {
   return (
     <>
       <div className='px-4 py-3 flex items-center justify-between'>
-        <div className="text-xl font-bold">{continent}</div>
+        <div className="text-xl font-bold">{region}</div>
         {showCounter && (
           <div className="text-md">{activeCount}/{allCount}</div>
         )}
@@ -26,4 +26,4 @@ function Continent({ continent, territories, activeStatus, showCounter, activeCo
   )
 }
 
-export default Continent
+export default Region

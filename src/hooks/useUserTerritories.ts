@@ -1,14 +1,14 @@
 import { useMemo } from 'react'
 
 import useUserStore from '@/store/user'
-import continents from '@/constants/continents'
+import regions from '@/constants/regions'
 
 import type { UserTerritory } from '@/types/user'
-import type { TerritoryContinent } from '@/types/territory'
+import type { TerritoryRegion } from '@/types/territory'
 
-import { getTerritoriesByContinent } from '@/utils/territories'
+import { getTerritoriesByRegion } from '@/utils/territories'
 
-type GroupedUserTerritories = Record<TerritoryContinent, {
+type GroupedUserTerritories = Record<TerritoryRegion, {
   all: UserTerritory[]
   visited: UserTerritory[]
   favorite: UserTerritory[]
@@ -20,8 +20,8 @@ export default function useUserTerritories() {
   const groupedTerritories = useMemo(() => {
     const grouped = {} as GroupedUserTerritories
 
-    continents.forEach(continent => {
-      const territories = getTerritoriesByContinent(continent) ?? []
+    regions.forEach(region => {
+      const territories = getTerritoriesByRegion(region) ?? []
 
       const all = territories.map(territory => ({
         ...territory,
@@ -29,7 +29,7 @@ export default function useUserTerritories() {
         favorite: favorite.includes(territory.code),
       }))
 
-      grouped[continent] = {
+      grouped[region] = {
         all,
         visited: all.filter(territory => territory.visited),
         favorite: all.filter(territory => territory.favorite)
