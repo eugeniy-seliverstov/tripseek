@@ -4,23 +4,54 @@ import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-sim
 
 import TerritoryPopover from './territory/TerritoryPopover'
 
-import useGlobalStore from '@/store/global'
 import useUserStore from '@/store/user'
+import useGlobalStore from '@/store/global'
+import useFilterStore from '@/store/filter'
 
-import { Nullable } from '@/types/utils'
-import { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
+import type { Filter } from '@/store/filter'
+import type { Nullable } from '@/types/utils'
+import type { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
 
 import map from '../assets/map/countries-110m.json'
 import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 
-const getGeographyStyle = (isActive: boolean, isVisited: boolean): GeographyProps['style'] => {
-  let defaultColor = 'rgba(255, 255, 255, 0.25)'
-  if (isVisited && isActive) defaultColor = '#F57D5C'
-  else if (isActive)  defaultColor = '#5CD4F5'
-  else if (isVisited)  defaultColor = '#FFFFFF'
-  // #5CF5CA
+const COLORS = {
+  default: 'rgba(255, 255, 255, 0.25)',
+  visited: '#FFFFFF',
+  favorite: '#FFFFFF',
+  hoverDefault: '#5CD4F5',
+  hoverVisited: '#F57D5C',
+  hoverFavorite: '#5CF5CA',
+}
 
-  const hoverColor = isVisited ? '#F57D5C' : '#5CD4F5'
+const getGeographyStyle = (
+  filter: Filter,
+  isVisited: boolean,
+  isFavorite: boolean,
+  isHovered: boolean
+): GeographyProps['style'] => {
+  let defaultColor = COLORS.default
+  let hoverColor = COLORS.hoverDefault
+
+  if (filter === 'visited' || filter === 'all') {
+    if (isVisited) {
+      defaultColor = COLORS.visited
+      hoverColor = COLORS.hoverVisited
+    }
+  } else if (filter === 'favorite') {
+    if (isFavorite) {
+      defaultColor = COLORS.favorite
+      hoverColor = COLORS.hoverFavorite
+    }
+  }
+
+  if (isHovered) {
+    if (filter === 'visited' || filter === 'all') {
+      defaultColor = isVisited ? COLORS.hoverVisited : COLORS.hoverDefault
+    } else if (filter === 'favorite') {
+      defaultColor = isFavorite ? COLORS.hoverFavorite : COLORS.hoverDefault
+    }
+  }
 
   return {
     default: { fill: defaultColor, outline: 'none', pointerEvents: 'auto' },
@@ -33,8 +64,9 @@ function World() {
   const [hoverTerritory, setHoverTerritory] = useState<Nullable<Territory>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
+  const { filter } = useFilterStore()
+  const { visited, favorite } = useUserStore()
   const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
-  const { visited } = useUserStore()
 
   useEffect(() => {
     const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
@@ -66,15 +98,16 @@ function World() {
                 : getCodeByName(geo.properties.NAME_LONG as TerritoryName)
               const territory = code ? getTerritoryByCode(code) : null
 
-              const isActive = territory?.code === globalHoverTerritory?.code
+              const isHovered = territory?.code === globalHoverTerritory?.code
               const isVisited = territory?.code ? visited.includes(territory.code) : false
+              const isFavorite = territory?.code ? favorite.includes(territory.code) : false
 
               return <Geography
                 key={geo.rsmKey}
                 geography={geo}
                 stroke="rgba(255, 255, 255, 0.05)"
                 strokeWidth={1}
-                style={getGeographyStyle(isActive, isVisited)}
+                style={getGeographyStyle(filter, isVisited, isFavorite, isHovered)}
                 onMouseEnter={() => setHoverTerritory(territory)}
                 onMouseLeave={() => setHoverTerritory(null)}
               />
