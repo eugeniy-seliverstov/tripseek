@@ -1,0 +1,24 @@
+import { useMemo } from 'react'
+
+import Statistics from './Statistics'
+import generateGuestProfile from '@/utils/generateGuestProfile'
+
+function Header() {
+  const guest = useMemo(generateGuestProfile, [])
+
+  return (
+    <div className="mb-5 px-4 text-center">
+      <div className="w-20 h-20 mb-2 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-[2.5rem] leading-none">
+        {guest.avatar}
+      </div>
+
+      <div className="mb-4 font-semibold text-lg text-gray-800">
+        {guest.name}
+      </div>
+
+      <Statistics />
+    </div>
+  )
+}
+
+export default Header

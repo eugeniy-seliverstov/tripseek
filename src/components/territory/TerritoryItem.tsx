@@ -20,7 +20,7 @@ function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisite
   return (
     <div
       className={cn(
-        'group flex items-center py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 duration-100',
+        'group flex items-center px-4 py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 duration-100',
         !active && 'opacity-50 hover:opacity-75'
       )}
       onMouseEnter={onMouseEnter}

@@ -1,3 +1,4 @@
+import Header from '@/components/sidebar/Header'
 import Region from '@/components/territory/Region'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
@@ -18,6 +19,8 @@ function Sidebar() {
 
   return (
     <div className="max-h-full overflow-auto py-3">
+      <Header />
+
       <Tabs defaultValue={filter} onValueChange={(value) => setFilter(value as Filter)} className="w-full px-4">
         <TabsList className="w-full flex justify-between">
           <TabsTrigger value="visited" className="flex-1">Visited</TabsTrigger>
@@ -35,17 +38,15 @@ function Sidebar() {
         const activeStatus = filter === 'all' ? 'visited' : filter
 
         return (
-          <div className="px-4 py-3">
-            <Region
-              key={region}
-              region={region}
-              territories={visibleTerritories}
-              activeStatus={activeStatus}
-              showCounter={filter !== 'favorite'}
-              activeCount={regionTerritories[activeStatus].length}
-              allCount={regionTerritories.all.length}
-            />
-          </div>
+          <Region
+            key={region}
+            region={region}
+            territories={visibleTerritories}
+            activeStatus={activeStatus}
+            showCounter={filter !== 'favorite'}
+            activeCount={regionTerritories[activeStatus].length}
+            allCount={regionTerritories.all.length}
+          />
         )
       })}
     </div>
