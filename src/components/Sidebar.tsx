@@ -1,4 +1,4 @@
-import Region from './territory/Region'
+import Region from '@/components/territory/Region'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import regions from '@/constants/regions'
@@ -35,15 +35,17 @@ function Sidebar() {
         const activeStatus = filter === 'all' ? 'visited' : filter
 
         return (
-          <Region
-            key={region}
-            region={region}
-            territories={visibleTerritories}
-            activeStatus={activeStatus}
-            showCounter={filter !== 'favorite'}
-            activeCount={regionTerritories[activeStatus].length}
-            allCount={regionTerritories.all.length}
-          />
+          <div className="px-4 py-3">
+            <Region
+              key={region}
+              region={region}
+              territories={visibleTerritories}
+              activeStatus={activeStatus}
+              showCounter={filter !== 'favorite'}
+              activeCount={regionTerritories[activeStatus].length}
+              allCount={regionTerritories.all.length}
+            />
+          </div>
         )
       })}
     </div>
