@@ -7,7 +7,7 @@ interface TerritoryFlagProps {
 function TerritoryFlag({ code }: TerritoryFlagProps) {
   return (
     <img
-      className="w-10 h-10"
+      className="w-10 h-10 select-none"
       src={`/flags/${code}.png`}
     />
   )
