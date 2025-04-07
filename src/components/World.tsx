@@ -5,10 +5,9 @@ import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-sim
 import TerritoryPopover from './territory/TerritoryPopover'
 
 import useUserStore from '@/store/user'
-import useGlobalStore from '@/store/global'
-import useFilterStore from '@/store/filter'
+import useStore from '@/store/app'
 
-import type { Filter } from '@/store/filter'
+import type { Filter } from '@/store/app'
 import type { Nullable } from '@/types/utils'
 import type { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
 
@@ -64,9 +63,8 @@ function World() {
   const [hoverTerritory, setHoverTerritory] = useState<Nullable<Territory>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
-  const { filter } = useFilterStore()
   const { visited, favorite } = useUserStore()
-  const { hoverTerritory: globalHoverTerritory } = useGlobalStore()
+  const { filter, hoverTerritory: sidebarHoverTerritory } = useStore()
 
   useEffect(() => {
     const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
@@ -98,7 +96,7 @@ function World() {
                 : getCodeByName(geo.properties.NAME_LONG as TerritoryName)
               const territory = code ? getTerritoryByCode(code) : null
 
-              const isHovered = territory?.code === globalHoverTerritory?.code
+              const isHovered = territory?.code === sidebarHoverTerritory?.code
               const isVisited = territory?.code ? visited.includes(territory.code) : false
               const isFavorite = territory?.code ? favorite.includes(territory.code) : false
 

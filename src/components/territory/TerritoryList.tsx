@@ -1,6 +1,6 @@
 import TerritoryItem from './TerritoryItem'
 
-import useGlobalStore from '@/store/global'
+import useStore from '@/store/app'
 import useUserStore from '@/store/user'
 
 import type { UserTerritory } from '@/types/user'
@@ -17,7 +17,7 @@ function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
     removeVisitedTerritory,
     removeFavoriteTerritory,
   } = useUserStore()
-  const { setHoverTerritory } = useGlobalStore()
+  const { setHoverTerritory } = useStore()
 
   return territories.map((territory) => {
     const active =
