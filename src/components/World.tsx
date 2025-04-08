@@ -17,16 +17,16 @@ import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 const COLORS = {
   default: 'rgba(255, 255, 255, 0.25)',
   visited: '#FFFFFF',
-  favorite: '#FFFFFF',
+  wishlist: '#FFFFFF',
   hoverDefault: '#5CD4F5',
   hoverVisited: '#F57D5C',
-  hoverFavorite: '#5CF5CA',
+  hoverWishlist: '#5CF5CA',
 }
 
 const getGeographyStyle = (
   filter: Filter,
   isVisited: boolean,
-  isFavorite: boolean,
+  isWishlist: boolean,
   isHovered: boolean
 ): GeographyProps['style'] => {
   let defaultColor = COLORS.default
@@ -37,18 +37,18 @@ const getGeographyStyle = (
       defaultColor = COLORS.visited
       hoverColor = COLORS.hoverVisited
     }
-  } else if (filter === 'favorite') {
-    if (isFavorite) {
-      defaultColor = COLORS.favorite
-      hoverColor = COLORS.hoverFavorite
+  } else if (filter === 'wishlist') {
+    if (isWishlist) {
+      defaultColor = COLORS.wishlist
+      hoverColor = COLORS.hoverWishlist
     }
   }
 
   if (isHovered) {
     if (filter === 'visited' || filter === 'all') {
       defaultColor = isVisited ? COLORS.hoverVisited : COLORS.hoverDefault
-    } else if (filter === 'favorite') {
-      defaultColor = isFavorite ? COLORS.hoverFavorite : COLORS.hoverDefault
+    } else if (filter === 'wishlist') {
+      defaultColor = isWishlist ? COLORS.hoverWishlist : COLORS.hoverDefault
     }
   }
 
@@ -63,7 +63,7 @@ function World() {
   const [hoverTerritory, setHoverTerritory] = useState<Nullable<Territory>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
-  const { visited, favorite } = useUserStore()
+  const { visited, wishlist } = useUserStore()
   const { filter, hoverTerritory: sidebarHoverTerritory } = useStore()
 
   useEffect(() => {
@@ -98,14 +98,14 @@ function World() {
 
               const isHovered = territory?.code === sidebarHoverTerritory?.code
               const isVisited = territory?.code ? visited.includes(territory.code) : false
-              const isFavorite = territory?.code ? favorite.includes(territory.code) : false
+              const isWishlist = territory?.code ? wishlist.includes(territory.code) : false
 
               return <Geography
                 key={geo.rsmKey}
                 geography={geo}
                 stroke="rgba(255, 255, 255, 0.05)"
                 strokeWidth={1}
-                style={getGeographyStyle(filter, isVisited, isFavorite, isHovered)}
+                style={getGeographyStyle(filter, isVisited, isWishlist, isHovered)}
                 onMouseEnter={() => setHoverTerritory(territory)}
                 onMouseLeave={() => setHoverTerritory(null)}
               />

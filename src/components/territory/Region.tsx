@@ -6,7 +6,7 @@ import type { TerritoryRegion } from '@/types/territory'
 interface RegionProps {
   region: TerritoryRegion
   territories: UserTerritory[]
-  activeStatus?: 'visited' | 'favorite'
+  activeStatus?: 'visited' | 'wishlist'
   showCounter?: boolean
   activeCount?: number
   allCount?: number

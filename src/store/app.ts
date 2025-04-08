@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { Territory } from '@/types/territory'
 import { Nullable } from '@/types/utils'
 
-export type Filter = 'visited' | 'favorite' | 'all'
+export type Filter = 'visited' | 'wishlist' | 'all'
 
 export interface StoreState {
   filter: Filter

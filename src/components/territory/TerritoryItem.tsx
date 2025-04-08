@@ -10,12 +10,12 @@ interface TerritoryItemProps {
   onMouseEnter: () => void
   onMouseLeave: () => void
   onVisitedClick: () => void
-  onFavoriteClick: () => void
+  onWishlistClick: () => void
 }
 
-function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisitedClick, onFavoriteClick }: TerritoryItemProps) {
+function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisitedClick, onWishlistClick }: TerritoryItemProps) {
   const FlagIcon = territory.visited ? IoFlag : IoFlagOutline
-  const HeartIcon = territory.favorite ? IoHeart : IoHeartOutline
+  const HeartIcon = territory.wishlist ? IoHeart : IoHeartOutline
 
   return (
     <div
@@ -43,10 +43,10 @@ function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisite
         />
         {!territory.visited &&
           <HeartIcon
-            className={`hover:cursor-pointer ${!territory.favorite && 'hidden group-hover:inline-flex'}`}
+            className={`hover:cursor-pointer ${!territory.wishlist && 'hidden group-hover:inline-flex'}`}
             color='#52dcb5'
             size='20px'
-            onClick={onFavoriteClick}
+            onClick={onWishlistClick}
           />
         }
       </div>

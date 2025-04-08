@@ -11,11 +11,11 @@ import { getTerritoriesByRegion } from '@/utils/territories'
 type GroupedUserTerritories = Record<TerritoryRegion, {
   all: UserTerritory[]
   visited: UserTerritory[]
-  favorite: UserTerritory[]
+  wishlist: UserTerritory[]
 }>
 
 export default function useUserTerritories() {
-  const { visited, favorite } = useUserStore()
+  const { visited, wishlist } = useUserStore()
 
   const groupedTerritories = useMemo(() => {
     const grouped = {} as GroupedUserTerritories
@@ -26,18 +26,18 @@ export default function useUserTerritories() {
       const all = territories.map(territory => ({
         ...territory,
         visited: visited.includes(territory.code),
-        favorite: favorite.includes(territory.code),
+        wishlist: wishlist.includes(territory.code),
       }))
 
       grouped[region] = {
         all,
         visited: all.filter(territory => territory.visited),
-        favorite: all.filter(territory => territory.favorite)
+        wishlist: all.filter(territory => territory.wishlist)
       }
     })
 
     return grouped
-  }, [visited, favorite])
+  }, [visited, wishlist])
 
   return groupedTerritories
 }

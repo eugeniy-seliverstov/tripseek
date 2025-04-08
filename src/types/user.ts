@@ -2,5 +2,5 @@ import { Territory } from './territory'
 
 export interface UserTerritory extends Territory {
   visited?: boolean
-  favorite?: boolean
+  wishlist?: boolean
 }

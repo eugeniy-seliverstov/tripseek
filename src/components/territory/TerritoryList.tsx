@@ -7,21 +7,21 @@ import type { UserTerritory } from '@/types/user'
 
 interface TerritoryListProps {
   territories: UserTerritory[]
-  activeStatus?: 'visited' | 'favorite'
+  activeStatus?: 'visited' | 'wishlist'
 }
 
 function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
   const {
     addVisitedTerritory,
-    addFavoriteTerritory,
+    addWishlistTerritory,
     removeVisitedTerritory,
-    removeFavoriteTerritory,
+    removeWishlistTerritory,
   } = useUserStore()
   const { setHoverTerritory } = useStore()
 
   return territories.map((territory) => {
     const active =
-      activeStatus === 'favorite' ? territory.favorite ?? false :
+      activeStatus === 'wishlist' ? territory.wishlist ?? false :
       activeStatus === 'visited' ? territory.visited ?? false :
       true
 
@@ -35,9 +35,9 @@ function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
         if (territory.visited) removeVisitedTerritory(territory.code)
         else addVisitedTerritory(territory.code)
       }}
-      onFavoriteClick={() => {
-        if (territory.favorite) removeFavoriteTerritory(territory.code)
-        else addFavoriteTerritory(territory.code)
+      onWishlistClick={() => {
+        if (territory.wishlist) removeWishlistTerritory(territory.code)
+        else addWishlistTerritory(territory.code)
       }}
     />
   })

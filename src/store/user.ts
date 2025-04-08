@@ -5,29 +5,29 @@ import unique from '@/utils/unique'
 
 export interface UserStore {
   visited: TerritoryCode[],
-  favorite: TerritoryCode[],
+  wishlist: TerritoryCode[],
 }
 
 export interface UserStoreActions {
   addVisitedTerritory: (code: TerritoryCode) => void
   removeVisitedTerritory: (code: TerritoryCode) => void
-  addFavoriteTerritory: (code: TerritoryCode) => void
-  removeFavoriteTerritory: (code: TerritoryCode) => void
+  addWishlistTerritory: (code: TerritoryCode) => void
+  removeWishlistTerritory: (code: TerritoryCode) => void
 }
 
 const useUserStore = create<UserStore & UserStoreActions>()(
   persist(
     (set) => ({
       visited: [],
-      favorite: [],
+      wishlist: [],
       addVisitedTerritory: (code: TerritoryCode) =>
-        set((state) => ({ visited: unique([...state.visited, code]), favorite: [...state.favorite.filter(value => value !== code)] })),
+        set((state) => ({ visited: unique([...state.visited, code]), wishlist: [...state.wishlist.filter(value => value !== code)] })),
       removeVisitedTerritory: (code: TerritoryCode) =>
         set((state) => ({ visited: state.visited.filter(value => value !== code) })),
-      addFavoriteTerritory: (code: TerritoryCode) =>
-        set((state) => ({ favorite: unique([...state.favorite, code]) })),
-      removeFavoriteTerritory: (code: TerritoryCode) =>
-        set((state) => ({ favorite: state.favorite.filter(value => value !== code) })),
+      addWishlistTerritory: (code: TerritoryCode) =>
+        set((state) => ({ wishlist: unique([...state.wishlist, code]) })),
+      removeWishlistTerritory: (code: TerritoryCode) =>
+        set((state) => ({ wishlist: state.wishlist.filter(value => value !== code) })),
     }),
     { name: 'territories' }
   )
