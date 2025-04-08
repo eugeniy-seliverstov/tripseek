@@ -15,11 +15,12 @@ import map from '../assets/map/countries-110m.json'
 import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 
 const COLORS = {
-  default: 'rgba(255, 255, 255, 0.25)',
-  visited: '#FFFFFF',
-  wishlist: '#FFFFFF',
-  hoverDefault: '#5CD4F5',
-  hoverVisited: '#F57D5C',
+  fill:          '#FFFFFF',
+  default:       'rgba(255, 255, 255, 0.25)',
+  hoverDefault:  '#9AB9E6',
+  visited:       '#F6A38C',
+  hoverVisited:  '#F7886A',
+  wishlist:      '#B8EBDD',
   hoverWishlist: '#5CF5CA',
 }
 
@@ -32,23 +33,37 @@ const getGeographyStyle = (
   let defaultColor = COLORS.default
   let hoverColor = COLORS.hoverDefault
 
-  if (filter === 'visited' || filter === 'all') {
+  if (filter === 'visited') {
     if (isVisited) {
-      defaultColor = COLORS.visited
+      defaultColor = COLORS.fill
       hoverColor = COLORS.hoverVisited
     }
   } else if (filter === 'wishlist') {
     if (isWishlist) {
+      defaultColor = COLORS.fill
+      hoverColor = COLORS.hoverWishlist
+    }
+  } else if (filter === 'all') {
+    if (isVisited) {
+      defaultColor = COLORS.visited
+      hoverColor = COLORS.hoverVisited
+    } else if (isWishlist) {
       defaultColor = COLORS.wishlist
       hoverColor = COLORS.hoverWishlist
     }
   }
 
   if (isHovered) {
-    if (filter === 'visited' || filter === 'all') {
+    if (filter === 'visited') {
       defaultColor = isVisited ? COLORS.hoverVisited : COLORS.hoverDefault
     } else if (filter === 'wishlist') {
       defaultColor = isWishlist ? COLORS.hoverWishlist : COLORS.hoverDefault
+    } else if (filter === 'all') {
+      defaultColor = isVisited
+        ? COLORS.hoverDefault
+        : isWishlist
+        ? COLORS.hoverWishlist
+        : COLORS.hoverDefault
     }
   }
 
