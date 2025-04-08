@@ -21,7 +21,7 @@ const useUserStore = create<UserStore & UserStoreActions>()(
       visited: [],
       favorite: [],
       addVisitedTerritory: (code: TerritoryCode) =>
-        set((state) => ({ visited: unique([...state.visited, code]) })),
+        set((state) => ({ visited: unique([...state.visited, code]), favorite: [...state.favorite.filter(value => value !== code)] })),
       removeVisitedTerritory: (code: TerritoryCode) =>
         set((state) => ({ visited: state.visited.filter(value => value !== code) })),
       addFavoriteTerritory: (code: TerritoryCode) =>

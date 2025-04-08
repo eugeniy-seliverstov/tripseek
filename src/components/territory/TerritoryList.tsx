@@ -33,10 +33,7 @@ function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
       onMouseLeave={() => setHoverTerritory(null)}
       onVisitedClick={() => {
         if (territory.visited) removeVisitedTerritory(territory.code)
-        else {
-          if (territory.favorite) removeFavoriteTerritory(territory.code)
-          addVisitedTerritory(territory.code)
-        }
+        else addVisitedTerritory(territory.code)
       }}
       onFavoriteClick={() => {
         if (territory.favorite) removeFavoriteTerritory(territory.code)
