@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-simple-maps'
 
@@ -78,8 +78,8 @@ function World() {
   const [hoverTerritory, setHoverTerritory] = useState<Nullable<Territory>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
-  const { visited, wishlist } = useUserStore()
   const { filter, hoverTerritory: sidebarHoverTerritory } = useStore()
+  const { visited, wishlist, toggleVisitedTerritory, toggleWishlistTerritory } = useUserStore()
 
   useEffect(() => {
     const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
@@ -91,6 +91,26 @@ function World() {
       window.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
+
+  const onClickTerritory = (event: React.MouseEvent<SVGPathElement>, territory: Nullable<Territory>) => {
+    if (!territory) return
+
+    const code = territory.code
+    const { shiftKey, altKey, metaKey } = event
+
+    const isWishlistAction = shiftKey && (altKey || metaKey)
+    const canModifyWishlist = filter === 'wishlist' || filter === 'all'
+    if (isWishlistAction && canModifyWishlist) {
+      toggleWishlistTerritory(code)
+      return
+    }
+
+    const isVisitedAction = shiftKey && !isWishlistAction
+    const canModifyVisited = filter === 'visited' || filter === 'all'
+    if (isVisitedAction && canModifyVisited) {
+      toggleVisitedTerritory(code)
+    }
+  }
 
   return (
     <>
@@ -123,6 +143,7 @@ function World() {
                 style={getGeographyStyle(filter, isVisited, isWishlist, isHovered)}
                 onMouseEnter={() => setHoverTerritory(territory)}
                 onMouseLeave={() => setHoverTerritory(null)}
+                onClick={(event) => onClickTerritory(event, territory)}
               />
             })
           }
