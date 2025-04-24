@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
-import useStore from '@/store/app'
+import useFilterStore from '@/store/useFilterStore'
 import { isApplePlatform } from '@/utils/platform'
 
 function Hint() {
-  const { filter } = useStore()
+  const { filter } = useFilterStore()
 
   const showVisitedHint = filter === 'visited' || filter === 'all'
   const showWishlistHint = filter === 'wishlist' || filter === 'all'

@@ -3,13 +3,13 @@ import Region from '@/components/territory/Region'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import regions from '@/constants/regions'
-import useStore from '@/store/app'
-import type{ Filter } from '@/store/app'
+import useFilterStore from '@/store/useFilterStore'
+import type { Filter } from '@/store/useFilterStore'
 
 import useUserTerritories from '@/hooks/useUserTerritories'
 
 function Sidebar() {
-  const { filter, setFilter } = useStore()
+  const { filter, setFilter } = useFilterStore()
   const groupedTerritories = useUserTerritories()
 
   const filteredRegions = regions.filter(region => {

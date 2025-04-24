@@ -4,11 +4,12 @@ import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-sim
 
 import TerritoryPopover from './territory/TerritoryPopover'
 
-import useUserStore from '@/store/user'
-import useStore from '@/store/app'
+import useUserStore from '@/store/useUserStore'
+import useHoverStore from '@/store/useHoverStore'
+import useFilterStore from '@/store/useFilterStore'
 
-import type { Filter } from '@/store/app'
 import type { Nullable } from '@/types/utils'
+import type { Filter } from '@/store/useFilterStore'
 import type { TerritoryCode, TerritoryName, Territory } from '@/types/territory'
 
 import map from '../assets/map/countries-110m.json'
@@ -78,7 +79,8 @@ function World() {
   const [hoverTerritory, setHoverTerritory] = useState<Nullable<Territory>>(null)
   const [mouseCoordinates, setMouseCoordinates] = useState({ clientX: 0, clientY: 0 })
 
-  const { filter, hoverTerritory: sidebarHoverTerritory } = useStore()
+  const { filter } = useFilterStore()
+  const { hoverTerritory: sidebarHoverTerritory } = useHoverStore()
   const { visited, wishlist, toggleVisitedTerritory, toggleWishlistTerritory } = useUserStore()
 
   useEffect(() => {

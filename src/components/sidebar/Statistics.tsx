@@ -1,4 +1,4 @@
-import useUserStore from '@/store/user'
+import useUserStore from '@/store/useUserStore'
 import territories from '@/constants/territories'
 import { getTerritoryByCode } from '@/utils/territories'
 import useUserTerritories from '@/hooks/useUserTerritories'
