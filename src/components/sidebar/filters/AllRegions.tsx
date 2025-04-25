@@ -16,17 +16,17 @@ function AllRegions() {
     <>
       {regions.map(region => {
         const regionTerritories = groupedTerritories[region].slice().sort(sortByVisited)
-        const visitedTerritories = regionTerritories.filter(territory => territory.visited)
+        const visitedCodes = new Set(regionTerritories.filter(territory => territory.visited).map(territory => territory.code))
 
         return (
           <Region
             key={region}
             name={region}
             territories={regionTerritories}
-            activeStatus="visited"
-            showCounters={true}
-            activeCount={visitedTerritories.length}
+            showCounters
+            activeCount={visitedCodes.size}
             totalCount={regionTerritories.length}
+            isActive={(territory: UserTerritory) => visitedCodes.has(territory.code)}
           />
         )
       })}

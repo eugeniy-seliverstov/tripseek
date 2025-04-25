@@ -17,7 +17,6 @@ function VisitedRegions() {
             key={region}
             name={region}
             territories={visitedTerritories}
-            activeStatus="visited"
             showCounters
             activeCount={visitedTerritories.length}
             totalCount={regionTerritories.length}

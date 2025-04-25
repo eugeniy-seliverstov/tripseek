@@ -17,7 +17,6 @@ function WishlistRegions() {
             key={region}
             name={region}
             territories={wishlistTerritories}
-            activeStatus="wishlist"
             showCounters={false}
           />
         )

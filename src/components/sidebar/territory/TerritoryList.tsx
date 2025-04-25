@@ -7,10 +7,10 @@ import type { UserTerritory } from '@/types/user'
 
 interface TerritoryListProps {
   territories: UserTerritory[]
-  activeStatus?: 'visited' | 'wishlist'
+  isActive?: (territory: UserTerritory) => boolean
 }
 
-function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
+function TerritoryList({ territories, isActive }: TerritoryListProps) {
   const {
     addVisitedTerritory,
     addWishlistTerritory,
@@ -20,10 +20,7 @@ function TerritoryList({ territories, activeStatus }: TerritoryListProps) {
   const { setHoverTerritory } = useHoverStore()
 
   return territories.map((territory) => {
-    const active =
-      activeStatus === 'wishlist' ? territory.wishlist ?? false :
-      activeStatus === 'visited' ? territory.visited ?? false :
-      true
+    const active = isActive?.(territory) ?? true
 
     return <TerritoryItem
       key={territory.code}

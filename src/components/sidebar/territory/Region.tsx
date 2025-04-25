@@ -8,10 +8,10 @@ interface RegionProps {
   showCounters?: boolean
   activeCount?: number,
   totalCount?: number
-  activeStatus?: 'visited' | 'wishlist'
+  isActive?: (territory: UserTerritory) => boolean,
 }
 
-function Region({ name, territories, activeStatus, showCounters, activeCount, totalCount }: RegionProps) {
+function Region({ name, territories, showCounters, activeCount, totalCount, isActive }: RegionProps) {
   const countries: UserTerritory[] = []
   const otherTerritories: UserTerritory[] = []
   const disputedTerritories: UserTerritory[] = []
@@ -42,7 +42,7 @@ function Region({ name, territories, activeStatus, showCounters, activeCount, to
             <div className="mb-1 px-4 text-sm font-semibold text-gray-500">
               {label}
             </div>
-            <TerritoryList territories={territories} activeStatus={activeStatus} />
+            <TerritoryList territories={territories} isActive={isActive} />
           </div>
         ) : null
       )}
