@@ -1,4 +1,4 @@
-import Region from '@/components/territory/Region'
+import Region from '@/components/sidebar/territory/Region'
 import useUserTerritories from '@/hooks/useUserTerritories'
 import regions from '@/constants/regions'
 

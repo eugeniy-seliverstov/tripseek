@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap, Geographies, Geography, GeographyProps } from 'react-simple-maps'
 
-import TerritoryPopover from './territory/TerritoryPopover'
+import TerritoryPopover from './sidebar/territory/TerritoryPopover'
 
 import useUserStore from '@/store/useUserStore'
 import useHoverStore from '@/store/useHoverStore'
