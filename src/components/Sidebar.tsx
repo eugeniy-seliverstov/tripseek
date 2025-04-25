@@ -1,22 +1,21 @@
+import { JSX } from 'react'
 import Header from '@/components/sidebar/Header'
-import Region from '@/components/territory/Region'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import AllRegions from '@/components/sidebar/filters/AllRegions'
+import VisitedRegions from '@/components/sidebar/filters/VisitedRegions'
+import WishlistRegions from '@/components/sidebar/filters/WishlistRegions'
 
-import regions from '@/constants/regions'
 import useFilterStore from '@/store/useFilterStore'
 import type { Filter } from '@/store/useFilterStore'
 
-import useUserTerritories from '@/hooks/useUserTerritories'
-
 function Sidebar() {
   const { filter, setFilter } = useFilterStore()
-  const groupedTerritories = useUserTerritories()
 
-  const filteredRegions = regions.filter(region => {
-    if (filter === 'visited') return groupedTerritories[region].visited.length > 0
-    if (filter === 'wishlist') return groupedTerritories[region].wishlist.length > 0
-    return true
-  })
+  const filterViews: Record<Filter, JSX.Element> = {
+    visited: <VisitedRegions />,
+    wishlist: <WishlistRegions />,
+    all: <AllRegions />
+  }
 
   return (
     <div className="max-h-full overflow-auto py-3">
@@ -29,27 +28,8 @@ function Sidebar() {
           <TabsTrigger value="all" className="flex-1">All</TabsTrigger>
         </TabsList>
       </Tabs>
-      {filteredRegions.map((region) => {
-        const regionTerritories = groupedTerritories[region]
-        const visibleTerritories =
-          filter === 'visited' ? regionTerritories.visited :
-          filter === 'wishlist' ? regionTerritories.wishlist :
-          regionTerritories.all
 
-        const activeStatus = filter === 'all' ? 'visited' : filter
-
-        return (
-          <Region
-            key={region}
-            region={region}
-            territories={visibleTerritories}
-            activeStatus={activeStatus}
-            showCounter={filter !== 'wishlist'}
-            activeCount={regionTerritories[activeStatus].length}
-            allCount={regionTerritories.all.length}
-          />
-        )
-      })}
+      {filterViews[filter]}
     </div>
   )
 }

@@ -20,7 +20,7 @@ function Statistics() {
     },
     regions: {
       total: Object.keys(userTerritories).length,
-      visited: Object.entries(userTerritories).filter(([, value]) => value.visited.length > 0).length,
+      visited: Object.entries(userTerritories).filter(([, value]) => value.some(territory => territory.visited)).length,
     }
   }
 

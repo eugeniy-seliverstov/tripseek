@@ -1,6 +1,5 @@
 import { UserTerritory } from '@/types/user'
 import TerritoryFlag from './TerritoryFlag'
-import { Badge } from '../ui/badge'
 import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 import { cn } from '@/lib/utils'
 
@@ -29,10 +28,6 @@ function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisite
       <TerritoryFlag code={territory.code} />
       <div className="flex flex-col grow">
         <div>{territory.name}</div>
-        <div className="flex">
-          {territory.type ==='other' && <Badge variant="info">Other</Badge>}
-          {territory.type === 'disputed' && <Badge variant="negative">Disputed</Badge>}
-        </div>
       </div>
       <div className="flex gap-2">
         <FlagIcon
