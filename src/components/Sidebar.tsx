@@ -18,7 +18,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="max-h-full overflow-auto py-3">
+    <div className="max-h-full overflow-auto pb-3">
       <Header />
 
       <Tabs defaultValue={filter} onValueChange={(value) => setFilter(value as Filter)} className="w-full px-4">
