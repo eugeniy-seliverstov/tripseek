@@ -1,8 +1,8 @@
 import Stat from './Stat'
-import useStatistics from '@/hooks/useStatistics'
+import useUserStatistics from '@/hooks/useUserStatistics'
 
 function Statistics() {
-  const stats = useStatistics()
+  const stats = useUserStatistics()
 
   return (
     <div className="flex justify-between text-center text-md">

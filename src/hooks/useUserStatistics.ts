@@ -10,7 +10,7 @@ export interface StatItem {
   total: number
 }
 
-export default function useStatistics(): StatItem[] {
+export default function useUserStatistics(): StatItem[] {
   const { visited } = useUserStore()
   const groupedTerritories = useUserTerritories()
 
