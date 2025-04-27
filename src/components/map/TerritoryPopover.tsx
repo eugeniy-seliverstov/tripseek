@@ -1,5 +1,6 @@
-import { Territory } from '@/types/territory'
-import TerritoryFlag from './TerritoryFlag'
+import { createPortal } from 'react-dom'
+import type { Territory } from '@/types/territory'
+import TerritoryFlag from '@/components/sidebar/territory/TerritoryFlag'
 
 interface TerritoryPopoverProps {
   territory: Territory
@@ -8,7 +9,7 @@ interface TerritoryPopoverProps {
 }
 
 function TerritoryPopover({ territory, clientY, clientX }: TerritoryPopoverProps) {
-  return (
+  return createPortal(
     <div
       className='flex gap-2 items-center absolute bg-white px-3 py-2 rounded-[12px] drop-shadow-xl select-none'
       style={{
@@ -19,7 +20,8 @@ function TerritoryPopover({ territory, clientY, clientX }: TerritoryPopoverProps
     >
       <TerritoryFlag code={territory.code}/>
       <span className='text-xl'>{territory.name}</span>
-    </div>
+    </div>,
+    document.body,
   )
 }
 
