@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react'
 
-import World from '@/components/map/World'
+import Map from '@/components/map/Map'
 import Logo from '@/components/map/header/Logo'
 import Hint from '@/components/map/header/Hint'
-import TerritoryPopover from '@/components/map/TerritoryPopover'
+import MapTerritoryPopover from '@/components/map/MapTerritoryPopover'
 
 import useMousePosition from '@/hooks/useMousePosition'
 
@@ -29,14 +29,14 @@ function MapContainer() {
       </div>
 
       <div className="grow flex justify-center items-center min-h-0">
-        <World
+        <Map
           onTerritoryEnter={handleTerritoryEnter}
           onTerritoryLeave={handleTerritoryLeave}
         />
       </div>
 
       {hoverTerritory && (
-        <TerritoryPopover
+        <MapTerritoryPopover
           territory={hoverTerritory}
           clientX={position.clientX}
           clientY={position.clientY}

@@ -2,17 +2,17 @@ import { memo } from 'react'
 import { geoTimes } from 'd3-geo-projection'
 import { ComposableMap } from 'react-simple-maps'
 
-import Territories from '@/components/map/Territories'
+import MapTerritories from '@/components/map/MapTerritories'
 
 import type { Nullable } from '@/types/utils'
 import type { Territory } from '@/types/territory'
 
-interface WorldProps {
+interface MapProps {
   onTerritoryEnter: (territory: Nullable<Territory>) => void
   onTerritoryLeave: () => void
 }
 
-function World({ onTerritoryEnter, onTerritoryLeave }: WorldProps) {
+function Map({ onTerritoryEnter, onTerritoryLeave }: MapProps) {
   return (
     <ComposableMap
       width={1000}
@@ -23,7 +23,7 @@ function World({ onTerritoryEnter, onTerritoryLeave }: WorldProps) {
         .scale(205)
         .rotate([-11, 0, 0])}
     >
-      <Territories
+      <MapTerritories
         onTerritoryEnter={onTerritoryEnter}
         onTerritoryLeave={onTerritoryLeave}
       />
@@ -31,4 +31,4 @@ function World({ onTerritoryEnter, onTerritoryLeave }: WorldProps) {
   )
 }
 
-export default memo(World)
+export default memo(Map)

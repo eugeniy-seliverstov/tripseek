@@ -14,12 +14,12 @@ import type { Territory, TerritoryCode, TerritoryName } from '@/types/territory'
 
 import map from '@/assets/map/countries-110m.json'
 
-interface TerritoriesProps {
+interface MapTerritoriesProps {
   onTerritoryEnter: (territory: Nullable<Territory>) => void
   onTerritoryLeave: () => void
 }
 
-function Territories({ onTerritoryEnter, onTerritoryLeave }: TerritoriesProps) {
+function MapTerritories({ onTerritoryEnter, onTerritoryLeave }: MapTerritoriesProps) {
   const { filter } = useFilterStore()
   const { hoverTerritory: sidebarHoverTerritory } = useHoverStore()
   const { visited, wishlist, toggleVisitedTerritory, toggleWishlistTerritory } = useUserStore()
@@ -72,4 +72,4 @@ function Territories({ onTerritoryEnter, onTerritoryLeave }: TerritoriesProps) {
   )
 }
 
-export default Territories
+export default MapTerritories
