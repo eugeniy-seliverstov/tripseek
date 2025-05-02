@@ -4,15 +4,7 @@ import { ComposableMap } from 'react-simple-maps'
 
 import MapTerritories from '@/components/map/MapTerritories'
 
-import type { Nullable } from '@/types/utils'
-import type { Territory } from '@/types/territory'
-
-interface MapProps {
-  onTerritoryEnter: (territory: Nullable<Territory>) => void
-  onTerritoryLeave: () => void
-}
-
-function Map({ onTerritoryEnter, onTerritoryLeave }: MapProps) {
+function Map() {
   return (
     <ComposableMap
       width={1000}
@@ -23,10 +15,7 @@ function Map({ onTerritoryEnter, onTerritoryLeave }: MapProps) {
         .scale(205)
         .rotate([-11, 0, 0])}
     >
-      <MapTerritories
-        onTerritoryEnter={onTerritoryEnter}
-        onTerritoryLeave={onTerritoryLeave}
-      />
+      <MapTerritories />
     </ComposableMap>
   )
 }

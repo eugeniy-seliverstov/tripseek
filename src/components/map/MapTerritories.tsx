@@ -8,20 +8,14 @@ import useTerritoryToggle from '@/hooks/useTerritoryToggle'
 import { getGeographyStyle } from '@/utils/geography'
 import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 
-import type { Nullable } from '@/types/utils'
 import type { GeographyProps } from 'react-simple-maps'
-import type { Territory, TerritoryCode, TerritoryName } from '@/types/territory'
+import type { TerritoryCode, TerritoryName } from '@/types/territory'
 
 import map from '@/assets/map/countries-110m.json'
 
-interface MapTerritoriesProps {
-  onTerritoryEnter: (territory: Nullable<Territory>) => void
-  onTerritoryLeave: () => void
-}
-
-function MapTerritories({ onTerritoryEnter, onTerritoryLeave }: MapTerritoriesProps) {
+function MapTerritories() {
   const { filter } = useFilterStore()
-  const { hoverTerritory: sidebarHoverTerritory } = useHoverStore()
+  const { mapHoverTerritory, sidebarHoverTerritory, setMapHoverTerritory } = useHoverStore()
   const { visited, wishlist, toggleVisitedTerritory, toggleWishlistTerritory } = useUserStore()
 
   const { toggleTerritory } = useTerritoryToggle({
@@ -37,7 +31,10 @@ function MapTerritories({ onTerritoryEnter, onTerritoryLeave }: MapTerritoriesPr
 
     const territory = code ? getTerritoryByCode(code) : null
 
-    const isHovered = territory?.code === sidebarHoverTerritory?.code
+    const isMapHovered = territory?.code === mapHoverTerritory?.code
+    const isSidebarHovered = territory?.code === sidebarHoverTerritory?.code
+    const isHovered = isMapHovered || isSidebarHovered
+
     const isVisited = territory ? visited.includes(territory.code) : false
     const isWishlist = territory ? wishlist.includes(territory.code) : false
 
@@ -59,8 +56,8 @@ function MapTerritories({ onTerritoryEnter, onTerritoryLeave }: MapTerritoriesPr
               stroke={isVisited ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.05)'}
               strokeWidth={1}
               style={styles}
-              onMouseEnter={() => onTerritoryEnter(territory)}
-              onMouseLeave={onTerritoryLeave}
+              onMouseEnter={() => setMapHoverTerritory(territory)}
+              onMouseLeave={() => setMapHoverTerritory(null)}
               onClick={(event) => {
                 if (territory) toggleTerritory(territory.code, event)
               }}

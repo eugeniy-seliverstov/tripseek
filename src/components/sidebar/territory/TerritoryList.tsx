@@ -17,7 +17,7 @@ function TerritoryList({ territories, isActive }: TerritoryListProps) {
     removeVisitedTerritory,
     removeWishlistTerritory,
   } = useUserStore()
-  const { setHoverTerritory } = useHoverStore()
+  const setSidebarHoverTerritory = useHoverStore(state => state.setSidebarHoverTerritory)
 
   return territories.map((territory) => {
     const active = isActive?.(territory) ?? true
@@ -26,8 +26,8 @@ function TerritoryList({ territories, isActive }: TerritoryListProps) {
       key={territory.code}
       active={active}
       territory={territory}
-      onMouseEnter={() => setHoverTerritory(territory)}
-      onMouseLeave={() => setHoverTerritory(null)}
+      onMouseEnter={() => setSidebarHoverTerritory(territory)}
+      onMouseLeave={() => setSidebarHoverTerritory(null)}
       onVisitedClick={() => {
         if (territory.visited) removeVisitedTerritory(territory.code)
         else addVisitedTerritory(territory.code)
