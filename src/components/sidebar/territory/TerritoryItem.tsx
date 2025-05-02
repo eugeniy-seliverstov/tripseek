@@ -1,7 +1,10 @@
-import { UserTerritory } from '@/types/user'
 import TerritoryFlag from './TerritoryFlag'
 import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
+
 import { cn } from '@/lib/utils'
+import { mapColors } from '@/theme/mapColors'
+
+import type { UserTerritory } from '@/types/user'
 
 interface TerritoryItemProps {
   active: boolean
@@ -32,14 +35,14 @@ function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisite
       <div className="flex gap-2">
         <FlagIcon
           className='hover:cursor-pointer hidden group-hover:inline-flex'
-          color='#F46A44'
+          color={mapColors.visited.icon}
           size='20px'
           onClick={onVisitedClick}
         />
         {!territory.visited &&
           <HeartIcon
             className='hover:cursor-pointer hidden group-hover:inline-flex'
-            color='#52dcb5'
+            color={mapColors.wishlist.icon}
             size='20px'
             onClick={onWishlistClick}
           />

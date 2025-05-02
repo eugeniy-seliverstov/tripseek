@@ -5,8 +5,8 @@ import useHoverStore from '@/store/useHoverStore'
 import useFilterStore from '@/store/useFilterStore'
 import useTerritoryToggle from '@/hooks/useTerritoryToggle'
 
-import { getGeographyStyle } from '@/utils/geography'
 import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
+import { getGeographyStyle, getGeographyStroke } from '@/utils/geography'
 
 import type { GeographyProps } from 'react-simple-maps'
 import type { TerritoryCode, TerritoryName } from '@/types/territory'
@@ -47,21 +47,22 @@ function MapTerritories() {
     const isWishlist = territory ? wishlist.includes(territory.code) : false
 
     const styles: GeographyProps['style'] = getGeographyStyle(filter, { isVisited, isWishlist, isHovered })
+    const stroke = getGeographyStroke(filter, { isVisited, isWishlist, isHovered })
 
-    return { territory, styles, isVisited }
+    return { territory, styles, stroke }
   }
 
   return (
     <Geographies geography={map}>
       {({ geographies }) =>
         geographies.map((geo) => {
-          const { territory, styles, isVisited } = prepareGeographyProps(geo)
+          const { territory, styles, stroke } = prepareGeographyProps(geo)
 
           return (
             <Geography
               key={geo.rsmKey}
               geography={geo}
-              stroke={isVisited ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.05)'}
+              stroke={stroke}
               strokeWidth={1}
               style={styles}
               onMouseEnter={() => setMapHoverTerritory(territory)}

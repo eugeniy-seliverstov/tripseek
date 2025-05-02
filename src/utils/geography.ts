@@ -1,17 +1,7 @@
+import { mapColors } from '@/theme/mapColors'
+
 import type { Filter } from '@/store/useFilterStore'
 import type { GeographyProps } from 'react-simple-maps'
-
-export const COLORS = {
-  fill: '#FFFFFF',
-  default: 'rgba(255, 255, 255, 0.25)',
-  hoverDefault: '#9AB9E6',
-  visited: '#F6A38C',
-  hoverVisited: '#F7886A',
-  wishlist: '#B8EBDD',
-  hoverWishlist: '#5CF5CA',
-  strokeDefault: 'rgba(255, 255, 255, 0.05)',
-  strokeVisited: 'rgba(0, 0, 0, 0.05)',
-}
 
 interface GeographyStates {
   isVisited: boolean
@@ -23,29 +13,29 @@ export function getGeographyStyle(
   filter: Filter,
   { isVisited, isWishlist, isHovered }: GeographyStates
 ): GeographyProps['style'] {
-  let defaultColor = COLORS.default
-  let hoverColor = COLORS.hoverDefault
+  let defaultColor = mapColors.default.base
+  let hoverColor = mapColors.default.hover
 
   switch (filter) {
     case 'visited':
       if (isVisited) {
-        defaultColor = COLORS.fill
-        hoverColor = COLORS.hoverVisited
+        defaultColor = mapColors.fill
+        hoverColor = mapColors.visited.hover
       }
       break
     case 'wishlist':
       if (isWishlist) {
-        defaultColor = COLORS.fill
-        hoverColor = COLORS.hoverWishlist
+        defaultColor = mapColors.fill
+        hoverColor = mapColors.wishlist.hover
       }
       break
     case 'all':
       if (isVisited) {
-        defaultColor = COLORS.visited
-        hoverColor = COLORS.hoverVisited
+        defaultColor = mapColors.visited.base
+        hoverColor = mapColors.visited.hover
       } else if (isWishlist) {
-        defaultColor = COLORS.wishlist
-        hoverColor = COLORS.hoverWishlist
+        defaultColor = mapColors.wishlist.base
+        hoverColor = mapColors.wishlist.hover
       }
       break
   }
@@ -53,17 +43,17 @@ export function getGeographyStyle(
   if (isHovered) {
     switch (filter) {
       case 'visited':
-        defaultColor = isVisited ? COLORS.hoverVisited : COLORS.hoverDefault
+        defaultColor = isVisited ? mapColors.visited.hover : mapColors.default.hover
         break
       case 'wishlist':
-        defaultColor = isWishlist ? COLORS.hoverWishlist : COLORS.hoverDefault
+        defaultColor = isWishlist ? mapColors.wishlist.hover : mapColors.default.hover
         break
       case 'all':
         defaultColor = isVisited
-          ? COLORS.hoverDefault
+          ? mapColors.visited.hover
           : isWishlist
-          ? COLORS.hoverWishlist
-          : COLORS.hoverDefault
+          ? mapColors.wishlist.hover
+          : mapColors.default.hover
         break
     }
   }
@@ -73,4 +63,19 @@ export function getGeographyStyle(
     hover: { fill: hoverColor, outline: 'none', cursor: 'pointer' },
     pressed: { fill: hoverColor, outline: 'none' },
   }
+}
+
+export function getGeographyStroke(
+  filter: Filter,
+  { isVisited, isWishlist }: GeographyStates
+): string {
+  if ((filter === 'visited' && isVisited) || (filter === 'all' && isVisited)) {
+    return mapColors.visited.border
+  }
+
+  if ((filter === 'wishlist' && isWishlist) || (filter === 'all' && isWishlist)) {
+    return mapColors.wishlist.border
+  }
+
+  return mapColors.default.border
 }
