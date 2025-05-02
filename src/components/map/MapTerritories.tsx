@@ -13,6 +13,14 @@ import type { TerritoryCode, TerritoryName } from '@/types/territory'
 
 import map from '@/assets/map/countries-110m.json'
 
+interface GeoFeature {
+  rsmKey: string
+  properties: {
+    ISO_A3?: string
+    NAME_LONG?: string
+  }
+}
+
 function MapTerritories() {
   const { filter } = useFilterStore()
   const { mapHoverTerritory, sidebarHoverTerritory, setMapHoverTerritory } = useHoverStore()
@@ -24,7 +32,7 @@ function MapTerritories() {
     toggleWishlistTerritory,
   })
 
-  const prepareGeographyProps = (geo: any) => {
+  const prepareGeographyProps = (geo: GeoFeature) => {
     const code = geo.properties?.ISO_A3 !== '-99'
       ? geo.properties?.ISO_A3 as TerritoryCode
       : getCodeByName(geo.properties?.NAME_LONG as TerritoryName)
