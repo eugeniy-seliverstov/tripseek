@@ -630,130 +630,130 @@ const territories = [
     "type": "country"
   },
   {
-    "name": "Brunei",
-    "code": "BRN",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Cambodia",
-    "code": "KHM",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
     "name": "China",
     "code": "CHN",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Indonesia",
-    "code": "IDN",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "country"
   },
   {
     "name": "Japan",
     "code": "JPN",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Laos",
-    "code": "LAO",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Malaysia",
-    "code": "MYS",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "country"
   },
   {
     "name": "Mongolia",
     "code": "MNG",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Myanmar",
-    "code": "MMR",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "country"
   },
   {
     "name": "North Korea",
     "code": "PRK",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Philippines",
-    "code": "PHL",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Singapore",
-    "code": "SGP",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "country"
   },
   {
     "name": "South Korea",
     "code": "KOR",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "country"
-  },
-  {
-    "name": "Thailand",
-    "code": "THA",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Timor-Leste",
-    "code": "TLS",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Vietnam",
-    "code": "VNM",
-    "region": "East & Southeast Asia",
-    "type": "country"
-  },
-  {
-    "name": "Christmas Island",
-    "code": "CXR",
-    "region": "East & Southeast Asia",
-    "type": "other"
-  },
-  {
-    "name": "Cocos (Keeling) Islands",
-    "code": "CCK",
-    "region": "East & Southeast Asia",
-    "type": "other"
   },
   {
     "name": "Hong Kong",
     "code": "HKG",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "other"
   },
   {
     "name": "Macau",
     "code": "MAC",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "other"
   },
   {
     "name": "Taiwan",
     "code": "TWN",
-    "region": "East & Southeast Asia",
+    "region": "East Asia",
     "type": "disputed"
+  },
+  {
+    "name": "Brunei",
+    "code": "BRN",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Cambodia",
+    "code": "KHM",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Indonesia",
+    "code": "IDN",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Laos",
+    "code": "LAO",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Malaysia",
+    "code": "MYS",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Myanmar",
+    "code": "MMR",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Philippines",
+    "code": "PHL",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Singapore",
+    "code": "SGP",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Thailand",
+    "code": "THA",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Timor-Leste",
+    "code": "TLS",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Vietnam",
+    "code": "VNM",
+    "region": "Southeast Asia",
+    "type": "country"
+  },
+  {
+    "name": "Christmas Island",
+    "code": "CXR",
+    "region": "Southeast Asia",
+    "type": "other"
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "code": "CCK",
+    "region": "Southeast Asia",
+    "type": "other"
   },
   {
     "name": "Albania",

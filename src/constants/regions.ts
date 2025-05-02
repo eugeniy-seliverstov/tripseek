@@ -1,5 +1,18 @@
-import territories from '@/constants/territories'
+import type { TerritoryRegion } from '@/types/territory'
 
-const regions = Array.from(new Set(territories.map(territory => territory.region))).sort()
+const regions: TerritoryRegion[] = [
+  'Europe',
+  'Africa',
+  'Middle East',
+  'Central Asia',
+  'South Asia',
+  'East Asia',
+  'Southeast Asia',
+  'Oceania',
+  'North America',
+  'Central America',
+  'South America',
+  'Antarctica',
+]
 
 export default regions
