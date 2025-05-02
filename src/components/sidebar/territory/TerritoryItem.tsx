@@ -31,14 +31,14 @@ function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisite
       </div>
       <div className="flex gap-2">
         <FlagIcon
-          className={`hover:cursor-pointer ${!territory.visited && 'hidden group-hover:inline-flex'}`}
+          className='hover:cursor-pointer hidden group-hover:inline-flex'
           color='#F46A44'
           size='20px'
           onClick={onVisitedClick}
         />
         {!territory.visited &&
           <HeartIcon
-            className={`hover:cursor-pointer ${!territory.wishlist && 'hidden group-hover:inline-flex'}`}
+            className='hover:cursor-pointer hidden group-hover:inline-flex'
             color='#52dcb5'
             size='20px'
             onClick={onWishlistClick}
