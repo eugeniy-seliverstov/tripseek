@@ -1,9 +1,9 @@
 import { JSX } from 'react'
 import Header from '@/components/sidebar/Header'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import AllRegions from '@/components/sidebar/filters/AllRegions'
-import VisitedRegions from '@/components/sidebar/filters/VisitedRegions'
-import WishlistRegions from '@/components/sidebar/filters/WishlistRegions'
+import AllTerritories from '@/components/sidebar/filters/AllTerritories'
+import VisitedTerritories from '@/components/sidebar/filters/VisitedTerritories'
+import WishlistTerritories from '@/components/sidebar/filters/WishlistTerritories'
 
 import useFilterStore from '@/store/useFilterStore'
 import type { Filter } from '@/store/useFilterStore'
@@ -12,9 +12,9 @@ function Sidebar() {
   const { filter, setFilter } = useFilterStore()
 
   const filterViews: Record<Filter, JSX.Element> = {
-    visited: <VisitedRegions />,
-    wishlist: <WishlistRegions />,
-    all: <AllRegions />
+    visited: <VisitedTerritories />,
+    wishlist: <WishlistTerritories />,
+    all: <AllTerritories />
   }
 
   return (

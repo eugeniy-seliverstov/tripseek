@@ -1,10 +1,10 @@
-import Region from '@/components/sidebar/territory/Region'
+import Region from '@/components/sidebar/region/Region'
 import useUserTerritories from '@/hooks/useUserTerritories'
-import regions from '@/constants/regions'
+import { SORTED_REGIONS } from '@/constants/regions'
 
-function VisitedRegions() {
+function VisitedTerritories() {
   const groupedTerritories = useUserTerritories()
-  const filteredRegions = regions.filter(region => groupedTerritories[region].some(territory => territory.visited))
+  const filteredRegions = SORTED_REGIONS.filter(region => groupedTerritories[region].some(territory => territory.visited))
 
   return (
     <>
@@ -27,4 +27,4 @@ function VisitedRegions() {
   )
 }
 
-export default VisitedRegions
+export default VisitedTerritories

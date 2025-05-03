@@ -1,7 +1,12 @@
-import Region from '@/components/sidebar/territory/Region'
-import useUserTerritories from '@/hooks/useUserTerritories'
-import regions from '@/constants/regions'
+import Region from '@/components/sidebar/region/Region'
+import { SORTED_REGIONS } from '@/constants/regions'
+
 import type { UserTerritory } from '@/types/user'
+import type { GroupedUserTerritories } from '@/types/user'
+
+interface RegionViewListProps {
+  groupedTerritories: GroupedUserTerritories
+}
 
 const sortByVisited = (a: UserTerritory, b: UserTerritory): number => {
   if (a.visited && !b.visited) return -1
@@ -9,12 +14,10 @@ const sortByVisited = (a: UserTerritory, b: UserTerritory): number => {
   return a.name.localeCompare(b.name)
 }
 
-function AllRegions() {
-  const groupedTerritories = useUserTerritories()
-
+function RegionViewList({ groupedTerritories }: RegionViewListProps) {
   return (
     <>
-      {regions.map(region => {
+      {SORTED_REGIONS.map(region => {
         const regionTerritories = groupedTerritories[region].slice().sort(sortByVisited)
         const visitedCodes = new Set(regionTerritories.filter(territory => territory.visited).map(territory => territory.code))
 
@@ -34,4 +37,4 @@ function AllRegions() {
   )
 }
 
-export default AllRegions
+export default RegionViewList

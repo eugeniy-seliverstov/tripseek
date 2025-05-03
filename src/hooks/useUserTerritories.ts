@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import useUserStore from '@/store/useUserStore'
-import regions from '@/constants/regions'
+import { SORTED_REGIONS } from '@/constants/regions'
 import { getTerritoriesByRegion } from '@/utils/territories'
 import type { GroupedUserTerritories } from '@/types/user'
 
@@ -10,7 +10,7 @@ export default function useUserTerritories(): GroupedUserTerritories {
   return useMemo(() => {
     const grouped = {} as GroupedUserTerritories
 
-    for (const region of regions) {
+    for (const region of SORTED_REGIONS) {
       const raw = getTerritoriesByRegion(region)
 
       grouped[region] = raw.map((territory) => ({

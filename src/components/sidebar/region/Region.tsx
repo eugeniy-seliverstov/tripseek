@@ -1,4 +1,4 @@
-import TerritoryList from './TerritoryList'
+import TerritoryList from '@/components/sidebar/territory/TerritoryList'
 import type { UserTerritory } from '@/types/user'
 import type { TerritoryRegion } from '@/types/territory'
 
@@ -31,15 +31,15 @@ function Region({ name, territories, showCounters, activeCount, totalCount, isAc
   return (
     <>
       <div className='sticky top-0 z-[10] px-4 pt-3 pb-2 flex items-center justify-between bg-white'>
-        <div className="text-xl font-bold">{name}</div>
+        <div className='text-xl font-bold'>{name}</div>
         {showCounters && (
           <span className="text-md">{activeCount}/{totalCount}</span>
         )}
       </div>
       {sections.map(({ label, territories }) =>
         territories.length > 0 ? (
-          <div key={label} className="mb-2">
-            <div className="sticky top-[48px] z-[5] mb-1 px-4 text-sm font-semibold text-gray-500 bg-white">
+          <div key={label} className='mb-2'>
+            <div className='sticky top-[48px] z-[5] mb-1 px-4 text-sm font-semibold text-gray-500 bg-white'>
               {label}
             </div>
             <TerritoryList territories={territories} isActive={isActive} />

@@ -1,10 +1,10 @@
-import Region from '@/components/sidebar/territory/Region'
+import Region from '@/components/sidebar/region/Region'
 import useUserTerritories from '@/hooks/useUserTerritories'
-import regions from '@/constants/regions'
+import { SORTED_REGIONS } from '@/constants/regions'
 
-function WishlistRegions() {
+function WishlistTerritories() {
   const groupedTerritories = useUserTerritories()
-  const filteredRegions = regions.filter(region => groupedTerritories[region].some(territory => territory.wishlist))
+  const filteredRegions = SORTED_REGIONS.filter(region => groupedTerritories[region].some(territory => territory.wishlist))
 
   return (
     <>
@@ -25,4 +25,4 @@ function WishlistRegions() {
   )
 }
 
-export default WishlistRegions
+export default WishlistTerritories
