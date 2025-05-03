@@ -1,25 +1,55 @@
-import { useState } from 'react'
 
-import RegionViewList from '@/components/sidebar/region/RegionViewList'
-import RegionViewGrid from '@/components/sidebar/region/RegionViewGrid'
+import { ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import RegionView from '@/components/sidebar/region/views/RegionView'
+import RegionViewList from '@/components/sidebar/region/views/RegionViewList'
+import RegionViewGrid from '@/components/sidebar/region/views/RegionViewGrid'
 import RegionViewSelector from '@/components/sidebar/region/RegionViewSelector'
 
+import useRegionViewStore from '@/store/useRegionViewStore'
 import useUserTerritories from '@/hooks/useUserTerritories'
 
-import type { RegionViewType } from '@/components/sidebar/region/RegionViewSelector'
+import { cn } from '@/lib/utils'
 
 function AllTerritories() {
-  const [view, setView] = useState<RegionViewType>('list')
   const groupedTerritories = useUserTerritories()
+  const { selectedRegion, setSelectedRegion, viewMode, setViewMode } = useRegionViewStore()
 
   return (
     <>
-      <div className='flex justify-end px-4 mt-2'>
-        <RegionViewSelector value={view} onChange={setView}/>
+      <div
+        className={cn(
+          'flex items-center px-4 mt-2',
+          selectedRegion ? 'justify-start' : 'justify-end'
+        )}
+      >
+        {selectedRegion ? (
+          <Button
+            variant='link'
+            className='p-0 gap-1 text-gray-500 hover:text-gray-900'
+            onClick={() => setSelectedRegion(null)}
+          >
+            <ArrowLeft />
+            Back to regions
+          </Button>
+        ) : (
+          <RegionViewSelector value={viewMode} onChange={setViewMode} />
+        )}
       </div>
 
-      {view === 'list' && <RegionViewList groupedTerritories={groupedTerritories} />}
-      {view === 'grid' && <RegionViewGrid groupedTerritories={groupedTerritories} />}
+      {selectedRegion ? (
+        <RegionView
+          region={selectedRegion}
+          territories={groupedTerritories[selectedRegion]}
+        />
+      ) : viewMode === 'grid' ? (
+        <RegionViewGrid
+          groupedTerritories={groupedTerritories}
+          onRegionClick={setSelectedRegion}
+        />
+      ) : (
+        <RegionViewList groupedTerritories={groupedTerritories} />
+      )}
     </>
   )
 }
