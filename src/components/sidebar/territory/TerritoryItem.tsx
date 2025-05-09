@@ -1,7 +1,7 @@
 import TerritoryFlag from './TerritoryFlag'
 import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 import { mapColors } from '@/theme/mapColors'
 
 import type { UserTerritory } from '@/types/user'

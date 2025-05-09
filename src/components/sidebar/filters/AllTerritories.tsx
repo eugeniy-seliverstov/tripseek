@@ -11,7 +11,7 @@ import RegionViewSelector from '@/components/sidebar/region/RegionViewSelector'
 import useRegionViewStore from '@/store/useRegionViewStore'
 import useUserTerritories from '@/hooks/useUserTerritories'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 
 function AllTerritories() {
   const { grouped: groupedTerritories } = useUserTerritories()
