@@ -14,14 +14,14 @@ function RegionPreview({ region, visited, total, onClick }: RegionPreviewProps) 
 
   return (
     <div
-      className='relative w-full rounded-2xl px-4 py-3 flex flex-col justify-between gap-2 shadow-md hover:scale-[1.02] hover:shadow-lg transition-all ease-in duration-100 cursor-pointer transform-gpu will-change-transform bg-no-repeat bg-right bg-contain overflow-hidden'
+      className='group relative w-full rounded-2xl px-4 py-3 flex flex-col justify-between gap-2 shadow-md hover:scale-[1.02] hover:shadow-lg transition-all ease-in duration-100 cursor-pointer transform-gpu will-change-transform bg-no-repeat bg-right bg-contain overflow-hidden'
       style={{ backgroundColor: background }}
       onClick={onClick}
     >
       {image && (
         <img
           src={image}
-          className='absolute opacity-20 pointer-events-none select-none'
+          className='absolute opacity-20 pointer-events-none select-none group-hover:opacity-30 transition-all ease-in duration-100'
           style={imageStyle}
         />
       )}
