@@ -4,7 +4,7 @@ import { SORTED_REGIONS } from '@/constants/regions'
 import { getTerritoriesByRegion } from '@/utils/territories'
 import type { GroupedUserTerritories } from '@/types/user'
 
-export default function useUserTerritories(): GroupedUserTerritories {
+export default function useUserTerritories() {
   const { visited, wishlist } = useUserStore()
 
   return useMemo(() => {
@@ -20,6 +20,6 @@ export default function useUserTerritories(): GroupedUserTerritories {
       }))
     }
 
-    return grouped
+    return { visited, wishlist, grouped }
   }, [visited, wishlist])
 }

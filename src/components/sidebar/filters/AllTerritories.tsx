@@ -14,7 +14,7 @@ import useUserTerritories from '@/hooks/useUserTerritories'
 import { cn } from '@/lib/utils'
 
 function AllTerritories() {
-  const groupedTerritories = useUserTerritories()
+  const { grouped: groupedTerritories } = useUserTerritories()
   const [searchQuery, setSearchQuery] = useState('')
   const { selectedRegion, setSelectedRegion, viewMode, setViewMode } = useRegionViewStore()
 

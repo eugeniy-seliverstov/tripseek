@@ -12,7 +12,7 @@ export interface StatItem {
 
 export default function useUserStatistics(): StatItem[] {
   const { visited } = useUserStore()
-  const groupedTerritories = useUserTerritories()
+  const { grouped: groupedTerritories } = useUserTerritories()
 
   return useMemo(() => {
     const countryTotal = territories.filter(territory => territory.type === 'country').length

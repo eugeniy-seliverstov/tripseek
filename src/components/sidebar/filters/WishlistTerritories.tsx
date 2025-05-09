@@ -1,13 +1,21 @@
 import Region from '@/components/sidebar/region/Region'
+import EmptyState from '@/components/sidebar/EmptyState'
 import useUserTerritories from '@/hooks/useUserTerritories'
 import { SORTED_REGIONS } from '@/constants/regions'
 
 function WishlistTerritories() {
-  const groupedTerritories = useUserTerritories()
+  const { wishlist, grouped: groupedTerritories } = useUserTerritories()
   const filteredRegions = SORTED_REGIONS.filter(region => groupedTerritories[region].some(territory => territory.wishlist))
 
   return (
     <>
+      {wishlist.length === 0 && (
+        <EmptyState
+          title="Your wishlist is empty"
+          description="Add countries you'd love to visit and plan your next journey."
+        />
+      )}
+
       {filteredRegions.map(region => {
         const regionTerritories = groupedTerritories[region]
         const wishlistTerritories = regionTerritories.filter(territory => territory.wishlist)
