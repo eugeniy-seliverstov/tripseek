@@ -1,5 +1,7 @@
-
+import { useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
+
+import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import RegionView from '@/components/sidebar/region/views/RegionView'
 import RegionViewList from '@/components/sidebar/region/views/RegionViewList'
@@ -13,26 +15,35 @@ import { cn } from '@/lib/utils'
 
 function AllTerritories() {
   const groupedTerritories = useUserTerritories()
+  const [searchQuery, setSearchQuery] = useState('')
   const { selectedRegion, setSelectedRegion, viewMode, setViewMode } = useRegionViewStore()
 
   return (
     <>
       <div
         className={cn(
-          'flex items-center px-4 mt-2',
-          selectedRegion ? 'justify-start' : 'justify-end'
+          'flex items-center px-4 mt-3 gap-3',
+          selectedRegion ? 'justify-start' : 'justify-end',
+          viewMode === 'grid' && !selectedRegion ? 'mb-3' : '',
         )}
       >
-        {selectedRegion ? (
+        {selectedRegion && (
           <Button
-            variant='link'
-            className='p-0 gap-1 text-gray-500 hover:text-gray-900'
-            onClick={() => setSelectedRegion(null)}
+            variant='outline'
+            size='icon'
+            className='p-3 text-neutral-400 hover:text-base'
+            onClick={() => { setSelectedRegion(null); setSearchQuery(''); }}
           >
             <ArrowLeft />
-            Back to regions
           </Button>
-        ) : (
+        )}
+        <Input
+          placeholder={`Country / Territory${selectedRegion ? '' : ' / Region'}`}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className='focus-visible:ring-0'
+        />
+        {!selectedRegion && !searchQuery && (
           <RegionViewSelector value={viewMode} onChange={setViewMode} />
         )}
       </div>
@@ -41,14 +52,18 @@ function AllTerritories() {
         <RegionView
           region={selectedRegion}
           territories={groupedTerritories[selectedRegion]}
+          searchQuery={searchQuery}
         />
-      ) : viewMode === 'grid' ? (
+      ) : viewMode === 'grid' && !searchQuery ? (
         <RegionViewGrid
           groupedTerritories={groupedTerritories}
           onRegionClick={setSelectedRegion}
         />
       ) : (
-        <RegionViewList groupedTerritories={groupedTerritories} />
+        <RegionViewList
+          groupedTerritories={groupedTerritories}
+          searchQuery={searchQuery}
+        />
       )}
     </>
   )
