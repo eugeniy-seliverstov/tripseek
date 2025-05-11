@@ -22,7 +22,7 @@ function AllTerritories() {
     <>
       <div
         className={cn(
-          'flex items-center px-4 mt-3 gap-3',
+          'flex items-center px-4 mt-3 mb-1 gap-3',
           selectedRegion ? 'justify-start' : 'justify-end',
           viewMode === 'grid' && !selectedRegion ? 'mb-3' : '',
         )}
@@ -31,7 +31,7 @@ function AllTerritories() {
           <Button
             variant='outline'
             size='icon'
-            className='p-3 text-neutral-400 hover:text-base'
+            className='p-3'
             onClick={() => { setSelectedRegion(null); setSearchQuery(''); }}
           >
             <ArrowLeft />
@@ -41,7 +41,6 @@ function AllTerritories() {
           placeholder={`Country / Territory${selectedRegion ? '' : ' / Region'}`}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className='focus-visible:ring-0'
         />
         {!selectedRegion && !searchQuery && (
           <RegionViewSelector value={viewMode} onChange={setViewMode} />

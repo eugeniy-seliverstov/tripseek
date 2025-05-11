@@ -1,4 +1,4 @@
-import { mapColors } from '@/theme/mapColors'
+import { mapColors } from '@/theme/colors'
 
 import type { Filter } from '@/store/useFilterStore'
 import type { GeographyProps } from 'react-simple-maps'

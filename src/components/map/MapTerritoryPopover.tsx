@@ -11,7 +11,7 @@ interface MapTerritoryPopoverProps {
 function MapTerritoryPopover({ territory, clientY, clientX }: MapTerritoryPopoverProps) {
   return createPortal(
     <div
-      className='flex gap-2 items-center absolute bg-white px-3 py-2 rounded-[12px] drop-shadow-xl select-none'
+      className='flex gap-2 items-center absolute bg-background text-text px-3 py-2 rounded-[12px] drop-shadow-xl select-none'
       style={{
         top: clientY - 70,
         left: clientX - 0,

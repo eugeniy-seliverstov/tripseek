@@ -8,10 +8,10 @@ interface StatProps {
 function Stat({ label, visited, total, className = '' }: StatProps) {
   return (
     <div className={className}>
-      <div className="font-semibold">
+      <div className="font-semibold text-text">
         {visited} / {total}
       </div>
-      <div className="text-sm text-gray-500">{label}</div>
+      <div className="text-sm text-text-secondary">{label}</div>
     </div>
   )
 }

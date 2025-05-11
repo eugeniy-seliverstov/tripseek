@@ -2,7 +2,7 @@ import TerritoryFlag from './TerritoryFlag'
 import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 
 import { cn } from '@/utils/cn'
-import { mapColors } from '@/theme/mapColors'
+import { mapColors } from '@/theme/colors'
 
 import type { UserTerritory } from '@/types/user'
 
@@ -22,7 +22,7 @@ function TerritoryItem({ active, territory, onMouseEnter, onMouseLeave, onVisite
   return (
     <div
       className={cn(
-        'group flex items-center px-4 py-2 gap-4 text-lg hover:bg-black hover:bg-opacity-5 duration-100',
+        'group flex items-center px-4 py-2 gap-4 text-lg text-text hover:bg-black hover:bg-opacity-5 duration-100',
         !active && 'opacity-50 hover:opacity-75'
       )}
       onMouseEnter={onMouseEnter}
