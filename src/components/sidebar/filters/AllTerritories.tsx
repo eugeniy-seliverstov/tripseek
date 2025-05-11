@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowLeft } from 'lucide-react'
+import { LuArrowLeft } from 'react-icons/lu'
 
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -34,7 +34,7 @@ function AllTerritories() {
             className='p-3'
             onClick={() => { setSelectedRegion(null); setSearchQuery(''); }}
           >
-            <ArrowLeft />
+            <LuArrowLeft />
           </Button>
         )}
         <Input
