@@ -1,20 +1,19 @@
-import { LuCompass } from 'react-icons/lu'
+import { IconType } from 'react-icons/lib'
 import { Button } from '@/components/ui/button'
-
 import useFilterStore from '@/store/useFilterStore'
 
-
 interface EmptyStateProps {
+  icon: IconType
   title: string
   description: string
 }
 
-export default function EmptyState({ title, description }: EmptyStateProps) {
+export default function EmptyState({ icon: Icon, title, description }: EmptyStateProps) {
   const { setFilter } = useFilterStore()
 
   return (
-    <div className='flex flex-col items-center justify-center text-center text-text px-4 py-12'>
-      <LuCompass className="w-8 h-8 mb-3" />
+    <div className='relative flex flex-col items-center justify-center text-center text-text px-4 py-16 mt-12'>
+      <Icon className="w-10 h-10 mb-3" />
       <h2 className="text-lg font-semibold">{title}</h2>
       <p className="text-sm text-text-secondary mt-1">{description}</p>
       <Button variant='primary' className='mt-6' onClick={() => setFilter('all')}>

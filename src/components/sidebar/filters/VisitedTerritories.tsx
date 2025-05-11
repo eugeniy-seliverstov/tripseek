@@ -1,6 +1,9 @@
+import { PiMapTrifold } from 'react-icons/pi'
 import Region from '@/components/sidebar/region/Region'
 import EmptyState from '@/components/sidebar/EmptyState'
+
 import useUserTerritories from '@/hooks/useUserTerritories'
+
 import { SORTED_REGIONS } from '@/constants/regions'
 
 function VisitedTerritories() {
@@ -11,6 +14,7 @@ function VisitedTerritories() {
     <>
       {visited.length === 0 && (
         <EmptyState
+          icon={PiMapTrifold}
           title="No visited countries yet"
           description="Mark the countries you’ve been to and track your adventures."
         />

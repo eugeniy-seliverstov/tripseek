@@ -1,6 +1,9 @@
+import { PiCalendarHeart } from 'react-icons/pi'
 import Region from '@/components/sidebar/region/Region'
 import EmptyState from '@/components/sidebar/EmptyState'
+
 import useUserTerritories from '@/hooks/useUserTerritories'
+
 import { SORTED_REGIONS } from '@/constants/regions'
 
 function WishlistTerritories() {
@@ -11,6 +14,7 @@ function WishlistTerritories() {
     <>
       {wishlist.length === 0 && (
         <EmptyState
+          icon={PiCalendarHeart}
           title="Your wishlist is empty"
           description="Add countries you'd love to visit and plan your next journey."
         />
