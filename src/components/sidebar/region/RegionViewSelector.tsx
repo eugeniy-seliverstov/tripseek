@@ -1,14 +1,16 @@
 import { LuList, LuLayoutGrid } from 'react-icons/lu'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import type { RegionViewMode } from '@/store/useRegionViewStore'
+import type { ReactElement } from 'react'
+
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 interface RegionViewSelectorProps {
   value: RegionViewMode
   onChange: (value: RegionViewMode) => void
 }
 
-function RegionViewSelector({ value, onChange }: RegionViewSelectorProps) {
+function RegionViewSelector({ value, onChange }: RegionViewSelectorProps): ReactElement {
   return (
     <Tabs value={value} onValueChange={val => onChange(val as RegionViewMode)}>
       <TabsList>

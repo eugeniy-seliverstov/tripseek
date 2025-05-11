@@ -1,19 +1,17 @@
-import { useState } from 'react'
+import { useState, ReactElement } from 'react'
 import { LuArrowLeft } from 'react-icons/lu'
 
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import RegionView from '@/components/sidebar/region/views/RegionView'
-import RegionViewList from '@/components/sidebar/region/views/RegionViewList'
-import RegionViewGrid from '@/components/sidebar/region/views/RegionViewGrid'
 import RegionViewSelector from '@/components/sidebar/region/RegionViewSelector'
-
-import useRegionViewStore from '@/store/useRegionViewStore'
+import RegionView from '@/components/sidebar/region/views/RegionView'
+import RegionViewGrid from '@/components/sidebar/region/views/RegionViewGrid'
+import RegionViewList from '@/components/sidebar/region/views/RegionViewList'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import useUserTerritories from '@/hooks/useUserTerritories'
-
+import useRegionViewStore from '@/store/useRegionViewStore'
 import { cn } from '@/utils/cn'
 
-function AllTerritories() {
+function AllTerritories(): ReactElement {
   const { grouped: groupedTerritories } = useUserTerritories()
   const [searchQuery, setSearchQuery] = useState('')
   const { selectedRegion, setSelectedRegion, viewMode, setViewMode } = useRegionViewStore()
@@ -32,7 +30,10 @@ function AllTerritories() {
             variant='outline'
             size='icon'
             className='p-3'
-            onClick={() => { setSelectedRegion(null); setSearchQuery(''); }}
+            onClick={() => {
+              setSelectedRegion(null)
+              setSearchQuery('')
+            }}
           >
             <LuArrowLeft />
           </Button>
@@ -40,7 +41,7 @@ function AllTerritories() {
         <Input
           placeholder={`Country / Territory${selectedRegion ? '' : ' / Region'}`}
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={e => setSearchQuery(e.target.value)}
         />
         {!selectedRegion && !searchQuery && (
           <RegionViewSelector value={viewMode} onChange={setViewMode} />
@@ -54,15 +55,9 @@ function AllTerritories() {
           searchQuery={searchQuery}
         />
       ) : viewMode === 'grid' && !searchQuery ? (
-        <RegionViewGrid
-          groupedTerritories={groupedTerritories}
-          onRegionClick={setSelectedRegion}
-        />
+        <RegionViewGrid groupedTerritories={groupedTerritories} onRegionClick={setSelectedRegion} />
       ) : (
-        <RegionViewList
-          groupedTerritories={groupedTerritories}
-          searchQuery={searchQuery}
-        />
+        <RegionViewList groupedTerritories={groupedTerritories} searchQuery={searchQuery} />
       )}
     </>
   )

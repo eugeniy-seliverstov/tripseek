@@ -7,12 +7,16 @@ interface UseTerritoryToggleProps {
   toggleWishlistTerritory: (code: TerritoryCode) => void
 }
 
-export default function useTerritoryToggle({
+interface UseTerritoryToggleResult {
+  toggleTerritory: (code: TerritoryCode, event: React.MouseEvent<Element>) => void
+}
+
+function useTerritoryToggle({
   filter,
   toggleVisitedTerritory,
-  toggleWishlistTerritory
-}: UseTerritoryToggleProps) {
-  const toggleTerritory = (code: TerritoryCode, event: React.MouseEvent<Element>) => {
+  toggleWishlistTerritory,
+}: UseTerritoryToggleProps): UseTerritoryToggleResult {
+  const toggleTerritory = (code: TerritoryCode, event: React.MouseEvent<Element>): void => {
     const { shiftKey, altKey, metaKey } = event
 
     const isWishlistAction = shiftKey && (altKey || metaKey)
@@ -30,3 +34,5 @@ export default function useTerritoryToggle({
 
   return { toggleTerritory }
 }
+
+export default useTerritoryToggle

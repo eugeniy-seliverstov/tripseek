@@ -1,7 +1,7 @@
-import { mapColors } from '@/theme/colors'
-
 import type { Filter } from '@/store/useFilterStore'
 import type { GeographyProps } from 'react-simple-maps'
+
+import { mapColors } from '@/theme/colors'
 
 interface GeographyStates {
   isVisited: boolean
@@ -11,7 +11,7 @@ interface GeographyStates {
 
 export function getGeographyStyle(
   filter: Filter,
-  { isVisited, isWishlist, isHovered }: GeographyStates
+  { isVisited, isWishlist, isHovered }: GeographyStates,
 ): GeographyProps['style'] {
   let defaultColor = mapColors.default.base
   let hoverColor = mapColors.default.hover
@@ -52,8 +52,8 @@ export function getGeographyStyle(
         defaultColor = isVisited
           ? mapColors.visited.hover
           : isWishlist
-          ? mapColors.wishlist.hover
-          : mapColors.default.hover
+            ? mapColors.wishlist.hover
+            : mapColors.default.hover
         break
     }
   }
@@ -67,7 +67,7 @@ export function getGeographyStyle(
 
 export function getGeographyStroke(
   filter: Filter,
-  { isVisited, isWishlist }: GeographyStates
+  { isVisited, isWishlist }: GeographyStates,
 ): string {
   if ((filter === 'visited' && isVisited) || (filter === 'all' && isVisited)) {
     return mapColors.visited.border

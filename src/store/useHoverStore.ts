@@ -1,6 +1,7 @@
 import { create } from 'zustand'
-import type { Nullable } from '@/types/utils'
+
 import type { Territory } from '@/types/territory'
+import type { Nullable } from '@/types/utils'
 
 export interface HoverStore {
   mapHoverTerritory: Nullable<Territory>
@@ -10,12 +11,12 @@ export interface HoverStore {
   setSidebarHoverTerritory: (territory: Nullable<Territory>) => void
 }
 
-const useHoverStore = create<HoverStore>((set) => ({
+const useHoverStore = create<HoverStore>(set => ({
   mapHoverTerritory: null,
   sidebarHoverTerritory: null,
 
-  setMapHoverTerritory: (territory) => set(() => ({ mapHoverTerritory: territory })),
-  setSidebarHoverTerritory: (territory) => set(() => ({ sidebarHoverTerritory: territory })),
+  setMapHoverTerritory: (territory): void => set(() => ({ mapHoverTerritory: territory })),
+  setSidebarHoverTerritory: (territory): void => set(() => ({ sidebarHoverTerritory: territory })),
 }))
 
 export default useHoverStore

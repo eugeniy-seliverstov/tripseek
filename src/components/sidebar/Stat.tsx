@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react'
+
 interface StatProps {
   label: string
   visited: number
@@ -5,13 +7,13 @@ interface StatProps {
   className?: string
 }
 
-function Stat({ label, visited, total, className = '' }: StatProps) {
+function Stat({ label, visited, total, className = '' }: StatProps): ReactElement {
   return (
     <div className={className}>
-      <div className="font-semibold text-text">
+      <div className='font-semibold text-text'>
         {visited} / {total}
       </div>
-      <div className="text-sm text-text-secondary">{label}</div>
+      <div className='text-sm text-text-secondary'>{label}</div>
     </div>
   )
 }

@@ -1,15 +1,16 @@
-import RegionPreview from '@/components/sidebar/region/RegionPreview'
-import { SORTED_REGIONS } from '@/constants/regions'
-
 import type { TerritoryRegion } from '@/types/territory'
 import type { GroupedUserTerritories } from '@/types/user'
+import type { ReactElement } from 'react'
+
+import RegionPreview from '@/components/sidebar/region/RegionPreview'
+import { SORTED_REGIONS } from '@/constants/regions'
 
 interface RegionViewGridProps {
   groupedTerritories: GroupedUserTerritories
   onRegionClick: (region: TerritoryRegion) => void
 }
 
-function RegionViewGrid({ groupedTerritories, onRegionClick }: RegionViewGridProps) {
+function RegionViewGrid({ groupedTerritories, onRegionClick }: RegionViewGridProps): ReactElement {
   return (
     <>
       <div className='my-2 px-4 grid grid-cols-2 gap-3'>

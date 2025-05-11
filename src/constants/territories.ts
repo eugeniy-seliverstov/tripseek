@@ -1,1564 +1,1564 @@
 const territories = [
   {
-    "name": "Algeria",
-    "code": "DZA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Algeria',
+    code: 'DZA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Angola",
-    "code": "AGO",
-    "region": "Africa",
-    "type": "country"
+    name: 'Angola',
+    code: 'AGO',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Benin",
-    "code": "BEN",
-    "region": "Africa",
-    "type": "country"
+    name: 'Benin',
+    code: 'BEN',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Botswana",
-    "code": "BWA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Botswana',
+    code: 'BWA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Burkina Faso",
-    "code": "BFA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Burkina Faso',
+    code: 'BFA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Burundi",
-    "code": "BDI",
-    "region": "Africa",
-    "type": "country"
+    name: 'Burundi',
+    code: 'BDI',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Cameroon",
-    "code": "CMR",
-    "region": "Africa",
-    "type": "country"
+    name: 'Cameroon',
+    code: 'CMR',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Cape Verde",
-    "code": "CPV",
-    "region": "Africa",
-    "type": "country"
+    name: 'Cape Verde',
+    code: 'CPV',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Central African Republic",
-    "code": "CAF",
-    "region": "Africa",
-    "type": "country"
+    name: 'Central African Republic',
+    code: 'CAF',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Chad",
-    "code": "TCD",
-    "region": "Africa",
-    "type": "country"
+    name: 'Chad',
+    code: 'TCD',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Comoros",
-    "code": "COM",
-    "region": "Africa",
-    "type": "country"
+    name: 'Comoros',
+    code: 'COM',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Democratic Republic of the Congo",
-    "code": "COD",
-    "region": "Africa",
-    "type": "country"
+    name: 'Democratic Republic of the Congo',
+    code: 'COD',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Djibouti",
-    "code": "DJI",
-    "region": "Africa",
-    "type": "country"
+    name: 'Djibouti',
+    code: 'DJI',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Egypt",
-    "code": "EGY",
-    "region": "Africa",
-    "type": "country"
+    name: 'Egypt',
+    code: 'EGY',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Equatorial Guinea",
-    "code": "GNQ",
-    "region": "Africa",
-    "type": "country"
+    name: 'Equatorial Guinea',
+    code: 'GNQ',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Eritrea",
-    "code": "ERI",
-    "region": "Africa",
-    "type": "country"
+    name: 'Eritrea',
+    code: 'ERI',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Eswatini",
-    "code": "SWZ",
-    "region": "Africa",
-    "type": "country"
+    name: 'Eswatini',
+    code: 'SWZ',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Ethiopia",
-    "code": "ETH",
-    "region": "Africa",
-    "type": "country"
+    name: 'Ethiopia',
+    code: 'ETH',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Gabon",
-    "code": "GAB",
-    "region": "Africa",
-    "type": "country"
+    name: 'Gabon',
+    code: 'GAB',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Gambia",
-    "code": "GMB",
-    "region": "Africa",
-    "type": "country"
+    name: 'Gambia',
+    code: 'GMB',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Ghana",
-    "code": "GHA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Ghana',
+    code: 'GHA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Guinea",
-    "code": "GIN",
-    "region": "Africa",
-    "type": "country"
+    name: 'Guinea',
+    code: 'GIN',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Guinea-Bissau",
-    "code": "GNB",
-    "region": "Africa",
-    "type": "country"
+    name: 'Guinea-Bissau',
+    code: 'GNB',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Ivory Coast",
-    "code": "CIV",
-    "region": "Africa",
-    "type": "country"
+    name: 'Ivory Coast',
+    code: 'CIV',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Kenya",
-    "code": "KEN",
-    "region": "Africa",
-    "type": "country"
+    name: 'Kenya',
+    code: 'KEN',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Lesotho",
-    "code": "LSO",
-    "region": "Africa",
-    "type": "country"
+    name: 'Lesotho',
+    code: 'LSO',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Liberia",
-    "code": "LBR",
-    "region": "Africa",
-    "type": "country"
+    name: 'Liberia',
+    code: 'LBR',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Libya",
-    "code": "LBY",
-    "region": "Africa",
-    "type": "country"
+    name: 'Libya',
+    code: 'LBY',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Madagascar",
-    "code": "MDG",
-    "region": "Africa",
-    "type": "country"
+    name: 'Madagascar',
+    code: 'MDG',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Malawi",
-    "code": "MWI",
-    "region": "Africa",
-    "type": "country"
+    name: 'Malawi',
+    code: 'MWI',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Mali",
-    "code": "MLI",
-    "region": "Africa",
-    "type": "country"
+    name: 'Mali',
+    code: 'MLI',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Mauritania",
-    "code": "MRT",
-    "region": "Africa",
-    "type": "country"
+    name: 'Mauritania',
+    code: 'MRT',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Mauritius",
-    "code": "MUS",
-    "region": "Africa",
-    "type": "country"
+    name: 'Mauritius',
+    code: 'MUS',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Morocco",
-    "code": "MAR",
-    "region": "Africa",
-    "type": "country"
+    name: 'Morocco',
+    code: 'MAR',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Mozambique",
-    "code": "MOZ",
-    "region": "Africa",
-    "type": "country"
+    name: 'Mozambique',
+    code: 'MOZ',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Namibia",
-    "code": "NAM",
-    "region": "Africa",
-    "type": "country"
+    name: 'Namibia',
+    code: 'NAM',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Niger",
-    "code": "NER",
-    "region": "Africa",
-    "type": "country"
+    name: 'Niger',
+    code: 'NER',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Nigeria",
-    "code": "NGA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Nigeria',
+    code: 'NGA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Republic of Congo",
-    "code": "COG",
-    "region": "Africa",
-    "type": "country"
+    name: 'Republic of Congo',
+    code: 'COG',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Rwanda",
-    "code": "RWA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Rwanda',
+    code: 'RWA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Sao Tome and Principe",
-    "code": "STP",
-    "region": "Africa",
-    "type": "country"
+    name: 'Sao Tome and Principe',
+    code: 'STP',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Senegal",
-    "code": "SEN",
-    "region": "Africa",
-    "type": "country"
+    name: 'Senegal',
+    code: 'SEN',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Seychelles",
-    "code": "SYC",
-    "region": "Africa",
-    "type": "country"
+    name: 'Seychelles',
+    code: 'SYC',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Sierra Leone",
-    "code": "SLE",
-    "region": "Africa",
-    "type": "country"
+    name: 'Sierra Leone',
+    code: 'SLE',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Somalia",
-    "code": "SOM",
-    "region": "Africa",
-    "type": "country"
+    name: 'Somalia',
+    code: 'SOM',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "South Africa",
-    "code": "ZAF",
-    "region": "Africa",
-    "type": "country"
+    name: 'South Africa',
+    code: 'ZAF',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "South Sudan",
-    "code": "SSD",
-    "region": "Africa",
-    "type": "country"
+    name: 'South Sudan',
+    code: 'SSD',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Sudan",
-    "code": "SDN",
-    "region": "Africa",
-    "type": "country"
+    name: 'Sudan',
+    code: 'SDN',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Tanzania",
-    "code": "TZA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Tanzania',
+    code: 'TZA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Togo",
-    "code": "TGO",
-    "region": "Africa",
-    "type": "country"
+    name: 'Togo',
+    code: 'TGO',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Tunisia",
-    "code": "TUN",
-    "region": "Africa",
-    "type": "country"
+    name: 'Tunisia',
+    code: 'TUN',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Uganda",
-    "code": "UGA",
-    "region": "Africa",
-    "type": "country"
+    name: 'Uganda',
+    code: 'UGA',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Zambia",
-    "code": "ZMB",
-    "region": "Africa",
-    "type": "country"
+    name: 'Zambia',
+    code: 'ZMB',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Zimbabwe",
-    "code": "ZWE",
-    "region": "Africa",
-    "type": "country"
+    name: 'Zimbabwe',
+    code: 'ZWE',
+    region: 'Africa',
+    type: 'country',
   },
   {
-    "name": "Ceuta",
-    "code": "ESPCA",
-    "region": "Africa",
-    "type": "other"
+    name: 'Ceuta',
+    code: 'ESPCA',
+    region: 'Africa',
+    type: 'other',
   },
   {
-    "name": "Mayotte",
-    "code": "MYT",
-    "region": "Africa",
-    "type": "other"
+    name: 'Mayotte',
+    code: 'MYT',
+    region: 'Africa',
+    type: 'other',
   },
   {
-    "name": "Melilla",
-    "code": "ESPME",
-    "region": "Africa",
-    "type": "other"
+    name: 'Melilla',
+    code: 'ESPME',
+    region: 'Africa',
+    type: 'other',
   },
   {
-    "name": "Réunion",
-    "code": "REU",
-    "region": "Africa",
-    "type": "other"
+    name: 'Réunion',
+    code: 'REU',
+    region: 'Africa',
+    type: 'other',
   },
   {
-    "name": "Saint Helena, Ascension and Tristan da Cunha",
-    "code": "SHN",
-    "region": "Africa",
-    "type": "other"
+    name: 'Saint Helena, Ascension and Tristan da Cunha',
+    code: 'SHN',
+    region: 'Africa',
+    type: 'other',
   },
   {
-    "name": "Somaliland",
-    "code": "SOMLN",
-    "region": "Africa",
-    "type": "disputed"
+    name: 'Somaliland',
+    code: 'SOMLN',
+    region: 'Africa',
+    type: 'disputed',
   },
   {
-    "name": "Western Sahara",
-    "code": "ESH",
-    "region": "Africa",
-    "type": "disputed"
+    name: 'Western Sahara',
+    code: 'ESH',
+    region: 'Africa',
+    type: 'disputed',
   },
   {
-    "name": "Antarctica",
-    "code": "ATA",
-    "region": "Antarctica",
-    "type": "other"
+    name: 'Antarctica',
+    code: 'ATA',
+    region: 'Antarctica',
+    type: 'other',
   },
   {
-    "name": "Antigua and Barbuda",
-    "code": "ATG",
-    "region": "Central America",
-    "type": "country"
+    name: 'Antigua and Barbuda',
+    code: 'ATG',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Bahamas",
-    "code": "BHS",
-    "region": "Central America",
-    "type": "country"
+    name: 'Bahamas',
+    code: 'BHS',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Barbados",
-    "code": "BRB",
-    "region": "Central America",
-    "type": "country"
+    name: 'Barbados',
+    code: 'BRB',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Belize",
-    "code": "BLZ",
-    "region": "Central America",
-    "type": "country"
+    name: 'Belize',
+    code: 'BLZ',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Costa Rica",
-    "code": "CRI",
-    "region": "Central America",
-    "type": "country"
+    name: 'Costa Rica',
+    code: 'CRI',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Cuba",
-    "code": "CUB",
-    "region": "Central America",
-    "type": "country"
+    name: 'Cuba',
+    code: 'CUB',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Dominica",
-    "code": "DMA",
-    "region": "Central America",
-    "type": "country"
+    name: 'Dominica',
+    code: 'DMA',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Dominican Republic",
-    "code": "DOM",
-    "region": "Central America",
-    "type": "country"
+    name: 'Dominican Republic',
+    code: 'DOM',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "El Salvador",
-    "code": "SLV",
-    "region": "Central America",
-    "type": "country"
+    name: 'El Salvador',
+    code: 'SLV',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Grenada",
-    "code": "GRD",
-    "region": "Central America",
-    "type": "country"
+    name: 'Grenada',
+    code: 'GRD',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Guatemala",
-    "code": "GTM",
-    "region": "Central America",
-    "type": "country"
+    name: 'Guatemala',
+    code: 'GTM',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Haiti",
-    "code": "HTI",
-    "region": "Central America",
-    "type": "country"
+    name: 'Haiti',
+    code: 'HTI',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Honduras",
-    "code": "HND",
-    "region": "Central America",
-    "type": "country"
+    name: 'Honduras',
+    code: 'HND',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Jamaica",
-    "code": "JAM",
-    "region": "Central America",
-    "type": "country"
+    name: 'Jamaica',
+    code: 'JAM',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Nicaragua",
-    "code": "NIC",
-    "region": "Central America",
-    "type": "country"
+    name: 'Nicaragua',
+    code: 'NIC',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Panama",
-    "code": "PAN",
-    "region": "Central America",
-    "type": "country"
+    name: 'Panama',
+    code: 'PAN',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Saint Kitts and Nevis",
-    "code": "KNA",
-    "region": "Central America",
-    "type": "country"
+    name: 'Saint Kitts and Nevis',
+    code: 'KNA',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Saint Lucia",
-    "code": "LCA",
-    "region": "Central America",
-    "type": "country"
+    name: 'Saint Lucia',
+    code: 'LCA',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Saint Vincent and the Grenadines",
-    "code": "VCT",
-    "region": "Central America",
-    "type": "country"
+    name: 'Saint Vincent and the Grenadines',
+    code: 'VCT',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Trinidad and Tobago",
-    "code": "TTO",
-    "region": "Central America",
-    "type": "country"
+    name: 'Trinidad and Tobago',
+    code: 'TTO',
+    region: 'Central America',
+    type: 'country',
   },
   {
-    "name": "Angullia",
-    "code": "AIA",
-    "region": "Central America",
-    "type": "other"
+    name: 'Angullia',
+    code: 'AIA',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Aruba",
-    "code": "ABW",
-    "region": "Central America",
-    "type": "other"
+    name: 'Aruba',
+    code: 'ABW',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Bermuda",
-    "code": "BMU",
-    "region": "Central America",
-    "type": "other"
+    name: 'Bermuda',
+    code: 'BMU',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Bonaire",
-    "code": "BES",
-    "region": "Central America",
-    "type": "other"
+    name: 'Bonaire',
+    code: 'BES',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "British Virgin Islands",
-    "code": "VGB",
-    "region": "Central America",
-    "type": "other"
+    name: 'British Virgin Islands',
+    code: 'VGB',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Cayman Islands",
-    "code": "CYM",
-    "region": "Central America",
-    "type": "other"
+    name: 'Cayman Islands',
+    code: 'CYM',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Curaçao",
-    "code": "CUW",
-    "region": "Central America",
-    "type": "other"
+    name: 'Curaçao',
+    code: 'CUW',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Guadeloupe",
-    "code": "GLP",
-    "region": "Central America",
-    "type": "other"
+    name: 'Guadeloupe',
+    code: 'GLP',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Martinique",
-    "code": "MTQ",
-    "region": "Central America",
-    "type": "other"
+    name: 'Martinique',
+    code: 'MTQ',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Montserrat",
-    "code": "MSR",
-    "region": "Central America",
-    "type": "other"
+    name: 'Montserrat',
+    code: 'MSR',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Puerto Rico",
-    "code": "PRI",
-    "region": "Central America",
-    "type": "other"
+    name: 'Puerto Rico',
+    code: 'PRI',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Saba",
-    "code": "NLDSA",
-    "region": "Central America",
-    "type": "other"
+    name: 'Saba',
+    code: 'NLDSA',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Saint Barthélemy",
-    "code": "BLM",
-    "region": "Central America",
-    "type": "other"
+    name: 'Saint Barthélemy',
+    code: 'BLM',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Saint Martin",
-    "code": "MAF",
-    "region": "Central America",
-    "type": "other"
+    name: 'Saint Martin',
+    code: 'MAF',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Sint Eustatius",
-    "code": "NLDSI",
-    "region": "Central America",
-    "type": "other"
+    name: 'Sint Eustatius',
+    code: 'NLDSI',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Sint Maarten",
-    "code": "SXM",
-    "region": "Central America",
-    "type": "other"
+    name: 'Sint Maarten',
+    code: 'SXM',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Turks and Caicos Islands",
-    "code": "TCA",
-    "region": "Central America",
-    "type": "other"
+    name: 'Turks and Caicos Islands',
+    code: 'TCA',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "United States Virgin Islands",
-    "code": "VIR",
-    "region": "Central America",
-    "type": "other"
+    name: 'United States Virgin Islands',
+    code: 'VIR',
+    region: 'Central America',
+    type: 'other',
   },
   {
-    "name": "Kazakhstan",
-    "code": "KAZ",
-    "region": "Central Asia",
-    "type": "country"
+    name: 'Kazakhstan',
+    code: 'KAZ',
+    region: 'Central Asia',
+    type: 'country',
   },
   {
-    "name": "Kyrgyzstan",
-    "code": "KGZ",
-    "region": "Central Asia",
-    "type": "country"
+    name: 'Kyrgyzstan',
+    code: 'KGZ',
+    region: 'Central Asia',
+    type: 'country',
   },
   {
-    "name": "Tajikistan",
-    "code": "TJK",
-    "region": "Central Asia",
-    "type": "country"
+    name: 'Tajikistan',
+    code: 'TJK',
+    region: 'Central Asia',
+    type: 'country',
   },
   {
-    "name": "Turkmenistan",
-    "code": "TKM",
-    "region": "Central Asia",
-    "type": "country"
+    name: 'Turkmenistan',
+    code: 'TKM',
+    region: 'Central Asia',
+    type: 'country',
   },
   {
-    "name": "Uzbekistan",
-    "code": "UZB",
-    "region": "Central Asia",
-    "type": "country"
+    name: 'Uzbekistan',
+    code: 'UZB',
+    region: 'Central Asia',
+    type: 'country',
   },
   {
-    "name": "China",
-    "code": "CHN",
-    "region": "East Asia",
-    "type": "country"
+    name: 'China',
+    code: 'CHN',
+    region: 'East Asia',
+    type: 'country',
   },
   {
-    "name": "Japan",
-    "code": "JPN",
-    "region": "East Asia",
-    "type": "country"
+    name: 'Japan',
+    code: 'JPN',
+    region: 'East Asia',
+    type: 'country',
   },
   {
-    "name": "Mongolia",
-    "code": "MNG",
-    "region": "East Asia",
-    "type": "country"
+    name: 'Mongolia',
+    code: 'MNG',
+    region: 'East Asia',
+    type: 'country',
   },
   {
-    "name": "North Korea",
-    "code": "PRK",
-    "region": "East Asia",
-    "type": "country"
+    name: 'North Korea',
+    code: 'PRK',
+    region: 'East Asia',
+    type: 'country',
   },
   {
-    "name": "South Korea",
-    "code": "KOR",
-    "region": "East Asia",
-    "type": "country"
+    name: 'South Korea',
+    code: 'KOR',
+    region: 'East Asia',
+    type: 'country',
   },
   {
-    "name": "Hong Kong",
-    "code": "HKG",
-    "region": "East Asia",
-    "type": "other"
+    name: 'Hong Kong',
+    code: 'HKG',
+    region: 'East Asia',
+    type: 'other',
   },
   {
-    "name": "Macau",
-    "code": "MAC",
-    "region": "East Asia",
-    "type": "other"
+    name: 'Macau',
+    code: 'MAC',
+    region: 'East Asia',
+    type: 'other',
   },
   {
-    "name": "Taiwan",
-    "code": "TWN",
-    "region": "East Asia",
-    "type": "disputed"
+    name: 'Taiwan',
+    code: 'TWN',
+    region: 'East Asia',
+    type: 'disputed',
   },
   {
-    "name": "Brunei",
-    "code": "BRN",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Brunei',
+    code: 'BRN',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Cambodia",
-    "code": "KHM",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Cambodia',
+    code: 'KHM',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Indonesia",
-    "code": "IDN",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Indonesia',
+    code: 'IDN',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Laos",
-    "code": "LAO",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Laos',
+    code: 'LAO',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Malaysia",
-    "code": "MYS",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Malaysia',
+    code: 'MYS',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Myanmar",
-    "code": "MMR",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Myanmar',
+    code: 'MMR',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Philippines",
-    "code": "PHL",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Philippines',
+    code: 'PHL',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Singapore",
-    "code": "SGP",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Singapore',
+    code: 'SGP',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Thailand",
-    "code": "THA",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Thailand',
+    code: 'THA',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Timor-Leste",
-    "code": "TLS",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Timor-Leste',
+    code: 'TLS',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Vietnam",
-    "code": "VNM",
-    "region": "Southeast Asia",
-    "type": "country"
+    name: 'Vietnam',
+    code: 'VNM',
+    region: 'Southeast Asia',
+    type: 'country',
   },
   {
-    "name": "Christmas Island",
-    "code": "CXR",
-    "region": "Southeast Asia",
-    "type": "other"
+    name: 'Christmas Island',
+    code: 'CXR',
+    region: 'Southeast Asia',
+    type: 'other',
   },
   {
-    "name": "Cocos (Keeling) Islands",
-    "code": "CCK",
-    "region": "Southeast Asia",
-    "type": "other"
+    name: 'Cocos (Keeling) Islands',
+    code: 'CCK',
+    region: 'Southeast Asia',
+    type: 'other',
   },
   {
-    "name": "Albania",
-    "code": "ALB",
-    "region": "Europe",
-    "type": "country"
+    name: 'Albania',
+    code: 'ALB',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Andorra",
-    "code": "AND",
-    "region": "Europe",
-    "type": "country"
+    name: 'Andorra',
+    code: 'AND',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Austria",
-    "code": "AUT",
-    "region": "Europe",
-    "type": "country"
+    name: 'Austria',
+    code: 'AUT',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Belarus",
-    "code": "BLR",
-    "region": "Europe",
-    "type": "country"
+    name: 'Belarus',
+    code: 'BLR',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Belgium",
-    "code": "BEL",
-    "region": "Europe",
-    "type": "country"
+    name: 'Belgium',
+    code: 'BEL',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Bosnia and Herzegovina",
-    "code": "BIH",
-    "region": "Europe",
-    "type": "country"
+    name: 'Bosnia and Herzegovina',
+    code: 'BIH',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Bulgaria",
-    "code": "BGR",
-    "region": "Europe",
-    "type": "country"
+    name: 'Bulgaria',
+    code: 'BGR',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Croatia",
-    "code": "HRV",
-    "region": "Europe",
-    "type": "country"
+    name: 'Croatia',
+    code: 'HRV',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Cyprus",
-    "code": "CYP",
-    "region": "Europe",
-    "type": "country"
+    name: 'Cyprus',
+    code: 'CYP',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Czech Republic",
-    "code": "CZE",
-    "region": "Europe",
-    "type": "country"
+    name: 'Czech Republic',
+    code: 'CZE',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Denmark",
-    "code": "DNK",
-    "region": "Europe",
-    "type": "country"
+    name: 'Denmark',
+    code: 'DNK',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Estonia",
-    "code": "EST",
-    "region": "Europe",
-    "type": "country"
+    name: 'Estonia',
+    code: 'EST',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Finland",
-    "code": "FIN",
-    "region": "Europe",
-    "type": "country"
+    name: 'Finland',
+    code: 'FIN',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "France",
-    "code": "FRA",
-    "region": "Europe",
-    "type": "country"
+    name: 'France',
+    code: 'FRA',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Germany",
-    "code": "DEU",
-    "region": "Europe",
-    "type": "country"
+    name: 'Germany',
+    code: 'DEU',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Greece",
-    "code": "GRC",
-    "region": "Europe",
-    "type": "country"
+    name: 'Greece',
+    code: 'GRC',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Hungary",
-    "code": "HUN",
-    "region": "Europe",
-    "type": "country"
+    name: 'Hungary',
+    code: 'HUN',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Iceland",
-    "code": "ISL",
-    "region": "Europe",
-    "type": "country"
+    name: 'Iceland',
+    code: 'ISL',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Ireland",
-    "code": "IRL",
-    "region": "Europe",
-    "type": "country"
+    name: 'Ireland',
+    code: 'IRL',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Italy",
-    "code": "ITA",
-    "region": "Europe",
-    "type": "country"
+    name: 'Italy',
+    code: 'ITA',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Latvia",
-    "code": "LVA",
-    "region": "Europe",
-    "type": "country"
+    name: 'Latvia',
+    code: 'LVA',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Liechtenstein",
-    "code": "LIE",
-    "region": "Europe",
-    "type": "country"
+    name: 'Liechtenstein',
+    code: 'LIE',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Lithuania",
-    "code": "LTU",
-    "region": "Europe",
-    "type": "country"
+    name: 'Lithuania',
+    code: 'LTU',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Luxembourg",
-    "code": "LUX",
-    "region": "Europe",
-    "type": "country"
+    name: 'Luxembourg',
+    code: 'LUX',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Malta",
-    "code": "MLT",
-    "region": "Europe",
-    "type": "country"
+    name: 'Malta',
+    code: 'MLT',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Moldova",
-    "code": "MDA",
-    "region": "Europe",
-    "type": "country"
+    name: 'Moldova',
+    code: 'MDA',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Monaco",
-    "code": "MCO",
-    "region": "Europe",
-    "type": "country"
+    name: 'Monaco',
+    code: 'MCO',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Montenegro",
-    "code": "MNE",
-    "region": "Europe",
-    "type": "country"
+    name: 'Montenegro',
+    code: 'MNE',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Netherlands",
-    "code": "NLD",
-    "region": "Europe",
-    "type": "country"
+    name: 'Netherlands',
+    code: 'NLD',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "North Macedonia",
-    "code": "MKD",
-    "region": "Europe",
-    "type": "country"
+    name: 'North Macedonia',
+    code: 'MKD',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Norway",
-    "code": "NOR",
-    "region": "Europe",
-    "type": "country"
+    name: 'Norway',
+    code: 'NOR',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Poland",
-    "code": "POL",
-    "region": "Europe",
-    "type": "country"
+    name: 'Poland',
+    code: 'POL',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Portugal",
-    "code": "PRT",
-    "region": "Europe",
-    "type": "country"
+    name: 'Portugal',
+    code: 'PRT',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Romania",
-    "code": "ROU",
-    "region": "Europe",
-    "type": "country"
+    name: 'Romania',
+    code: 'ROU',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Russia",
-    "code": "RUS",
-    "region": "Europe",
-    "type": "country"
+    name: 'Russia',
+    code: 'RUS',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "San Marino",
-    "code": "SMR",
-    "region": "Europe",
-    "type": "country"
+    name: 'San Marino',
+    code: 'SMR',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Serbia",
-    "code": "SRB",
-    "region": "Europe",
-    "type": "country"
+    name: 'Serbia',
+    code: 'SRB',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Slovakia",
-    "code": "SVK",
-    "region": "Europe",
-    "type": "country"
+    name: 'Slovakia',
+    code: 'SVK',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Slovenia",
-    "code": "SVN",
-    "region": "Europe",
-    "type": "country"
+    name: 'Slovenia',
+    code: 'SVN',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Spain",
-    "code": "ESP",
-    "region": "Europe",
-    "type": "country"
+    name: 'Spain',
+    code: 'ESP',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Sweden",
-    "code": "SWE",
-    "region": "Europe",
-    "type": "country"
+    name: 'Sweden',
+    code: 'SWE',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Switzerland",
-    "code": "CHE",
-    "region": "Europe",
-    "type": "country"
+    name: 'Switzerland',
+    code: 'CHE',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Ukraine",
-    "code": "UKR",
-    "region": "Europe",
-    "type": "country"
+    name: 'Ukraine',
+    code: 'UKR',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "United Kingdom",
-    "code": "GBR",
-    "region": "Europe",
-    "type": "country"
+    name: 'United Kingdom',
+    code: 'GBR',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Vatican City",
-    "code": "VAT",
-    "region": "Europe",
-    "type": "country"
+    name: 'Vatican City',
+    code: 'VAT',
+    region: 'Europe',
+    type: 'country',
   },
   {
-    "name": "Azores",
-    "code": "PRTAZ",
-    "region": "Europe",
-    "type": "other"
+    name: 'Azores',
+    code: 'PRTAZ',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Balearic Islands",
-    "code": "ESPBI",
-    "region": "Europe",
-    "type": "other"
+    name: 'Balearic Islands',
+    code: 'ESPBI',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Canary Islands",
-    "code": "ESPCI",
-    "region": "Europe",
-    "type": "other"
+    name: 'Canary Islands',
+    code: 'ESPCI',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Faroe Islands",
-    "code": "FRO",
-    "region": "Europe",
-    "type": "other"
+    name: 'Faroe Islands',
+    code: 'FRO',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Gibraltar",
-    "code": "GIB",
-    "region": "Europe",
-    "type": "other"
+    name: 'Gibraltar',
+    code: 'GIB',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Guernsey",
-    "code": "GUE",
-    "region": "Europe",
-    "type": "other"
+    name: 'Guernsey',
+    code: 'GUE',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Isle of Man",
-    "code": "ISO",
-    "region": "Europe",
-    "type": "other"
+    name: 'Isle of Man',
+    code: 'ISO',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Jan Mayen",
-    "code": "NORJM",
-    "region": "Europe",
-    "type": "other"
+    name: 'Jan Mayen',
+    code: 'NORJM',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Jersey",
-    "code": "JER",
-    "region": "Europe",
-    "type": "other"
+    name: 'Jersey',
+    code: 'JER',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Madeira",
-    "code": "PRTMD",
-    "region": "Europe",
-    "type": "other"
+    name: 'Madeira',
+    code: 'PRTMD',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Svalbard",
-    "code": "SJM",
-    "region": "Europe",
-    "type": "other"
+    name: 'Svalbard',
+    code: 'SJM',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Åland Islands",
-    "code": "ALA",
-    "region": "Europe",
-    "type": "other"
+    name: 'Åland Islands',
+    code: 'ALA',
+    region: 'Europe',
+    type: 'other',
   },
   {
-    "name": "Kosovo",
-    "code": "SRBKV",
-    "region": "Europe",
-    "type": "disputed"
+    name: 'Kosovo',
+    code: 'SRBKV',
+    region: 'Europe',
+    type: 'disputed',
   },
   {
-    "name": "Northern Cyprus",
-    "code": "NOCYP",
-    "region": "Europe",
-    "type": "disputed"
+    name: 'Northern Cyprus',
+    code: 'NOCYP',
+    region: 'Europe',
+    type: 'disputed',
   },
   {
-    "name": "Transnistria",
-    "code": "MDATN",
-    "region": "Europe",
-    "type": "disputed"
+    name: 'Transnistria',
+    code: 'MDATN',
+    region: 'Europe',
+    type: 'disputed',
   },
   {
-    "name": "Armenia",
-    "code": "ARM",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Armenia',
+    code: 'ARM',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Azerbaijan",
-    "code": "AZE",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Azerbaijan',
+    code: 'AZE',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Bahrain",
-    "code": "BHR",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Bahrain',
+    code: 'BHR',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Georgia",
-    "code": "GEO",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Georgia',
+    code: 'GEO',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Iran",
-    "code": "IRN",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Iran',
+    code: 'IRN',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Iraq",
-    "code": "IRQ",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Iraq',
+    code: 'IRQ',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Israel",
-    "code": "ISR",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Israel',
+    code: 'ISR',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Jordan",
-    "code": "JOR",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Jordan',
+    code: 'JOR',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Kuwait",
-    "code": "KWT",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Kuwait',
+    code: 'KWT',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Lebanon",
-    "code": "LBN",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Lebanon',
+    code: 'LBN',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Oman",
-    "code": "OMN",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Oman',
+    code: 'OMN',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Palestine",
-    "code": "PSE",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Palestine',
+    code: 'PSE',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Qatar",
-    "code": "QAT",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Qatar',
+    code: 'QAT',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Saudi Arabia",
-    "code": "SAU",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Saudi Arabia',
+    code: 'SAU',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Syria",
-    "code": "SYR",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Syria',
+    code: 'SYR',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Turkey",
-    "code": "TUR",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Turkey',
+    code: 'TUR',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "United Arab Emirates",
-    "code": "ARE",
-    "region": "Middle East",
-    "type": "country"
+    name: 'United Arab Emirates',
+    code: 'ARE',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Yemen",
-    "code": "YEM",
-    "region": "Middle East",
-    "type": "country"
+    name: 'Yemen',
+    code: 'YEM',
+    region: 'Middle East',
+    type: 'country',
   },
   {
-    "name": "Abkhazia",
-    "code": "GEOAB",
-    "region": "Middle East",
-    "type": "disputed"
+    name: 'Abkhazia',
+    code: 'GEOAB',
+    region: 'Middle East',
+    type: 'disputed',
   },
   {
-    "name": "South Ossetia",
-    "code": "GEOSO",
-    "region": "Middle East",
-    "type": "disputed"
+    name: 'South Ossetia',
+    code: 'GEOSO',
+    region: 'Middle East',
+    type: 'disputed',
   },
   {
-    "name": "Canada",
-    "code": "CAN",
-    "region": "North America",
-    "type": "country"
+    name: 'Canada',
+    code: 'CAN',
+    region: 'North America',
+    type: 'country',
   },
   {
-    "name": "Mexico",
-    "code": "MEX",
-    "region": "North America",
-    "type": "country"
+    name: 'Mexico',
+    code: 'MEX',
+    region: 'North America',
+    type: 'country',
   },
   {
-    "name": "United States",
-    "code": "USA",
-    "region": "North America",
-    "type": "country"
+    name: 'United States',
+    code: 'USA',
+    region: 'North America',
+    type: 'country',
   },
   {
-    "name": "Greenland",
-    "code": "GRL",
-    "region": "North America",
-    "type": "other"
+    name: 'Greenland',
+    code: 'GRL',
+    region: 'North America',
+    type: 'other',
   },
   {
-    "name": "Saint Pierre and Miquelo",
-    "code": "SPM",
-    "region": "North America",
-    "type": "other"
+    name: 'Saint Pierre and Miquelo',
+    code: 'SPM',
+    region: 'North America',
+    type: 'other',
   },
   {
-    "name": "Australia",
-    "code": "AUS",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Australia',
+    code: 'AUS',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Fiji",
-    "code": "FJI",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Fiji',
+    code: 'FJI',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Kiribati",
-    "code": "KIR",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Kiribati',
+    code: 'KIR',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Marshall Islands",
-    "code": "MHL",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Marshall Islands',
+    code: 'MHL',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Micronesia",
-    "code": "FSM",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Micronesia',
+    code: 'FSM',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Nauru",
-    "code": "NRU",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Nauru',
+    code: 'NRU',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "New Zealand",
-    "code": "NZL",
-    "region": "Oceania",
-    "type": "country"
+    name: 'New Zealand',
+    code: 'NZL',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Palau",
-    "code": "PLW",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Palau',
+    code: 'PLW',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Papua New Guinea",
-    "code": "PNG",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Papua New Guinea',
+    code: 'PNG',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Samoa",
-    "code": "WSM",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Samoa',
+    code: 'WSM',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Solomon Islands",
-    "code": "SLB",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Solomon Islands',
+    code: 'SLB',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Tonga",
-    "code": "TON",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Tonga',
+    code: 'TON',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Tuvalu",
-    "code": "TUV",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Tuvalu',
+    code: 'TUV',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "Vanuatu",
-    "code": "VUT",
-    "region": "Oceania",
-    "type": "country"
+    name: 'Vanuatu',
+    code: 'VUT',
+    region: 'Oceania',
+    type: 'country',
   },
   {
-    "name": "American Samoa",
-    "code": "ASM",
-    "region": "Oceania",
-    "type": "other"
+    name: 'American Samoa',
+    code: 'ASM',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Cook Islands",
-    "code": "COK",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Cook Islands',
+    code: 'COK',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "French Polynesia",
-    "code": "PYF",
-    "region": "Oceania",
-    "type": "other"
+    name: 'French Polynesia',
+    code: 'PYF',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Guam",
-    "code": "GUM",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Guam',
+    code: 'GUM',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "New Caledonia",
-    "code": "NCL",
-    "region": "Oceania",
-    "type": "other"
+    name: 'New Caledonia',
+    code: 'NCL',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Niue",
-    "code": "NIU",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Niue',
+    code: 'NIU',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Norfolk Island",
-    "code": "NFK",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Norfolk Island',
+    code: 'NFK',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Northern Mariana Islands",
-    "code": "USANI",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Northern Mariana Islands',
+    code: 'USANI',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Pitcairn Islands",
-    "code": "PCN",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Pitcairn Islands',
+    code: 'PCN',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Tokelau",
-    "code": "TKL",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Tokelau',
+    code: 'TKL',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Wallis and Futuna",
-    "code": "WLF",
-    "region": "Oceania",
-    "type": "other"
+    name: 'Wallis and Futuna',
+    code: 'WLF',
+    region: 'Oceania',
+    type: 'other',
   },
   {
-    "name": "Argentina",
-    "code": "ARG",
-    "region": "South America",
-    "type": "country"
+    name: 'Argentina',
+    code: 'ARG',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Bolivia",
-    "code": "BOL",
-    "region": "South America",
-    "type": "country"
+    name: 'Bolivia',
+    code: 'BOL',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Brazil",
-    "code": "BRA",
-    "region": "South America",
-    "type": "country"
+    name: 'Brazil',
+    code: 'BRA',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Chile",
-    "code": "CHL",
-    "region": "South America",
-    "type": "country"
+    name: 'Chile',
+    code: 'CHL',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Colombia",
-    "code": "COL",
-    "region": "South America",
-    "type": "country"
+    name: 'Colombia',
+    code: 'COL',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Ecuador",
-    "code": "ECU",
-    "region": "South America",
-    "type": "country"
+    name: 'Ecuador',
+    code: 'ECU',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Guyana",
-    "code": "GUY",
-    "region": "South America",
-    "type": "country"
+    name: 'Guyana',
+    code: 'GUY',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Paraguay",
-    "code": "PRY",
-    "region": "South America",
-    "type": "country"
+    name: 'Paraguay',
+    code: 'PRY',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Peru",
-    "code": "PER",
-    "region": "South America",
-    "type": "country"
+    name: 'Peru',
+    code: 'PER',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Suriname",
-    "code": "SUR",
-    "region": "South America",
-    "type": "country"
+    name: 'Suriname',
+    code: 'SUR',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Uruguay",
-    "code": "URY",
-    "region": "South America",
-    "type": "country"
+    name: 'Uruguay',
+    code: 'URY',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Venezuela",
-    "code": "VEN",
-    "region": "South America",
-    "type": "country"
+    name: 'Venezuela',
+    code: 'VEN',
+    region: 'South America',
+    type: 'country',
   },
   {
-    "name": "Falkland Islands",
-    "code": "FLK",
-    "region": "South America",
-    "type": "other"
+    name: 'Falkland Islands',
+    code: 'FLK',
+    region: 'South America',
+    type: 'other',
   },
   {
-    "name": "French Guiana",
-    "code": "GUF",
-    "region": "South America",
-    "type": "other"
+    name: 'French Guiana',
+    code: 'GUF',
+    region: 'South America',
+    type: 'other',
   },
   {
-    "name": "Galapagos Islands",
-    "code": "ECUGI",
-    "region": "South America",
-    "type": "other"
+    name: 'Galapagos Islands',
+    code: 'ECUGI',
+    region: 'South America',
+    type: 'other',
   },
   {
-    "name": "Afghanistan",
-    "code": "AFG",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Afghanistan',
+    code: 'AFG',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "Bangladesh",
-    "code": "BGD",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Bangladesh',
+    code: 'BGD',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "Bhutan",
-    "code": "BTN",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Bhutan',
+    code: 'BTN',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "India",
-    "code": "IND",
-    "region": "South Asia",
-    "type": "country"
+    name: 'India',
+    code: 'IND',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "Maldives",
-    "code": "MDV",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Maldives',
+    code: 'MDV',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "Nepal",
-    "code": "NPL",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Nepal',
+    code: 'NPL',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "Pakistan",
-    "code": "PAK",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Pakistan',
+    code: 'PAK',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "Sri Lanka",
-    "code": "LKA",
-    "region": "South Asia",
-    "type": "country"
+    name: 'Sri Lanka',
+    code: 'LKA',
+    region: 'South Asia',
+    type: 'country',
   },
   {
-    "name": "British Indian Ocean Territory",
-    "code": "IOT",
-    "region": "South Asia",
-    "type": "other"
-  }
+    name: 'British Indian Ocean Territory',
+    code: 'IOT',
+    region: 'South Asia',
+    type: 'other',
+  },
 ] as const
 
 export default territories

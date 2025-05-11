@@ -1,22 +1,25 @@
 import { PiMapTrifold } from 'react-icons/pi'
-import Region from '@/components/sidebar/region/Region'
-import EmptyState from '@/components/sidebar/EmptyState'
 
+import type { ReactElement } from 'react'
+
+import EmptyState from '@/components/sidebar/EmptyState'
+import Region from '@/components/sidebar/region/Region'
+import { SORTED_REGIONS } from '@/constants/regions'
 import useUserTerritories from '@/hooks/useUserTerritories'
 
-import { SORTED_REGIONS } from '@/constants/regions'
-
-function VisitedTerritories() {
+function VisitedTerritories(): ReactElement {
   const { visited, grouped: groupedTerritories } = useUserTerritories()
-  const filteredRegions = SORTED_REGIONS.filter(region => groupedTerritories[region].some(territory => territory.visited))
+  const filteredRegions = SORTED_REGIONS.filter(region =>
+    groupedTerritories[region].some(territory => territory.visited),
+  )
 
   return (
     <>
       {visited.length === 0 && (
         <EmptyState
           icon={PiMapTrifold}
-          title="No visited countries yet"
-          description="Mark the countries you’ve been to and track your adventures."
+          title='No visited countries yet'
+          description='Mark the countries you’ve been to and track your adventures.'
         />
       )}
 

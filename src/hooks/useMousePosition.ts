@@ -5,19 +5,21 @@ interface MousePosition {
   clientY: number
 }
 
-export default function useMousePosition(): MousePosition {
+function useMousePosition(): MousePosition {
   const [mousePosition, setMousePosition] = useState<MousePosition>({ clientX: 0, clientY: 0 })
 
   useEffect(() => {
-    const handleMouseMove = ({ clientX, clientY }: MouseEvent) => {
+    const handleMouseMove = ({ clientX, clientY }: MouseEvent): void => {
       setMousePosition({ clientX, clientY })
     }
     window.addEventListener('mousemove', handleMouseMove)
 
-    return () => {
+    return (): void => {
       window.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
 
   return mousePosition
 }
+
+export default useMousePosition

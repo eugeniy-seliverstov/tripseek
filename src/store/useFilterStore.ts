@@ -8,10 +8,10 @@ export interface FilterStore {
   initFilter: (count: number) => void
 }
 
-const useFilterStore = create<FilterStore>((set) => ({
+const useFilterStore = create<FilterStore>(set => ({
   filter: 'visited',
-  setFilter: (filter) => set(() => ({ filter })),
-  initFilter: (count) => set(() => ({ filter: count ? 'visited' : 'all' })),
+  setFilter: (filter): void => set(() => ({ filter })),
+  initFilter: (count): void => set(() => ({ filter: count ? 'visited' : 'all' })),
 }))
 
 export default useFilterStore

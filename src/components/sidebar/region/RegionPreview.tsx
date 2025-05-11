@@ -1,5 +1,7 @@
-import { REGION_META } from '@/constants/regions'
 import type { TerritoryRegion } from '@/types/territory'
+import type { ReactElement } from 'react'
+
+import { REGION_META } from '@/constants/regions'
 
 interface RegionPreviewProps {
   region: TerritoryRegion
@@ -8,9 +10,9 @@ interface RegionPreviewProps {
   onClick?: () => void
 }
 
-function RegionPreview({ region, visited, total, onClick }: RegionPreviewProps) {
+function RegionPreview({ region, visited, total, onClick }: RegionPreviewProps): ReactElement {
   const percent = Math.round((visited / total) * 100)
-  const { background, image, imageStyle} = REGION_META[region]
+  const { background, image, imageStyle } = REGION_META[region]
 
   return (
     <div
@@ -25,8 +27,8 @@ function RegionPreview({ region, visited, total, onClick }: RegionPreviewProps) 
           style={imageStyle}
         />
       )}
-      <div className="font-semibold">{region}</div>
-      <div className="text-xl font-bold">{percent}%</div>
+      <div className='font-semibold'>{region}</div>
+      <div className='text-xl font-bold'>{percent}%</div>
     </div>
   )
 }

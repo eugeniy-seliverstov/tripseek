@@ -1,6 +1,7 @@
 import { create } from 'zustand'
-import type { Nullable } from '@/types/utils'
+
 import type { TerritoryRegion } from '@/types/territory'
+import type { Nullable } from '@/types/utils'
 
 export type RegionViewMode = 'grid' | 'list'
 
@@ -12,11 +13,11 @@ interface RegionViewStore {
   setSelectedRegion: (region: Nullable<TerritoryRegion>) => void
 }
 
-const useRegionViewStore = create<RegionViewStore>((set) => ({
+const useRegionViewStore = create<RegionViewStore>(set => ({
   viewMode: 'grid',
   selectedRegion: null,
-  setViewMode: (mode) => set(() => ({ viewMode: mode })),
-  setSelectedRegion: (region) => set(() => ({ selectedRegion: region })),
+  setViewMode: (mode): void => set(() => ({ viewMode: mode })),
+  setSelectedRegion: (region): void => set(() => ({ selectedRegion: region })),
 }))
 
 export default useRegionViewStore

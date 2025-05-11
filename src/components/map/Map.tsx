@@ -1,10 +1,10 @@
-import { memo } from 'react'
 import { geoTimes } from 'd3-geo-projection'
+import { memo, ReactElement } from 'react'
 import { ComposableMap } from 'react-simple-maps'
 
 import MapTerritories from '@/components/map/MapTerritories'
 
-function Map() {
+function Map(): ReactElement {
   return (
     <ComposableMap
       width={1000}

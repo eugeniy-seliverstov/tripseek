@@ -3,8 +3,8 @@ const nouns = ['Voyager', 'Nomad', 'Explorer', 'Traveler', 'Pathfinder', 'Seeker
 const adjectives = ['Hidden', 'Wandering', 'Curious', 'Unknown', 'Restless', 'Mystic']
 
 export interface GuestProfile {
-  name: string,
-  avatar: string,
+  name: string
+  avatar: string
 }
 
 function generateGuestProfile(): GuestProfile {

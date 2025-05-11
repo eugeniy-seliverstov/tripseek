@@ -16,15 +16,15 @@ export const colors = {
   background: {
     DEFAULT: '#FFFFFF',
     muted: '#F5F5F5',
-    active: '#FFFFFF'
+    active: '#FFFFFF',
   },
   border: {
     DEFAULT: '#E5E5E5',
   },
   focus: {
     ring: '#9EA2F5',
-    offset: '#E4E5FB'
-  }
+    offset: '#E4E5FB',
+  },
 }
 
 export const mapColors = {
@@ -32,7 +32,7 @@ export const mapColors = {
   default: {
     base: 'rgba(255, 255, 255, 0.2)',
     hover: '#A89BCF',
-    border: 'rgba(255, 255, 255, 0.05)'
+    border: 'rgba(255, 255, 255, 0.05)',
   },
   visited: {
     base: '#F6B8A2',

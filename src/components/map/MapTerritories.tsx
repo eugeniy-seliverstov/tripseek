@@ -1,17 +1,16 @@
 import { Geographies, Geography } from 'react-simple-maps'
 
-import useUserStore from '@/store/useUserStore'
-import useHoverStore from '@/store/useHoverStore'
-import useFilterStore from '@/store/useFilterStore'
-import useTerritoryToggle from '@/hooks/useTerritoryToggle'
-
-import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
-import { getGeographyStyle, getGeographyStroke } from '@/utils/geography'
-
+import type { Territory, TerritoryCode, TerritoryName } from '@/types/territory'
+import type { ReactElement } from 'react'
 import type { GeographyProps } from 'react-simple-maps'
-import type { TerritoryCode, TerritoryName } from '@/types/territory'
 
 import map from '@/assets/map/countries-110m.json'
+import useTerritoryToggle from '@/hooks/useTerritoryToggle'
+import useFilterStore from '@/store/useFilterStore'
+import useHoverStore from '@/store/useHoverStore'
+import useUserStore from '@/store/useUserStore'
+import { getGeographyStyle, getGeographyStroke } from '@/utils/geography'
+import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 
 interface GeoFeature {
   rsmKey: string
@@ -21,7 +20,7 @@ interface GeoFeature {
   }
 }
 
-function MapTerritories() {
+function MapTerritories(): ReactElement {
   const { filter } = useFilterStore()
   const { mapHoverTerritory, sidebarHoverTerritory, setMapHoverTerritory } = useHoverStore()
   const { visited, wishlist, toggleVisitedTerritory, toggleWishlistTerritory } = useUserStore()
@@ -32,10 +31,17 @@ function MapTerritories() {
     toggleWishlistTerritory,
   })
 
-  const prepareGeographyProps = (geo: GeoFeature) => {
-    const code = geo.properties?.ISO_A3 !== '-99'
-      ? geo.properties?.ISO_A3 as TerritoryCode
-      : getCodeByName(geo.properties?.NAME_LONG as TerritoryName)
+  const prepareGeographyProps = (
+    geo: GeoFeature,
+  ): {
+    territory: Territory | null | undefined
+    styles: GeographyProps['style']
+    stroke: string
+  } => {
+    const code =
+      geo.properties?.ISO_A3 !== '-99'
+        ? (geo.properties?.ISO_A3 as TerritoryCode)
+        : getCodeByName(geo.properties?.NAME_LONG as TerritoryName)
 
     const territory = code ? getTerritoryByCode(code) : null
 
@@ -46,7 +52,11 @@ function MapTerritories() {
     const isVisited = territory ? visited.includes(territory.code) : false
     const isWishlist = territory ? wishlist.includes(territory.code) : false
 
-    const styles: GeographyProps['style'] = getGeographyStyle(filter, { isVisited, isWishlist, isHovered })
+    const styles: GeographyProps['style'] = getGeographyStyle(filter, {
+      isVisited,
+      isWishlist,
+      isHovered,
+    })
     const stroke = getGeographyStroke(filter, { isVisited, isWishlist, isHovered })
 
     return { territory, styles, stroke }
@@ -55,7 +65,7 @@ function MapTerritories() {
   return (
     <Geographies geography={map}>
       {({ geographies }) =>
-        geographies.map((geo) => {
+        geographies.map(geo => {
           const { territory, styles, stroke } = prepareGeographyProps(geo)
 
           return (
@@ -67,7 +77,7 @@ function MapTerritories() {
               style={styles}
               onMouseEnter={() => setMapHoverTerritory(territory)}
               onMouseLeave={() => setMapHoverTerritory(null)}
-              onClick={(event) => {
+              onClick={event => {
                 if (territory) toggleTerritory(territory.code, event)
               }}
             />

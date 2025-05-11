@@ -1,11 +1,12 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+
 import { TerritoryCode } from '@/types/territory'
 import unique from '@/utils/unique'
 
 export interface UserStore {
-  visited: TerritoryCode[],
-  wishlist: TerritoryCode[],
+  visited: TerritoryCode[]
+  wishlist: TerritoryCode[]
 }
 
 export interface UserStoreActions {
@@ -24,16 +25,16 @@ const useUserStore = create<UserStore & UserStoreActions>()(
       visited: [],
       wishlist: [],
 
-      addVisitedTerritory: (code: TerritoryCode) =>
-        set((state) => ({
+      addVisitedTerritory: (code: TerritoryCode): void =>
+        set(state => ({
           visited: unique([...state.visited, code]),
-          wishlist: state.wishlist.filter(value => value !== code)
+          wishlist: state.wishlist.filter(value => value !== code),
         })),
-      removeVisitedTerritory: (code: TerritoryCode) =>
-        set((state) => ({
-          visited: state.visited.filter(value => value !== code)
+      removeVisitedTerritory: (code: TerritoryCode): void =>
+        set(state => ({
+          visited: state.visited.filter(value => value !== code),
         })),
-      toggleVisitedTerritory: (code: TerritoryCode) => {
+      toggleVisitedTerritory: (code: TerritoryCode): void => {
         const { visited, addVisitedTerritory, removeVisitedTerritory } = get()
         if (visited.includes(code)) {
           removeVisitedTerritory(code)
@@ -42,17 +43,17 @@ const useUserStore = create<UserStore & UserStoreActions>()(
         }
       },
 
-      addWishlistTerritory: (code: TerritoryCode) =>
-        set((state) => ({
+      addWishlistTerritory: (code: TerritoryCode): void =>
+        set(state => ({
           wishlist: state.visited.includes(code)
-          ? state.wishlist
-          : unique([...state.wishlist, code])
+            ? state.wishlist
+            : unique([...state.wishlist, code]),
         })),
-      removeWishlistTerritory: (code: TerritoryCode) =>
-        set((state) => ({
-          wishlist: state.wishlist.filter(value => value !== code)
+      removeWishlistTerritory: (code: TerritoryCode): void =>
+        set(state => ({
+          wishlist: state.wishlist.filter(value => value !== code),
         })),
-      toggleWishlistTerritory: (code) => {
+      toggleWishlistTerritory: (code: TerritoryCode): void => {
         const { wishlist, removeWishlistTerritory, addWishlistTerritory } = get()
         if (wishlist.includes(code)) {
           removeWishlistTerritory(code)
@@ -61,8 +62,8 @@ const useUserStore = create<UserStore & UserStoreActions>()(
         }
       },
     }),
-    { name: 'territories' }
-  )
+    { name: 'territories' },
+  ),
 )
 
 export default useUserStore

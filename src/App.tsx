@@ -1,9 +1,11 @@
-import Sidebar from '@/components/Sidebar'
-import MapContainer from '@/components/MapContainer'
+import type { ReactElement } from 'react'
 
-function App() {
+import MapContainer from '@/components/MapContainer'
+import Sidebar from '@/components/Sidebar'
+
+function App(): ReactElement {
   return (
-    <div className="relative w-full h-screen flex flex-col sm:flex-row overflow-hidden">
+    <div className='relative w-full h-screen flex flex-col sm:flex-row overflow-hidden'>
       <MapContainer />
       <Sidebar />
     </div>

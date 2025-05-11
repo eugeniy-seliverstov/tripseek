@@ -1,5 +1,8 @@
 import { createPortal } from 'react-dom'
+
 import type { Territory } from '@/types/territory'
+import type { ReactElement } from 'react'
+
 import TerritoryFlag from '@/components/sidebar/territory/TerritoryFlag'
 
 interface MapTerritoryPopoverProps {
@@ -8,7 +11,11 @@ interface MapTerritoryPopoverProps {
   clientX: number
 }
 
-function MapTerritoryPopover({ territory, clientY, clientX }: MapTerritoryPopoverProps) {
+function MapTerritoryPopover({
+  territory,
+  clientY,
+  clientX,
+}: MapTerritoryPopoverProps): ReactElement {
   return createPortal(
     <div
       className='flex gap-2 items-center absolute bg-background text-text px-3 py-2 rounded-[12px] drop-shadow-xl select-none'
@@ -18,7 +25,7 @@ function MapTerritoryPopover({ territory, clientY, clientX }: MapTerritoryPopove
         transform: 'translateX(-50%)',
       }}
     >
-      <TerritoryFlag code={territory.code}/>
+      <TerritoryFlag code={territory.code} />
       <span className='text-xl'>{territory.name}</span>
     </div>,
     document.body,

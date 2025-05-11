@@ -1,4 +1,4 @@
-import { Territory, TerritoryRegion } from './territory'
+import { Territory, TerritoryRegion } from '@/types/territory'
 
 export interface UserTerritory extends Territory {
   visited?: boolean
