@@ -1,15 +1,11 @@
 import { useMemo } from 'react'
 
+import type { StatItem } from '@/types/statistics'
+
 import territories from '@/constants/territories'
 import useUserTerritories from '@/hooks/useUserTerritories'
 import useUserStore from '@/store/useUserStore'
 import { getTerritoryByCode } from '@/utils/territories'
-
-export interface StatItem {
-  label: string
-  visited: number
-  total: number
-}
 
 function useUserStatistics(): StatItem[] {
   const { visited } = useUserStore()
@@ -27,7 +23,12 @@ function useUserStatistics(): StatItem[] {
     ).length
 
     return [
-      { label: 'Countries', visited: countryVisited, total: countryTotal },
+      {
+        label: 'Countries',
+        visited: countryVisited,
+        total: countryTotal,
+        hint: 'Based on the UN list. Some marked territories may not count as countries.',
+      },
       { label: 'Territories', visited: visited.length, total: territories.length },
       { label: 'Regions', visited: regionVisited, total: regionTotal },
     ]
