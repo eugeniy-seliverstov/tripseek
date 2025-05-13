@@ -4,6 +4,7 @@ import type { UserTerritory } from '@/types/user'
 import type { ReactElement } from 'react'
 
 import TerritoryFlag from '@/components/sidebar/territory/TerritoryFlag'
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { mapColors } from '@/theme/colors'
 import { cn } from '@/utils/cn'
 
@@ -41,19 +42,34 @@ function TerritoryItem({
         <div>{territory.name}</div>
       </div>
       <div className='flex gap-2'>
-        <FlagIcon
-          className='hover:cursor-pointer hidden group-hover:inline-flex'
-          color={mapColors.visited.icon}
-          size='20px'
-          onClick={onVisitedClick}
-        />
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <FlagIcon
+              className='hover:cursor-pointer hidden group-hover:inline-flex'
+              color={mapColors.visited.icon}
+              size='20px'
+              onClick={onVisitedClick}
+            />
+          </TooltipTrigger>
+          <TooltipContent side='top' collisionPadding={8}>
+            {territory.visited ? 'Remove from visited' : 'Mark as visited'}
+          </TooltipContent>
+        </Tooltip>
+
         {!territory.visited && (
-          <HeartIcon
-            className='hover:cursor-pointer hidden group-hover:inline-flex'
-            color={mapColors.wishlist.icon}
-            size='20px'
-            onClick={onWishlistClick}
-          />
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <HeartIcon
+                className='hover:cursor-pointer hidden group-hover:inline-flex'
+                color={mapColors.wishlist.icon}
+                size='20px'
+                onClick={onWishlistClick}
+              />
+            </TooltipTrigger>
+            <TooltipContent side='top' collisionPadding={8}>
+              {territory.wishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+            </TooltipContent>
+          </Tooltip>
         )}
       </div>
     </div>
