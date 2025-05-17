@@ -2,7 +2,7 @@ import type { TerritoryRegion } from '@/types/territory'
 import type { UserTerritory } from '@/types/user'
 import type { ReactElement } from 'react'
 
-import Region from '@/components/sidebar/region/Region'
+import { Region } from '@/components/sidebar/region/Region'
 
 interface RegionViewProps {
   region: TerritoryRegion
@@ -16,7 +16,11 @@ const sortByVisited = (a: UserTerritory, b: UserTerritory): number => {
   return a.name.localeCompare(b.name)
 }
 
-function RegionView({ region, territories, searchQuery }: RegionViewProps): ReactElement | null {
+export const RegionView = ({
+  region,
+  territories,
+  searchQuery,
+}: RegionViewProps): ReactElement | null => {
   const normalizedQuery = searchQuery?.toLowerCase().trim() ?? ''
   const regionTerritories = territories.slice().sort(sortByVisited)
 
@@ -46,5 +50,3 @@ function RegionView({ region, territories, searchQuery }: RegionViewProps): Reac
     />
   )
 }
-
-export default RegionView

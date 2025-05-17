@@ -1,9 +1,9 @@
 import { useMemo, ReactElement } from 'react'
 
-import useFilterStore from '@/store/useFilterStore'
+import { useFilterStore } from '@/store/useFilterStore'
 import { isApplePlatform } from '@/utils/platform'
 
-function Hint(): ReactElement {
+export const Hint = (): ReactElement => {
   const { filter } = useFilterStore()
 
   const showVisitedHint = filter === 'visited' || filter === 'all'
@@ -32,5 +32,3 @@ function Hint(): ReactElement {
     </div>
   )
 }
-
-export default Hint

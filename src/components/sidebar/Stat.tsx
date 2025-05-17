@@ -1,13 +1,13 @@
 import type { StatItem } from '@/types/statistics'
 import type { ReactElement } from 'react'
 
-import Hint from '@/components/Hint'
+import { Hint } from '@/components/Hint'
 
 type StatProps = StatItem & {
   className?: string
 }
 
-function Stat({ label, visited, total, hint, className = '' }: StatProps): ReactElement {
+export const Stat = ({ label, visited, total, hint, className = '' }: StatProps): ReactElement => {
   return (
     <div className={className}>
       <div className='font-semibold text-text text-md inline-flex gap-1 items-center'>
@@ -20,5 +20,3 @@ function Stat({ label, visited, total, hint, className = '' }: StatProps): React
     </div>
   )
 }
-
-export default Stat

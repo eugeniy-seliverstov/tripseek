@@ -1,4 +1,4 @@
-const territories = [
+export const territories = [
   {
     name: 'Algeria',
     code: 'DZA',
@@ -1560,5 +1560,3 @@ const territories = [
     type: 'other',
   },
 ] as const
-
-export default territories

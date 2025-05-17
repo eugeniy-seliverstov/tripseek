@@ -2,9 +2,9 @@ import { geoTimes } from 'd3-geo-projection'
 import { memo, ReactElement } from 'react'
 import { ComposableMap } from 'react-simple-maps'
 
-import MapTerritories from '@/components/map/MapTerritories'
+import { MapTerritories } from '@/components/map/MapTerritories'
 
-function Map(): ReactElement {
+const MapComponent = (): ReactElement => {
   return (
     <ComposableMap
       width={1000}
@@ -20,4 +20,4 @@ function Map(): ReactElement {
   )
 }
 
-export default memo(Map)
+export const Map = memo(MapComponent)

@@ -1,17 +1,17 @@
 import { useState, ReactElement } from 'react'
 import { LuArrowLeft } from 'react-icons/lu'
 
-import RegionViewSelector from '@/components/sidebar/region/RegionViewSelector'
-import RegionView from '@/components/sidebar/region/views/RegionView'
-import RegionViewGrid from '@/components/sidebar/region/views/RegionViewGrid'
-import RegionViewList from '@/components/sidebar/region/views/RegionViewList'
+import { RegionViewSelector } from '@/components/sidebar/region/RegionViewSelector'
+import { RegionView } from '@/components/sidebar/region/views/RegionView'
+import { RegionViewGrid } from '@/components/sidebar/region/views/RegionViewGrid'
+import { RegionViewList } from '@/components/sidebar/region/views/RegionViewList'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import useUserTerritories from '@/hooks/useUserTerritories'
-import useRegionViewStore from '@/store/useRegionViewStore'
+import { useUserTerritories } from '@/hooks/useUserTerritories'
+import { useRegionViewStore } from '@/store/useRegionViewStore'
 import { cn } from '@/utils/cn'
 
-function AllTerritories(): ReactElement {
+export const AllTerritories = (): ReactElement => {
   const { grouped: groupedTerritories } = useUserTerritories()
   const [searchQuery, setSearchQuery] = useState('')
   const { selectedRegion, setSelectedRegion, viewMode, setViewMode } = useRegionViewStore()
@@ -62,5 +62,3 @@ function AllTerritories(): ReactElement {
     </>
   )
 }
-
-export default AllTerritories

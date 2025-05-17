@@ -34,6 +34,7 @@ export default tseslint.config(
       prettier,
     },
     rules: {
+      // Typescript
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: false }],
@@ -48,11 +49,14 @@ export default tseslint.config(
       '@typescript-eslint/consistent-type-assertions': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
 
+      // React
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       'react/react-in-jsx-scope': 'off',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
+      // Import
+      'import/no-default-export': ['error'],
       'import/order': [
         'error',
         {
@@ -65,12 +69,12 @@ export default tseslint.config(
         },
       ],
 
+      // Other
       'no-console': 'warn',
       'no-debugger': 'error',
       'no-else-return': 'error',
       'no-unneeded-ternary': 'error',
       'prefer-const': 'error',
-
       'prettier/prettier': ['error', prettierConfig],
     },
     settings: {

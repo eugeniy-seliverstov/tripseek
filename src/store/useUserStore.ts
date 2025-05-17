@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 import { TerritoryCode } from '@/types/territory'
-import unique from '@/utils/unique'
+import { unique } from '@/utils/unique'
 
 export interface UserStore {
   visited: TerritoryCode[]
@@ -19,7 +19,7 @@ export interface UserStoreActions {
   toggleWishlistTerritory: (code: TerritoryCode) => void
 }
 
-const useUserStore = create<UserStore & UserStoreActions>()(
+export const useUserStore = create<UserStore & UserStoreActions>()(
   persist(
     (set, get) => ({
       visited: [],
@@ -65,5 +65,3 @@ const useUserStore = create<UserStore & UserStoreActions>()(
     { name: 'territories' },
   ),
 )
-
-export default useUserStore

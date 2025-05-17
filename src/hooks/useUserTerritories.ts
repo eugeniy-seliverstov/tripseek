@@ -4,7 +4,7 @@ import type { TerritoryCode } from '@/types/territory'
 import type { GroupedUserTerritories } from '@/types/user'
 
 import { SORTED_REGIONS } from '@/constants/regions'
-import useUserStore from '@/store/useUserStore'
+import { useUserStore } from '@/store/useUserStore'
 import { getTerritoriesByRegion } from '@/utils/territories'
 
 interface UserTerritoriesResult {
@@ -13,7 +13,7 @@ interface UserTerritoriesResult {
   grouped: GroupedUserTerritories
 }
 
-function useUserTerritories(): UserTerritoriesResult {
+export const useUserTerritories = (): UserTerritoriesResult => {
   const { visited, wishlist } = useUserStore()
 
   return useMemo(() => {
@@ -32,5 +32,3 @@ function useUserTerritories(): UserTerritoriesResult {
     return { visited, wishlist, grouped }
   }, [visited, wishlist])
 }
-
-export default useUserTerritories

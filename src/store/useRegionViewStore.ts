@@ -13,11 +13,9 @@ interface RegionViewStore {
   setSelectedRegion: (region: Nullable<TerritoryRegion>) => void
 }
 
-const useRegionViewStore = create<RegionViewStore>(set => ({
+export const useRegionViewStore = create<RegionViewStore>(set => ({
   viewMode: 'grid',
   selectedRegion: null,
   setViewMode: (mode): void => set(() => ({ viewMode: mode })),
   setSelectedRegion: (region): void => set(() => ({ selectedRegion: region })),
 }))
-
-export default useRegionViewStore

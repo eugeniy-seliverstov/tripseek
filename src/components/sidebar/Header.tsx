@@ -1,9 +1,9 @@
 import { useMemo, ReactElement } from 'react'
 
-import Statistics from '@/components/sidebar/Statistics'
-import generateGuestProfile from '@/utils/generateGuestProfile'
+import { Statistics } from '@/components/sidebar/Statistics'
+import { generateGuestProfile } from '@/utils/generateGuestProfile'
 
-function Header(): ReactElement {
+export const Header = (): ReactElement => {
   const guest = useMemo(generateGuestProfile, [])
 
   return (
@@ -18,5 +18,3 @@ function Header(): ReactElement {
     </div>
   )
 }
-
-export default Header

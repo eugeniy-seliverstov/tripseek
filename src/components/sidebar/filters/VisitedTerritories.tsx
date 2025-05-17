@@ -2,12 +2,12 @@ import { PiMapTrifold } from 'react-icons/pi'
 
 import type { ReactElement } from 'react'
 
-import EmptyState from '@/components/sidebar/EmptyState'
-import Region from '@/components/sidebar/region/Region'
+import { EmptyState } from '@/components/sidebar/EmptyState'
+import { Region } from '@/components/sidebar/region/Region'
 import { SORTED_REGIONS } from '@/constants/regions'
-import useUserTerritories from '@/hooks/useUserTerritories'
+import { useUserTerritories } from '@/hooks/useUserTerritories'
 
-function VisitedTerritories(): ReactElement {
+export const VisitedTerritories = (): ReactElement => {
   const { visited, grouped: groupedTerritories } = useUserTerritories()
   const filteredRegions = SORTED_REGIONS.filter(region =>
     groupedTerritories[region].some(territory => territory.visited),
@@ -41,5 +41,3 @@ function VisitedTerritories(): ReactElement {
     </>
   )
 }
-
-export default VisitedTerritories

@@ -10,7 +10,12 @@ interface RegionPreviewProps {
   onClick?: () => void
 }
 
-function RegionPreview({ region, visited, total, onClick }: RegionPreviewProps): ReactElement {
+export const RegionPreview = ({
+  region,
+  visited,
+  total,
+  onClick,
+}: RegionPreviewProps): ReactElement => {
   const percent = Math.round((visited / total) * 100)
   const { background, image, imageStyle } = REGION_META[region]
 
@@ -32,5 +37,3 @@ function RegionPreview({ region, visited, total, onClick }: RegionPreviewProps):
     </div>
   )
 }
-
-export default RegionPreview

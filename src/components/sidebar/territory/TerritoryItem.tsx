@@ -3,7 +3,7 @@ import { IoFlag, IoFlagOutline, IoHeart, IoHeartOutline } from 'react-icons/io5'
 import type { UserTerritory } from '@/types/user'
 import type { ReactElement } from 'react'
 
-import TerritoryFlag from '@/components/sidebar/territory/TerritoryFlag'
+import { TerritoryFlag } from '@/components/sidebar/territory/TerritoryFlag'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { mapColors } from '@/theme/colors'
 import { cn } from '@/utils/cn'
@@ -17,14 +17,14 @@ interface TerritoryItemProps {
   onWishlistClick: () => void
 }
 
-function TerritoryItem({
+export const TerritoryItem = ({
   active,
   territory,
   onMouseEnter,
   onMouseLeave,
   onVisitedClick,
   onWishlistClick,
-}: TerritoryItemProps): ReactElement {
+}: TerritoryItemProps): ReactElement => {
   const FlagIcon = territory.visited ? IoFlag : IoFlagOutline
   const HeartIcon = territory.wishlist ? IoHeart : IoHeartOutline
 
@@ -75,5 +75,3 @@ function TerritoryItem({
     </div>
   )
 }
-
-export default TerritoryItem

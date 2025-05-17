@@ -1,12 +1,12 @@
-import { FC } from 'react'
+import { ReactElement } from 'react'
 import { PiCalendarHeart } from 'react-icons/pi'
 
-import EmptyState from '@/components/sidebar/EmptyState'
-import Region from '@/components/sidebar/region/Region'
+import { EmptyState } from '@/components/sidebar/EmptyState'
+import { Region } from '@/components/sidebar/region/Region'
 import { SORTED_REGIONS } from '@/constants/regions'
-import useUserTerritories from '@/hooks/useUserTerritories'
+import { useUserTerritories } from '@/hooks/useUserTerritories'
 
-const WishlistTerritories: FC = () => {
+export const WishlistTerritories = (): ReactElement => {
   const { wishlist, grouped: groupedTerritories } = useUserTerritories()
   const filteredRegions = SORTED_REGIONS.filter(region =>
     groupedTerritories[region].some(territory => territory.wishlist),
@@ -38,5 +38,3 @@ const WishlistTerritories: FC = () => {
     </>
   )
 }
-
-export default WishlistTerritories

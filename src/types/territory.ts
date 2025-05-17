@@ -1,4 +1,4 @@
-import territories from '@/constants/territories'
+import { territories } from '@/constants/territories'
 
 type BaseTerritory = (typeof territories)[number]
 

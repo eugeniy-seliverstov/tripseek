@@ -7,7 +7,7 @@ export interface GuestProfile {
   avatar: string
 }
 
-function generateGuestProfile(): GuestProfile {
+export const generateGuestProfile = (): GuestProfile => {
   const avatar = avatars[Math.floor(Math.random() * avatars.length)]
   const noun = nouns[Math.floor(Math.random() * nouns.length)]
   const adjective = adjectives[Math.floor(Math.random() * adjectives.length)]
@@ -17,5 +17,3 @@ function generateGuestProfile(): GuestProfile {
     name: `${adjective} ${noun}`,
   }
 }
-
-export default generateGuestProfile

@@ -1,4 +1,4 @@
-import territories from '@/constants/territories'
+import { territories } from '@/constants/territories'
 import { Territory, TerritoryCode, TerritoryName, TerritoryRegion } from '@/types/territory'
 
 export function getTerritoryByCode(code: TerritoryCode): Territory | undefined {

@@ -10,7 +10,7 @@ interface HintProps {
   className?: string
 }
 
-function Hint({ text, size = 14, className = '' }: HintProps): ReactElement {
+export const Hint = ({ text, size = 14, className = '' }: HintProps): ReactElement => {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -26,5 +26,3 @@ function Hint({ text, size = 14, className = '' }: HintProps): ReactElement {
     </Tooltip>
   )
 }
-
-export default Hint

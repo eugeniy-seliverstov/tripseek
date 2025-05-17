@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react'
 
-import Stat from '@/components/sidebar/Stat'
-import useUserStatistics from '@/hooks/useUserStatistics'
+import { Stat } from '@/components/sidebar/Stat'
+import { useUserStatistics } from '@/hooks/useUserStatistics'
 
-function Statistics(): ReactElement {
+export const Statistics = (): ReactElement => {
   const stats = useUserStatistics()
 
   return (
@@ -21,5 +21,3 @@ function Statistics(): ReactElement {
     </div>
   )
 }
-
-export default Statistics

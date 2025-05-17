@@ -2,7 +2,7 @@ import type { TerritoryRegion } from '@/types/territory'
 import type { UserTerritory } from '@/types/user'
 import type { ReactElement } from 'react'
 
-import TerritoryList from '@/components/sidebar/territory/TerritoryList'
+import { TerritoryList } from '@/components/sidebar/territory/TerritoryList'
 
 interface RegionProps {
   name: TerritoryRegion
@@ -13,14 +13,14 @@ interface RegionProps {
   isActive?: (territory: UserTerritory) => boolean
 }
 
-function Region({
+export const Region = ({
   name,
   territories,
   showCounters,
   activeCount,
   totalCount,
   isActive,
-}: RegionProps): ReactElement {
+}: RegionProps): ReactElement => {
   const countries: UserTerritory[] = []
   const otherTerritories: UserTerritory[] = []
   const disputedTerritories: UserTerritory[] = []
@@ -60,5 +60,3 @@ function Region({
     </>
   )
 }
-
-export default Region

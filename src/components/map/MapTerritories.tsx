@@ -5,10 +5,10 @@ import type { ReactElement } from 'react'
 import type { GeographyProps } from 'react-simple-maps'
 
 import map from '@/assets/map/countries-110m.json'
-import useTerritoryToggle from '@/hooks/useTerritoryToggle'
-import useFilterStore from '@/store/useFilterStore'
-import useHoverStore from '@/store/useHoverStore'
-import useUserStore from '@/store/useUserStore'
+import { useTerritoryToggle } from '@/hooks/useTerritoryToggle'
+import { useFilterStore } from '@/store/useFilterStore'
+import { useHoverStore } from '@/store/useHoverStore'
+import { useUserStore } from '@/store/useUserStore'
 import { getGeographyStyle, getGeographyStroke } from '@/utils/geography'
 import { getTerritoryByCode, getCodeByName } from '@/utils/territories'
 
@@ -20,7 +20,7 @@ interface GeoFeature {
   }
 }
 
-function MapTerritories(): ReactElement {
+export const MapTerritories = (): ReactElement => {
   const { filter } = useFilterStore()
   const { mapHoverTerritory, sidebarHoverTerritory, setMapHoverTerritory } = useHoverStore()
   const { visited, wishlist, toggleVisitedTerritory, toggleWishlistTerritory } = useUserStore()
@@ -87,5 +87,3 @@ function MapTerritories(): ReactElement {
     </Geographies>
   )
 }
-
-export default MapTerritories

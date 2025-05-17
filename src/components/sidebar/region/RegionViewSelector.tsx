@@ -11,7 +11,7 @@ interface RegionViewSelectorProps {
   onChange: (value: RegionViewMode) => void
 }
 
-function RegionViewSelector({ value, onChange }: RegionViewSelectorProps): ReactElement {
+export const RegionViewSelector = ({ value, onChange }: RegionViewSelectorProps): ReactElement => {
   return (
     <Tabs value={value} onValueChange={val => onChange(val as RegionViewMode)}>
       <TabsList>
@@ -44,5 +44,3 @@ function RegionViewSelector({ value, onChange }: RegionViewSelectorProps): React
     </Tabs>
   )
 }
-
-export default RegionViewSelector

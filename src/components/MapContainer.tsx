@@ -1,13 +1,13 @@
 import { ReactElement } from 'react'
 
-import Map from '@/components/map/Map'
-import MapTerritoryPopover from '@/components/map/MapTerritoryPopover'
-import Hint from '@/components/map/header/Hint'
-import Logo from '@/components/map/header/Logo'
-import useMousePosition from '@/hooks/useMousePosition'
-import useHoverStore from '@/store/useHoverStore'
+import { Map } from '@/components/map/Map'
+import { MapTerritoryPopover } from '@/components/map/MapTerritoryPopover'
+import { Hint } from '@/components/map/header/Hint'
+import { Logo } from '@/components/map/header/Logo'
+import { useMousePosition } from '@/hooks/useMousePosition'
+import { useHoverStore } from '@/store/useHoverStore'
 
-function MapContainer(): ReactElement {
+export const MapContainer = (): ReactElement => {
   const position = useMousePosition()
   const mapHoverTerritory = useHoverStore(state => state.mapHoverTerritory)
 
@@ -32,5 +32,3 @@ function MapContainer(): ReactElement {
     </div>
   )
 }
-
-export default MapContainer

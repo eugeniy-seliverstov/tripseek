@@ -3,7 +3,7 @@ import { IconType } from 'react-icons/lib'
 import type { ReactElement } from 'react'
 
 import { Button } from '@/components/ui/button'
-import useFilterStore from '@/store/useFilterStore'
+import { useFilterStore } from '@/store/useFilterStore'
 
 interface EmptyStateProps {
   icon: IconType
@@ -11,11 +11,7 @@ interface EmptyStateProps {
   description: string
 }
 
-export default function EmptyState({
-  icon: Icon,
-  title,
-  description,
-}: EmptyStateProps): ReactElement {
+export const EmptyState = ({ icon: Icon, title, description }: EmptyStateProps): ReactElement => {
   const { setFilter } = useFilterStore()
 
   return (

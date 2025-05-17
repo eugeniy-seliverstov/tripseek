@@ -1,16 +1,16 @@
 import type { UserTerritory } from '@/types/user'
 import type { ReactElement } from 'react'
 
-import TerritoryItem from '@/components/sidebar/territory/TerritoryItem'
-import useHoverStore from '@/store/useHoverStore'
-import useUserStore from '@/store/useUserStore'
+import { TerritoryItem } from '@/components/sidebar/territory/TerritoryItem'
+import { useHoverStore } from '@/store/useHoverStore'
+import { useUserStore } from '@/store/useUserStore'
 
 interface TerritoryListProps {
   territories: UserTerritory[]
   isActive?: (territory: UserTerritory) => boolean
 }
 
-function TerritoryList({ territories, isActive }: TerritoryListProps): ReactElement[] {
+export const TerritoryList = ({ territories, isActive }: TerritoryListProps): ReactElement[] => {
   const {
     addVisitedTerritory,
     addWishlistTerritory,
@@ -41,5 +41,3 @@ function TerritoryList({ territories, isActive }: TerritoryListProps): ReactElem
     )
   })
 }
-
-export default TerritoryList

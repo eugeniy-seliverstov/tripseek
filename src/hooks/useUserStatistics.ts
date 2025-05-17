@@ -2,12 +2,12 @@ import { useMemo } from 'react'
 
 import type { StatItem } from '@/types/statistics'
 
-import territories from '@/constants/territories'
-import useUserTerritories from '@/hooks/useUserTerritories'
-import useUserStore from '@/store/useUserStore'
+import { territories } from '@/constants/territories'
+import { useUserTerritories } from '@/hooks/useUserTerritories'
+import { useUserStore } from '@/store/useUserStore'
 import { getTerritoryByCode } from '@/utils/territories'
 
-function useUserStatistics(): StatItem[] {
+export const useUserStatistics = (): StatItem[] => {
   const { visited } = useUserStore()
   const { grouped: groupedTerritories } = useUserTerritories()
 
@@ -34,5 +34,3 @@ function useUserStatistics(): StatItem[] {
     ]
   }, [visited, groupedTerritories])
 }
-
-export default useUserStatistics

@@ -11,12 +11,10 @@ export interface HoverStore {
   setSidebarHoverTerritory: (territory: Nullable<Territory>) => void
 }
 
-const useHoverStore = create<HoverStore>(set => ({
+export const useHoverStore = create<HoverStore>(set => ({
   mapHoverTerritory: null,
   sidebarHoverTerritory: null,
 
   setMapHoverTerritory: (territory): void => set(() => ({ mapHoverTerritory: territory })),
   setSidebarHoverTerritory: (territory): void => set(() => ({ sidebarHoverTerritory: territory })),
 }))
-
-export default useHoverStore

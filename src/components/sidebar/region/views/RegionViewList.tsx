@@ -1,7 +1,7 @@
 import type { GroupedUserTerritories } from '@/types/user'
 import type { ReactElement } from 'react'
 
-import RegionView from '@/components/sidebar/region/views/RegionView'
+import { RegionView } from '@/components/sidebar/region/views/RegionView'
 import { SORTED_REGIONS } from '@/constants/regions'
 
 interface RegionViewListProps {
@@ -9,7 +9,10 @@ interface RegionViewListProps {
   searchQuery?: string
 }
 
-function RegionViewList({ groupedTerritories, searchQuery }: RegionViewListProps): ReactElement {
+export const RegionViewList = ({
+  groupedTerritories,
+  searchQuery,
+}: RegionViewListProps): ReactElement => {
   const regions = SORTED_REGIONS.map(region => (
     <RegionView
       key={region}
@@ -21,5 +24,3 @@ function RegionViewList({ groupedTerritories, searchQuery }: RegionViewListProps
 
   return <>{regions}</>
 }
-
-export default RegionViewList

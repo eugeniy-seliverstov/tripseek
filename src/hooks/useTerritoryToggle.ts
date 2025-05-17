@@ -11,11 +11,11 @@ interface UseTerritoryToggleResult {
   toggleTerritory: (code: TerritoryCode, event: React.MouseEvent<Element>) => void
 }
 
-function useTerritoryToggle({
+export const useTerritoryToggle = ({
   filter,
   toggleVisitedTerritory,
   toggleWishlistTerritory,
-}: UseTerritoryToggleProps): UseTerritoryToggleResult {
+}: UseTerritoryToggleProps): UseTerritoryToggleResult => {
   const toggleTerritory = (code: TerritoryCode, event: React.MouseEvent<Element>): void => {
     const { shiftKey, altKey, metaKey } = event
 
@@ -34,5 +34,3 @@ function useTerritoryToggle({
 
   return { toggleTerritory }
 }
-
-export default useTerritoryToggle
