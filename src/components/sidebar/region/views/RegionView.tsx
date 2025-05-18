@@ -46,6 +46,7 @@ export const RegionView = ({
       showCounters={!normalizedQuery}
       activeCount={visitedCodes.size}
       totalCount={regionTerritories.length}
+      animation={!normalizedQuery}
       isActive={(territory: UserTerritory) => visitedCodes.has(territory.code)}
     />
   )

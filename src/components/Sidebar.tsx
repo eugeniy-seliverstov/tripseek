@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, ReactElement } from 'react'
 
 import type { Filter } from '@/store/useFilterStore'
@@ -46,7 +47,17 @@ export const Sidebar = (): ReactElement => {
         </TabsList>
       </Tabs>
 
-      {filterViews[filter]}
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={filter}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+        >
+          {filterViews[filter]}
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }

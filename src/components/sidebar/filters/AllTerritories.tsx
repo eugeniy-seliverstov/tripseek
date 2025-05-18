@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, ReactElement } from 'react'
 import { LuArrowLeft } from 'react-icons/lu'
 
@@ -11,6 +12,13 @@ import { useUserTerritories } from '@/hooks/useUserTerritories'
 import { useRegionViewStore } from '@/store/useRegionViewStore'
 import { cn } from '@/utils/cn'
 
+const motionProps = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -8 },
+  transition: { duration: 0.2 },
+}
+
 export const AllTerritories = (): ReactElement => {
   const { grouped: groupedTerritories } = useUserTerritories()
   const [searchQuery, setSearchQuery] = useState('')
@@ -22,7 +30,6 @@ export const AllTerritories = (): ReactElement => {
         className={cn(
           'flex items-center px-4 mt-3 mb-1 gap-3',
           selectedRegion ? 'justify-start' : 'justify-end',
-          viewMode === 'grid' && !selectedRegion ? 'mb-3' : '',
         )}
       >
         {selectedRegion && (
@@ -48,17 +55,28 @@ export const AllTerritories = (): ReactElement => {
         )}
       </div>
 
-      {selectedRegion ? (
-        <RegionView
-          region={selectedRegion}
-          territories={groupedTerritories[selectedRegion]}
-          searchQuery={searchQuery}
-        />
-      ) : viewMode === 'grid' && !searchQuery ? (
-        <RegionViewGrid groupedTerritories={groupedTerritories} onRegionClick={setSelectedRegion} />
-      ) : (
-        <RegionViewList groupedTerritories={groupedTerritories} searchQuery={searchQuery} />
-      )}
+      <AnimatePresence mode='wait'>
+        {selectedRegion ? (
+          <motion.div key='region' {...motionProps}>
+            <RegionView
+              region={selectedRegion}
+              territories={groupedTerritories[selectedRegion]}
+              searchQuery={searchQuery}
+            />
+          </motion.div>
+        ) : viewMode === 'grid' && !searchQuery ? (
+          <motion.div key='grid' {...motionProps}>
+            <RegionViewGrid
+              groupedTerritories={groupedTerritories}
+              onRegionClick={setSelectedRegion}
+            />
+          </motion.div>
+        ) : (
+          <motion.div key='list' {...motionProps}>
+            <RegionViewList groupedTerritories={groupedTerritories} searchQuery={searchQuery} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

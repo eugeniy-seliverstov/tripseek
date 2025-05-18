@@ -16,7 +16,7 @@ export const RegionViewGrid = ({
 }: RegionViewGridProps): ReactElement => {
   return (
     <>
-      <div className='my-2 px-4 grid grid-cols-2 gap-3'>
+      <div className='my-3 px-4 grid grid-cols-2 gap-3'>
         {SORTED_REGIONS.map(region => {
           const territories = groupedTerritories[region]
           const visited = territories.filter(t => t.visited).length
