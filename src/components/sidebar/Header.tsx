@@ -8,7 +8,7 @@ export const Header = (): ReactElement => {
 
   return (
     <div className='mb-5 px-4 pt-4 text-center'>
-      <div className='w-20 h-20 mb-2 mx-auto rounded-full bg-primary-light flex items-center justify-center text-[2.5rem] leading-none'>
+      <div className='w-20 h-20 mb-2 mx-auto rounded-full bg-primary-light flex items-center justify-center text-[2.5rem] leading-none select-none'>
         {guest.avatar}
       </div>
 

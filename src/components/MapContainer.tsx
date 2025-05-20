@@ -18,7 +18,7 @@ export const MapContainer = (): ReactElement => {
         <Hint />
       </div>
 
-      <div className='grow flex justify-center items-center min-h-0'>
+      <div className='grow flex justify-center items-center min-h-0 select-none'>
         <Map />
       </div>
 
