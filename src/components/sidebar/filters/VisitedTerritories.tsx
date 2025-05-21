@@ -19,7 +19,7 @@ export const VisitedTerritories = (): ReactElement => {
         <EmptyState
           icon={PiMapTrifold}
           title='No visited countries yet'
-          description='Mark the countries you’ve been to and track your adventures.'
+          description='Mark the countries you’ve been to and track your adventures'
         />
       )}
 

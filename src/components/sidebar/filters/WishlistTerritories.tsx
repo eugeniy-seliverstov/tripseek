@@ -18,7 +18,7 @@ export const WishlistTerritories = (): ReactElement => {
         <EmptyState
           icon={PiCalendarHeart}
           title='Your wishlist is empty'
-          description="Add countries you'd love to visit and plan your next journey."
+          description="Add countries you'd love to visit and plan your next journey"
         />
       )}
 
