@@ -26,13 +26,13 @@ export const Sidebar = (): ReactElement => {
   }, [])
 
   return (
-    <div className='w-full sm:w-2/5 max-w-md h-full bg-background text-text overflow-auto'>
+    <div className='w-full sm:w-1/2 md:2/5 sm:max-w-md h-full bg-background text-text overflow-auto'>
       <Header />
 
       <Tabs
         value={filter}
         onValueChange={value => setFilter(value as Filter)}
-        className='w-full px-4'
+        className='w-full mt-5 px-4'
       >
         <TabsList className='w-full flex justify-between'>
           <TabsTrigger value='visited' className='flex-1'>

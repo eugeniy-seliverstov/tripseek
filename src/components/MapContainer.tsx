@@ -12,8 +12,8 @@ export const MapContainer = (): ReactElement => {
   const mapHoverTerritory = useHoverStore(state => state.mapHoverTerritory)
 
   return (
-    <div className='w-full sm:w-auto grow flex flex-col bg-gradient-to-b from-[#1a0548] to-[#1a0548]'>
-      <div className='hidden sm:flex justify-between p-4 min-h-[100px]'>
+    <div className='w-full sm:w-1/2 md:w-3/5 grow flex flex-col bg-gradient-to-b from-[#1a0548] to-[#1a0548]'>
+      <div className='hidden px-0 py-4 sm:flex sm:flex-col lg:flex-row justify-between md:p-4 min-h-[100px]'>
         <Logo />
         <Hint />
       </div>
