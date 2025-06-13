@@ -4,18 +4,30 @@ import type { ReactElement } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { useFilterStore } from '@/store/useFilterStore'
+import { cn } from '@/utils/cn'
 
 interface EmptyStateProps {
   icon: IconType
   title: string
   description: string
+  className?: string
 }
 
-export const EmptyState = ({ icon: Icon, title, description }: EmptyStateProps): ReactElement => {
+export const EmptyState = ({
+  icon: Icon,
+  title,
+  description,
+  className,
+}: EmptyStateProps): ReactElement => {
   const { setFilter } = useFilterStore()
 
   return (
-    <div className='relative flex flex-col items-center justify-center text-center text-text px-4 py-16 mt-12'>
+    <div
+      className={cn(
+        'relative flex flex-col items-center justify-center text-center text-text px-4',
+        className,
+      )}
+    >
       <Icon className='w-10 h-10 mb-3' />
       <h2 className='text-lg font-semibold'>{title}</h2>
       <p className='text-sm text-text-secondary mt-1'>{description}</p>

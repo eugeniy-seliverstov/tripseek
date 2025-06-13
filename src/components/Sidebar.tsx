@@ -8,12 +8,14 @@ import { AllTerritories } from '@/components/sidebar/filters/AllTerritories'
 import { VisitedTerritories } from '@/components/sidebar/filters/VisitedTerritories'
 import { WishlistTerritories } from '@/components/sidebar/filters/WishlistTerritories'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useMobile } from '@/hooks/useMobile'
 import { useFilterStore } from '@/store/useFilterStore'
 import { useUserStore } from '@/store/useUserStore'
 
 export const Sidebar = (): ReactElement => {
   const { filter, setFilter, initFilter } = useFilterStore()
   const { visited } = useUserStore()
+  const isMobile = useMobile()
 
   const filterViews: Record<Filter, ReactElement> = {
     visited: <VisitedTerritories />,
@@ -26,8 +28,8 @@ export const Sidebar = (): ReactElement => {
   }, [])
 
   return (
-    <div className='w-full sm:w-1/2 md:2/5 sm:max-w-md h-full bg-background text-text overflow-auto'>
-      <Header />
+    <div className='w-full sm:w-1/2 md:2/5 sm:max-w-md min-h-0 sm:h-full flex flex-col grow bg-background text-text rounded-t-3xl sm:rounded-none'>
+      {!isMobile && <Header />}
 
       <Tabs
         value={filter}
@@ -54,6 +56,7 @@ export const Sidebar = (): ReactElement => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
+          className='grow min-h-0 overflow-auto'
         >
           {filterViews[filter]}
         </motion.div>
