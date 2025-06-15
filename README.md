@@ -4,7 +4,7 @@
 
 **Live Demo:** [https://tripseek-seven.vercel.app](https://tripseek-seven.vercel.app)
 
-![Preview](./preview.png)
+![Preview of Tripseek — interactive world map with selected countries marked](./preview.png)
 
 ## ✨ Features
 
