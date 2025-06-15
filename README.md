@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# Tripseek
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Tripseek** is an interactive travel map for marking visited and wishlist countries. It runs fully in the browser — no backend, no login, no external services.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://tripseek-seven.vercel.app](https://tripseek-seven.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview](./screenshot.png)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Interactive world map with hover and click feedback  
+- Mark countries as **visited**  
+- Add countries to your **wishlist**  
+- Filter countries by status: All / Visited / Wishlist  
+- View countries grouped by continent  
+- Fully responsive layout for mobile and desktop  
+- Instant feedback — works 100% client-side
 
-- Configure the top-level `parserOptions` property like this:
+## 🧱 Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React 19** — UI and component logic  
+- **TypeScript** — static typing  
+- **Zustand** — lightweight global state management  
+- **TailwindCSS** — utility-first styling  
+- **shadcn/ui** — modern, accessible UI components 
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/eugeniy-seliverstov/tripseek.git
+   cd tripseek
+   ```
+2. Install dependencies
+   ```bash
+   yarn
+   ```
+3. Start the development server
+   ```bash
+   yarn dev
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Tripseek will be available at http://localhost:5173 by default.
+
+## 📌 Roadmap
+
+- [x] Wishlist and visited country selection
+- [x] Filter by status: All / Visited / Wishlist
+- [x] Grouping countries by continent
+- [x] Travel statistics in the header 
+- [x] Country search
+- [ ] Editable user profile
+- [ ] Public shareable map/profile
+- [ ] Improve mobile UX and interactions
+- [ ] Build a dedicated mobile app
+
+## 📄 License
+
+The source code is provided for educational and demonstration purposes only.  
+Commercial or production use is not permitted without explicit permission.
+
+## 🙋‍♂️ Author
+
+Created by [Eugeniy Seliverstov](https://github.com/eugeniy-seliverstov).  
+Feel free to reach out or open an issue if you have feedback!
